@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Zineb Ahaddout" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Boek een gratis testrit</title>
+
+    <link href="styles/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  </head>
+
+  <body>
+    <script defer src="scripts/script.js"></script>
+
+    <!-- Header met logo en navigatie -->
+    <header>
+      <!-- Navigatie -->
+      <nav>
+        <a href="/"><img src="images/logo.jpg" alt="Logo Cowboy" /></a>
+        <ul>
+          <li>
+            <a href="/"
+              ><img src="images/user-regular.svg" alt="User profile"
+            /></a>
+          </li>
+          <li>
+            <a href="/"
+              ><img src="images/shoppingbag.png" alt="shoppingbag"
+            /></a>
+          </li>
+          <li>
+            <a href="/"
+              ><img src="images/hamburgermenu.svg" alt="hamburgermenu"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Testrit</h1>
+      <h2>
+        Boek een gratis testrit en voel de sensatie van een Cowboy bike. We
+        komen naar je toe of je komt langs in de winkel.
+      </h2>
+
+      <!-- Stap 1: locatie zoeken -->
+      <section>
+        <h3>01. Kies een locatie</h3>
+
+        <form action="/testrit" method="get" role="search">
+          <label>
+            Adres of stad
+            <input
+              type="search"
+              name="locatie"
+              placeholder="Voer een adres of stad in"
+              autocomplete="address-line1"
+              spellcheck="false"
+              required
+              minlength="5"
+              title="Vul een straat + huisnummer in, bijv. “Develstein 398, Amsterdam”."
+            />
+          </label>
+          <button type="submit">Zoeken</button>
+        </form>
+
+        <p>Geef je adres op om testritten bij jou in de buurt te vinden.</p>
+      </section>
+
+      <!-- Stap 2: model kiezen (toon dit pas na een ingevuld/gevonden adres) -->
+      <section>
+        <h3>02. Kies een model en we komen naar je toe</h3>
+        <p>
+          Goed nieuws, een Cowboy-expert kan naar dit adres komen. Kies het
+          model dat je wilt proberen.
+        </p>
+
+        <form action="/testrit/model" method="get">
+          <ul>
+            <li>
+              <input
+                type="radio"
+                name="model"
+                value="cruiser"
+                aria-label="Cruiser"
+                required
+              />
+              <img src="cruiser.jpg" alt="Cruiser e-bike" />
+              <h3>Cruiser</h3>
+              <p>Beschikbaar</p>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="model"
+                value="classic"
+                aria-label="Classic"
+              />
+              <img src="classic.jpg" alt="Classic e-bike" />
+              <h3>Classic</h3>
+              <p>Geen tijdslot beschikbaar</p>
+            </li>
+          </ul>
+
+          <button type="submit">Doorgaan</button>
+        </form>
+
+        <p>
+          Weet je niet zeker welke fiets bij je past?
+          <a href="/quiz">Doe de quiz</a>.
+        </p>
+      </section>
+
+      <!-- Stap 3: Langs komen in de winkel -->
+
+      <section>
+        <h3>03. Of kom langs in de winkel</h3>
+        <p>
+          Je kunt ook een winkel in de buurt bezoeken om onze experts te
+          ontmoeten en een Cowboy uit te proberen.
+        </p>
+
+        <!-- Platte kaart als afbeelding NOG AANPASSEN -->
+        <img
+          src="images/kaart-amsterdam.png"
+          alt="Kaart van Amsterdam met winkellocaties"
+        />
+
+        <ol>
+          <li>
+            <a
+              href="https://maps.google.com/?q=Welectric Rozengracht 101 Amsterdam"
+            >
+              <img src="images/icoon-winkel.svg" alt="Winkel icoon" />
+              <h4>Welectric</h4>
+              <p>1,8 km · Rozengracht 101, 103, 1016 LV Amsterdam</p>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://maps.google.com/?q=Jan Pieter Heijestraat 154 Amsterdam"
+            >
+              <img src="images/icoon-winkel.svg" alt="Winkel icoon" />
+              <h4>Wiel tot Wiel</h4>
+              <p>2,8 km · Jan Pieter Heijestraat 154/160, 1054 MK Amsterdam</p>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://maps.google.com/?q=Jan van Galenstraat 60 Amsterdam"
+            >
+              <img src="images/icoon-winkel.svg" alt="Winkel icoon" />
+              <h4>Riders Hub</h4>
+              <p>3,0 km · Jan van Galenstraat 60h, 1056 CC Amsterdam</p>
+            </a>
+          </li>
+        </ol>
+      </section>
+
+      <img
+        src="images/testritmanvrouw.jpg"
+        alt="Expert helpt klant bij testrit op een Cowboy-e-bike"
+      />
+    </main>
+  </body>
+</html>
