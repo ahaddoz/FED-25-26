@@ -1,31 +1,65 @@
 /**************/
 /* CSS REMEDY */
 /**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-
-
-
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-:root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+@font-face {
+  font-family: "Suisse Intl";
+  src: url("../fonts/suisse-intl-regular.ttf") format("truetype");
+  font-weight: 400;
 }
 
+body {
+  --color-text: #111;
+  --color-background: #f0eee2;
 
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-family: "Suisse Intl", sans-serif;
+}
 
+/* header + nav */
+header > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+/* logo links */
+header > nav > a > img {
+  display: block;
+  height: 4em;
+  width: auto;
+}
 
-/****************/
-/* JOUW STYLING */
-/****************/
+/* iconen rechts */
+header > nav > ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-/* jouw code */
+/* eerste icoon (user) verbergen op mobiel voor de look van je screenshot */
+header > nav > ul > li:first-child {
+  display: none;
+}
 
+/* klikbare hit-area iets groter maken */
+header > nav > ul > li > a {
+  display: inline-flex;
+  padding: 6px;
+}
+
+/* icon-grootte rechts */
+header > nav > ul > li > a > img {
+  height: 24px;
+  width: auto;
+  display: block;
+}
