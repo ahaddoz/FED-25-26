@@ -158,10 +158,31 @@ Kan ik in een section andere html elementen stoppen zonder een article om de sec
 
 hier na afloop snel de uitkomsten van de meeting vastleggen
 
-- punt 1
-- punt 2
-- nog een punt
-- ...
+Zineb: 3 stylesheets (algemeen, specifiek en 2e pagina)
+
+Geen classes gebruiken maar parent, child enth of type
+
+Buttons of links, dus niet beide vooral als het een actie is
+
+Button ziet eruit als een link, dus eigenlijk a gebruiken (link)
+
+Buttons zijn acties zoals iets kopen, hakburger menu klikken
+
+Figure mag weg want dat is overbodig want het is gewoon een img, pas als er een bijschrift bij de afbeeldingen staan dan mag figure als optie
+
+Pijltjes en andere decoratie is CSS Bijvoorbeeld content: “>”
+
+Bener:
+
+Header is iets wat elke pagina terug komt zoals logo, navi, profiel, winkelwagen
+
+Samya:
+
+Als een foto decoratie is dan moet het in de CSS en alleen als het informatief is dan moet het in de html
+
+Phon:Nav kan ook in de main of in de footer
+
+Detail summery (dat is wanneer je een tabje open klapt)
 
 </details>
 
