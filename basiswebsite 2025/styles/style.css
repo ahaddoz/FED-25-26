@@ -21,6 +21,36 @@ body {
   background-color: var(--color-background);
   font-family: "Suisse Intl", sans-serif;
 }
+/* bovenbalk (meldingsbalk) */
+aside {
+  background: #111; /* zwart */
+  color: #fff; /* witte tekst */
+  margin: 0; /* geen ruimte erboven */
+  padding: 0.75em 1em; /* compacte hoogte */
+  text-align: center;
+  font-size: 0.875em; /* iets kleiner dan body */
+  position: sticky; /* blijft bovenaan bij scroll */
+  top: 0;
+  z-index: 100;
+}
+
+/* tekst + link */
+aside > p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+aside > p > a {
+  color: #fff;
+  text-decoration: underline;
+  display: block;
+  margin-top: 0.25em;
+}
+
+header {
+  padding: 0em;
+  margin-left: em;
+}
 
 /* header + nav */
 header > nav {
@@ -50,14 +80,30 @@ header > nav > ul > li:first-child {
   display: none;
 }
 
-/* klikbare hit-area iets groter maken */
 header > nav > ul > li > a {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* icon-grootte rechts */
-header > nav > ul > li > a > img {
-  height: 2.5em;
-  width: auto;
-  display: block;
+/* shopping bag = 2e li */
+header > nav > ul > li:nth-child(2) > a > img {
+  height: 3.5em;
+}
+
+/* hamburger menu = 3e li */
+header > nav > ul > li:nth-child(3) > a > img {
+  height: 2.3em;
+}
+
+h1 {
+  position: absolute; /* haalt het element uit de normale flow (zwevend) */
+  width: 0.0625em; /* maakt het superklein (ongeveer 1px breed) */
+  height: 0.0625em; /* maakt het superklein (ongeveer 1px hoog) */
+  overflow: hidden; /* verbergt alles wat buiten dat mini-vakje valt */
+  clip: rect(0 0 0 0); /* knipt het zichtbare gebied weg (0x0 pixels) */
+  white-space: nowrap; /* voorkomt dat tekst afbreekt op meerdere regels */
+  border: 0; /* geen rand die per ongeluk zichtbaar kan zijn */
+  margin: 0; /* haalt ruimte rondom weg */
+  padding: 0; /* haalt binnenruimte weg */
 }
