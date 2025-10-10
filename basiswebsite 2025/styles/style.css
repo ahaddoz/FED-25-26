@@ -32,7 +32,7 @@ header > nav {
 /* logo links */
 header > nav > a > img {
   display: block;
-  height: 4em;
+  height: 10em;
   width: auto;
 }
 
@@ -40,13 +40,12 @@ header > nav > a > img {
 header > nav > ul {
   display: flex;
   align-items: center;
-  gap: 16px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* eerste icoon (user) verbergen op mobiel voor de look van je screenshot */
+/* eerste icoon (user) verbergen op mobiel*/
 header > nav > ul > li:first-child {
   display: none;
 }
@@ -54,12 +53,11 @@ header > nav > ul > li:first-child {
 /* klikbare hit-area iets groter maken */
 header > nav > ul > li > a {
   display: inline-flex;
-  padding: 6px;
 }
 
 /* icon-grootte rechts */
 header > nav > ul > li > a > img {
-  height: 24px;
+  height: 2.5em;
   width: auto;
   display: block;
 }
