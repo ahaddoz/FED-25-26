@@ -18,7 +18,7 @@
     <header>
       <!-- Navigatie -->
       <nav>
-        <a href="/"><img src="images/logo.png" alt="Logo Cowboy" /></a>
+        <a href="/"><img src="images/logo.svg" alt="Logo Cowboy" /></a>
         <ul>
           <li>
             <a href="/"
@@ -46,10 +46,9 @@
       </h2>
 
       <!-- Stap 1: locatie zoeken -->
-      <section>
-        <h3>01. Kies een locatie</h3>
-
-        <form action="/testrit" method="get" role="search">
+      <form action="/testrit" method="get" role="search">
+        <section>
+          <h3>01. Kies een locatie</h3>
           <label>
             Adres of stad
             <input
@@ -63,28 +62,24 @@
               title="Vul een straat + huisnummer in, bijv. “Develstein 398, Amsterdam”."
             />
           </label>
-          <button type="submit">Zoeken</button>
-        </form>
 
-        <p>Geef je adres op om testritten bij jou in de buurt te vinden.</p>
-      </section>
+          <p>Geef je adres op om testritten bij jou in de buurt te vinden.</p>
+        </section>
 
-      <!-- Stap 2: model kiezen (toon dit pas na een ingevuld/gevonden adres) -->
-      <section>
-        <h3>02. Kies een model en we komen naar je toe</h3>
-        <p>
-          Goed nieuws, een Cowboy-expert kan naar dit adres komen. Kies het
-          model dat je wilt proberen.
-        </p>
-
-        <form action="/testrit/model" method="get">
+        <!-- Stap 2: model kiezen (toon dit pas na een ingevuld/gevonden adres) -->
+        <section>
+          <h3>02. Kies een model en we komen naar je toe</h3>
+          <p>
+            Goed nieuws, een Cowboy-expert kan naar dit adres komen. Kies het
+            model dat je wilt proberen.
+          </p>
           <ul>
             <li>
               <input
                 type="radio"
                 name="model"
                 value="cruiser"
-                aria-label="Cruiser"
+                disabled
                 required
               />
               <img src="cruiser.jpg" alt="Cruiser e-bike" />
@@ -105,13 +100,13 @@
           </ul>
 
           <button type="submit">Doorgaan</button>
-        </form>
 
-        <p>
-          Weet je niet zeker welke fiets bij je past?
-          <a href="/quiz">Doe de quiz</a>.
-        </p>
-      </section>
+          <p>
+            Weet je niet zeker welke fiets bij je past?
+            <a href="/quiz">Doe de quiz</a>.
+          </p>
+        </section>
+      </form>
 
       <!-- Stap 3: Langs komen in de winkel -->
 

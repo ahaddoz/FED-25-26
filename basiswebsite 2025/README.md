@@ -292,4 +292,29 @@ Nb. Vermeld de bronnen ook in je code.
 2. bron 2
 3. ...
 
+FED PLANNING
+
+    - [ ] HTML
+        - [ ] Home
+            - [ ] Svg’s van cowboy overnemen en in de website plaatsen.
+            - [ ] Maak taal zonder klikbaarheid
+        - [x] Testrit
+    - [ ] Css
+        - [ ] Globale css
+        - [ ] Home
+        - [ ] Testrit
+            - [ ] Radio fiets keuze highlighten.
+    - [ ] Javascript
+        - [ ] Menu
+    - [ ] Verslag
+        - [ ] Opschrijven wat je zou maken als je meer tijd hebt bv. Google maps stylen
+    - [ ] WGAC (Alles hercontroleren ook alles wat yes)
+        - [ ] Alle No’s fixen
+        - [ ] Screen reader test
+    - [ ] Wensen lijstje (als tijd en zin over)
+        - [ ] Balk bovenin
+            - [ ] Wegklikbaar
+            - [ ] Texten die Veranderen
+        - [ ] Kaart
+
 </details>

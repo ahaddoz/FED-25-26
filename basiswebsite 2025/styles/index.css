@@ -1,0 +1,51 @@
+h1 {
+  position: absolute; /* haalt het element uit de normale flow (zwevend) */
+  width: 0.0625em; /* maakt het superklein (ongeveer 1px breed) */
+  height: 0.0625em; /* maakt het superklein (ongeveer 1px hoog) */
+  overflow: hidden; /* verbergt alles wat buiten dat mini-vakje valt */
+  clip: rect(0 0 0 0); /* knipt het zichtbare gebied weg (0x0 pixels) */
+  white-space: nowrap; /* voorkomt dat tekst afbreekt op meerdere regels */
+  border: 0; /* geen rand die per ongeluk zichtbaar kan zijn */
+  margin: 0; /* haalt ruimte rondom weg */
+  padding: 0; /* haalt binnenruimte weg */
+}
+
+/* ---------- Productsectie 1 (Cruiser) ---------- */
+
+/* titels + prijs gecentreerd */
+main > h2 {
+  margin: 0 0 0.25em 0;
+  font-size: 1em; /* kleine bovenkop (grijs) */
+  font-weight: 500;
+  color: #6b6b6b;
+  text-align: center;
+}
+
+main > h3 {
+  margin: 0 0 0.375em 0;
+  font-size: 2.25em; /* grote titel “Go Dutch” */
+  line-height: 1.1;
+  text-align: center;
+  color: #111;
+}
+
+main > p {
+  margin: 0 0 1em 0; /* “Vanaf € 2.999” */
+  font-size: 1em;
+  color: #6b6b6b;
+  text-align: center;
+}
+
+/* fiets-afbeelding fullscreen breedte */
+main > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 1.25em 0;
+}
+
+/* knoppen */
+main > a {
+  text-decoration: none;
+  display: inline-block;
+}
