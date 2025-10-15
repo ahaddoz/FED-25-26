@@ -54,14 +54,12 @@ header {
   margin-left: em;
 }
 
-/* header + nav */
 header > nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* logo links */
 header > nav > a > img {
   display: block;
   width: auto;
