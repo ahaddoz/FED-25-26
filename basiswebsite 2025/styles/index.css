@@ -1,18 +1,17 @@
 h1 {
   position: absolute;
-  width: 0.0625em;
-  height: 0.0625em;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
-  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-/* ---------- Productsectie 1 (Cruiser) ---------- */
+/* Productsectie 1 */
 
-/* titels + prijs gecentreerd */
 main > h2 {
   margin: 0 0 0.25em 0;
   font-size: 1em;
@@ -26,10 +25,10 @@ main > h3 {
   font-size: 2.25em;
   line-height: 1.1;
   text-align: center;
-  color: #111;
+  color: #000;
 }
 
-/* “Vanaf € 2.999” */
+/* vanaf € 2.999 */
 main > p {
   margin: 0 0 1em 0;
   font-size: 1em;
@@ -37,16 +36,10 @@ main > p {
   text-align: center;
 }
 
-/* fiets-afbeelding fullscreen breedte */
+/* fiets-afbeelding */
 main > img {
   display: block;
   width: 100%;
   height: auto;
   margin: 0 0 1.25em 0;
-}
-
-/* knoppen */
-main > a {
-  text-decoration: none;
-  display: inline-block;
 }

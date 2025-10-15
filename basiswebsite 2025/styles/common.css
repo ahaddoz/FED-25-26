@@ -23,15 +23,15 @@ body {
   margin: 0;
 }
 
-/* bovenbalk (meldingsbalk) */
+/* meldingsbalk */
 section:first-of-type {
-  background: #111; /* zwart */
-  color: #fff; /* witte tekst */
-  margin: 0; /* geen ruimte erboven */
-  padding: 0.75em 1em; /* compacte hoogte */
+  background: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0.75em 1em;
   text-align: center;
-  font-size: 0.875em; /* iets kleiner dan body */
-  position: sticky; /* blijft bovenaan bij scroll */
+  font-size: 0.875em;
+  position: sticky;
   top: 0;
   z-index: 100;
 }
@@ -65,6 +65,7 @@ header > nav {
 header > nav > a > img {
   display: block;
   width: auto;
+  margin-top: 1em;
 }
 
 /* iconen rechts */
@@ -76,58 +77,51 @@ header > nav > ul {
   padding: 0;
 }
 
-/* eerste icoon (user) verbergen op mobiel*/
-header > nav > ul > li:first-child {
-  display: none;
-}
-
 header > nav > ul > li > a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* shopping bag = 2e li */
+/* Profiel */
+header > nav > ul > li:first-child > a > img {
+  display: none;
+}
+
+/* shopping bag (voor mobiel is hij hidden) */
 header > nav > ul > li:nth-child(2) > a > img {
-  height: 3.5em;
+  height: 1.8em;
+  width: 3em;
+  margin-top: 1em;
 }
 
-/* hamburger menu = 3e li */
+/* hamburger menu  */
 header > nav > ul > li:nth-child(3) > a > img {
-  height: 2.3em;
+  height: 1.5em;
+  width: 2.5em;
+  margin-top: 1em;
 }
 
-/* 1) Buttons */
+/* buttons */
 section:not(:first-of-type) a:first-of-type,
 main a:first-of-type {
-  padding: 10px 22px; /* ruimte binnenin */
-  border-radius: 9999px; /* mega rond = pill shape */
-  border: none; /* randje weg bij <button> */
-  display: inline-block; /* laat <a> als blokje gedragen */
-  line-height: 1; /* nette verticale uitlijning */
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0.625em 1.375em;
+  border-radius: 999em;
+  border: none;
+  line-height: 1;
 
-  /* kleuren zoals in het voorbeeld */
-  background-color: #1e1e1e; /* zwart/donkergrijs */
-  color: #ffffff; /* witte tekst */
-
-  /* gedrag */
-  cursor: pointer; /* handje bij hover */
-  text-decoration: none; /* geen streepje bij <a> */
-
-  /* zachte overgang bij hover */
+  background-color: #1e1e1e;
+  color: #ffffff;
+  text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* 2) Hover: kleuren omdraaien (tekst zwart, achtergrond wit) */
+/* hover: kleuren omdraaien */
 section:not(:first-of-type) a:first-of-type:hover,
 main a:first-of-type:hover {
   background-color: #ffffff;
   color: #000000;
-}
-
-/* 4) Oefenen met animatie, en dit lijkt nu meer op een knop
-klik-feedback: mini-inkrimping voelt “klikbaar” */
-section:not(:first-of-type) a:first-of-type:active,
-main a:first-of-type:active {
-  transform: scale(0.9);
 }

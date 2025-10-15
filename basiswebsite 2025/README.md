@@ -234,17 +234,53 @@ Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er v
 
 ### Stand van zaken
 
-hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+Dit ging lastig:
+
+Alle SVG’s vinden van de website en deze in mijn eigen HTML zetten. Uiteindelijk heb ik online gevonden hoe ik de SVG-codes kan kopiëren en daar mijn eigen SVG’s van kan maken. Tot nu toe heb ik alle iconen kunnen krijgen, behalve die van de USP’s.
+
+Het formulier maken voor mijn tweede pagina “testrit”. Ik vond deze HTML-elementen wat lastiger. Ik heb online gekeken hoe ik een formulier maak en moest de elementen opzoeken om te begrijpen wat ze doen. Dit waren nieuwe elementen voor mij.
+
+Wat ging goed:
+
+Beginnen aan de CSS en een hiërarchie aanbrengen, zoals common, index en testrit, om het overzichtelijk te houden. Dit is overzichtelijk, maar tegelijkertijd ook een beetje uitdagend, want je moet steeds heen en weer schakelen.
+
+Ik heb van tevoren een lijstje gemaakt met wat sowieso in common hoort:
+
+Balk
+
+Navigatie incl.
+
+Footer
+
+Buttons
+
+Lettertype
 
 ### Agenda voor meeting
 
 samen met je groepje opstellen
 
-| student 1      | student 2          | student 3    | student 4        |
-| -------------- | ------------------ | ------------ | ---------------- |
-| dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-| en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-| ...            | ...                | ...          | ...              |
+Zineb:
+
+- Waarom zie ik niet alle html elementen van mijn footer?
+- Klopt mijn css hyrargie: common, index en testrit
+- Hoe kan ik de kleur van mijn iconen aanpassen
+- Ik heb in mijn navigatie a gebruikt ipv buttons. Kan ik dit in javascript makkelijk gebruiken, omdat het dus niet echt wordt gelinkt naar een pagina maar op de pagina blijft.
+
+Samya:
+1.⁠ ⁠Hoe zet ik iconen in de footer naast elkaar?
+2.⁠ ⁠⁠Mijn sluit knop van de hamburger menu doet het niet, waar kan dat aan liggen?
+3.⁠ ⁠⁠hoe style ik foto’s in een bepaalde vorm?
+
+Bener:
+1.⁠ ⁠Hoe maak je ook alweer een foto carousel/slider? (Automatisch)
+2.⁠ ⁠Hoe maak ik hover animaties in die carousel?
+3.⁠ ⁠Hoe maak ik die blauwe lijntjes tussendoor mijn sections in mijn website? (lab111.nl)
+4.⁠ ⁠Specials img of banner?
+5.⁠ ⁠Hoe verstop ik de rest van tekst in mijn captions?
+6.⁠ ⁠Icoontjes in footer. Hover, linkjes, svg?
+
+Phon:
 
 ### Verslag van meeting
 
