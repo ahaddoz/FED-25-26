@@ -334,7 +334,7 @@ FED PLANNING
         - [ ] Home
             - [ ] Svg’s van cowboy overnemen en in de website plaatsen.
             - [ ] Maak taal zonder klikbaarheid
-        - [x] Testrit
+            - [ ] Testrit
     - [ ] Css
         - [ ] Globale css
         - [ ] Home
@@ -343,7 +343,7 @@ FED PLANNING
     - [ ] Javascript
         - [ ] Menu
     - [ ] Verslag
-        - [ ] Opschrijven wat je zou maken als je meer tijd hebt bv. Google maps stylen
+        - [ ] Wat zou ik nog meer doen als ik meer tijd heb
     - [ ] WGAC (Alles hercontroleren ook alles wat yes)
         - [ ] Alle No’s fixen
         - [ ] Screen reader test
