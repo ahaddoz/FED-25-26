@@ -24,7 +24,7 @@ body {
 }
 
 /* bovenbalk (meldingsbalk) */
-section {
+section:first-of-type {
   background: #111; /* zwart */
   color: #fff; /* witte tekst */
   margin: 0; /* geen ruimte erboven */
@@ -37,12 +37,12 @@ section {
 }
 
 /* tekst + link */
-section > p {
+section:first-of-type > p {
   margin: 0;
   line-height: 1.4;
 }
 
-section > p > a {
+section:first-of-type > p > a {
   color: #fff;
   text-decoration: underline;
   display: block;
@@ -95,4 +95,39 @@ header > nav > ul > li:nth-child(2) > a > img {
 /* hamburger menu = 3e li */
 header > nav > ul > li:nth-child(3) > a > img {
   height: 2.3em;
+}
+
+/* 1) Buttons */
+section:not(:first-of-type) a:first-of-type,
+main a:first-of-type {
+  padding: 10px 22px; /* ruimte binnenin */
+  border-radius: 9999px; /* mega rond = pill shape */
+  border: none; /* randje weg bij <button> */
+  display: inline-block; /* laat <a> als blokje gedragen */
+  line-height: 1; /* nette verticale uitlijning */
+
+  /* kleuren zoals in het voorbeeld */
+  background-color: #1e1e1e; /* zwart/donkergrijs */
+  color: #ffffff; /* witte tekst */
+
+  /* gedrag */
+  cursor: pointer; /* handje bij hover */
+  text-decoration: none; /* geen streepje bij <a> */
+
+  /* zachte overgang bij hover */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* 2) Hover: kleuren omdraaien (tekst zwart, achtergrond wit) */
+section:not(:first-of-type) a:first-of-type:hover,
+main a:first-of-type:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* 4) Oefenen met animatie, en dit lijkt nu meer op een knop
+klik-feedback: mini-inkrimping voelt “klikbaar” */
+section:not(:first-of-type) a:first-of-type:active,
+main a:first-of-type:active {
+  transform: scale(0.9);
 }
