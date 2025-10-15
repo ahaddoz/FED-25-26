@@ -281,6 +281,13 @@ Bener:
 6.⁠ ⁠Icoontjes in footer. Hover, linkjes, svg?
 
 Phon:
+1.⁠ ⁠Hoe kan ik in 1x dark mode via root coderen?
+2.⁠ ⁠Wat heb ik gedaan dat mijn kleuren van mijn root niet toe gepassen kunnen worden?
+3.⁠ ⁠Moet ik elke button in mijn site werkend maken?
+4.⁠ ⁠Hoe krijg ik 1 versie van de beoordeling afbeelding in css ipv deze afbeelding meerdere keren achter elkaar?
+5.⁠ ⁠Hoe moet ik de favorieten hartje bij de producten aan spreken in css.?
+6.⁠ ⁠Hoe kan ik alleen de social media bij de beoordeling naast elkaar krijgen?
+7.⁠ ⁠Hoeveel js moeten we hebben, 1 toch?
 
 ### Verslag van meeting
 
