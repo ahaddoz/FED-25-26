@@ -7,9 +7,16 @@
   box-sizing: border-box;
 }
 
+/* Suisse Intl (regular) */
 @font-face {
   font-family: "Suisse Intl";
   src: url("../fonts/suisse-intl-regular.ttf") format("truetype");
+  font-weight: 400;
+}
+/* Gill Sans (regular) */
+@font-face {
+  font-family: "Gill sans";
+  src: url("../fonts/Gill\ Sans.otf") format("truetype");
   font-weight: 400;
 }
 
@@ -24,8 +31,8 @@ body {
 }
 
 /* meldingsbalk */
-section:first-of-type {
-  background: #111;
+body > section:nth-of-type(1) {
+  background: #000;
   color: #fff;
   margin: 0;
   padding: 0.75em 1em;
@@ -37,18 +44,18 @@ section:first-of-type {
 }
 
 /* tekst + link */
-section:first-of-type > p {
+body > section:nth-of-type(1) p {
   margin: 0;
   line-height: 1.4;
 }
 
-section:first-of-type > p > a {
+body > section:nth-of-type(1) p a {
   color: #fff;
   text-decoration: underline;
   display: block;
   margin-top: 0.25em;
 }
-
+/* Header */
 header {
   padding: 0em;
   margin-left: em;
@@ -59,7 +66,7 @@ header > nav {
   justify-content: space-between;
   align-items: center;
 }
-
+/* Header logo */
 header > nav > a > img {
   display: block;
   width: auto;
@@ -100,13 +107,13 @@ header > nav > ul > li:nth-child(3) > a > img {
   margin-top: 1em;
 }
 
-/* buttons */
+/* buttons rond */
 section:not(:first-of-type) a:first-of-type,
 main a:first-of-type {
   display: block;
   width: max-content;
   margin: 0 auto;
-  padding: 0.625em 1.375em;
+  padding: 0.75em 1em;
   border-radius: 999em;
   border: none;
   line-height: 1;
@@ -122,4 +129,61 @@ section:not(:first-of-type) a:first-of-type:hover,
 main a:first-of-type:hover {
   background-color: #ffffff;
   color: #000000;
+}
+
+/* Boek gratis testrit knop */
+main > section > a:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: max-content;
+  margin: 0 auto;
+  padding: 1em 1.3em;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Pijltje naast de boek gratis testrit */
+main > section > a:nth-of-type(2) svg {
+  width: 0.375rem;
+  height: 0.625rem;
+  transition: transform 200ms ease;
+  vertical-align: middle;
+  color: #000;
+}
+
+main > section > a:nth-of-type(2) + ul {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  list-style: none;
+  padding: 1em 0;
+  margin: 1.5em 0 0;
+  border-top: 0.0625em solid #e6e6e6;
+}
+
+/* elk item */
+main > section > a:nth-of-type(2) + ul > li {
+  text-align: center;
+  padding: 0 1.25em;
+}
+
+/* lijn tussen alle items */
+main > section > a:nth-of-type(2) + ul > li + li {
+  border-left: 0.0625em solid #dddddd;
+}
+
+/* Bovenste regel  */
+main > section > a:nth-of-type(2) + ul > li > h4 {
+  margin: 0 0 0.25em;
+  font-size: 0.6em;
+  font-weight: 400;
+  color: #6b6b6b;
+}
+
+/* onderste regel  */
+main > section > a:nth-of-type(2) + ul > li > p {
+  margin: 0;
+  font-size: 0.7em;
+  font-weight: 600;
 }

@@ -10,32 +10,33 @@ h1 {
 
 /* Productsectie 1 */
 
-main > h2 {
-  margin: 0 0 0.25em 0;
+main section > h2 {
+  margin: 0 0 0.85em 0;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 400;
   color: #6b6b6b;
   text-align: center;
 }
 
-main > h3 {
+main section > h3 {
   margin: 0 0 0.375em 0;
   font-size: 2.25em;
+  font-weight: 400;
   line-height: 1.1;
   text-align: center;
   color: #000;
 }
 
 /* vanaf € 2.999 */
-main > p {
+main section > p {
   margin: 0 0 1em 0;
-  font-size: 1em;
+  font-size: 0.75em;
   color: #6b6b6b;
   text-align: center;
 }
 
 /* fiets-afbeelding */
-main > img {
+main section > img {
   display: block;
   width: 100%;
   height: auto;
