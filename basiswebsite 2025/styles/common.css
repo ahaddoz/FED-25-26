@@ -7,6 +7,22 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #f5f5f5;
+  --secondary-color: #222222;
+  --tertiary-color: #ffffff;
+  --color-bg-1: #eee7d5;
+  --color-bg-2: #d9e7fb;
+  --color-bg-3: #e8ebe6;
+  --color-bg-4: #f1f2f1;
+  --color-bg-5: #333b3a;
+  --color-bg-6: #746866;
+
+  --primary-text-color: #1d1d1d;
+  --secondary-text-color: #ffffff;
+  --border-color: #e4e7eb;
+}
+
 /* Suisse Intl (regular) */
 @font-face {
   font-family: "Suisse Intl";
@@ -21,11 +37,8 @@
 }
 
 body {
-  --color-text: #111;
-  --color-background: #f0eee2;
-
-  color: var(--color-text);
-  background-color: var(--color-background);
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
   font-family: "Suisse Intl", sans-serif;
   margin: 0;
 }
@@ -38,9 +51,7 @@ body > section:nth-of-type(1) {
   padding: 0.75em 1em;
   text-align: center;
   font-size: 0.875em;
-  position: sticky;
   top: 0;
-  z-index: 100;
 }
 
 /* tekst + link */
@@ -61,20 +72,23 @@ header {
   margin-left: em;
 }
 
-header > nav {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--color-bg-1);
 }
 /* Header logo */
-header > nav > a > img {
+header > a > svg {
   display: block;
   width: auto;
   margin-top: 1em;
+  height: 1.1875em;
+  color: #000;
 }
 
 /* iconen rechts */
-header > nav > ul {
+header > ul:first-of-type {
   display: flex;
   align-items: center;
   list-style: none;
@@ -82,29 +96,49 @@ header > nav > ul {
   padding: 0;
 }
 
-header > nav > ul > li > a {
+header > nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  translate: -100% 0%;
+  transition: translate 0.3s;
+  background-color: var(--primary-color);
+}
+
+header > nav.toonMenu {
+  translate: 0% 0%;
+}
+
+header > ul > li > a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Profiel */
-header > nav > ul > li:first-child > a > img {
+/* Profiel (voor mobiel is hij hidden)*/
+header > ul > li:first-child > a > svg {
   display: none;
+  color: #000;
+  height: 1.8em;
+  width: 3em;
 }
 
-/* shopping bag (voor mobiel is hij hidden) */
-header > nav > ul > li:nth-child(2) > a > img {
+/* shopping bag ( */
+header > ul > li:nth-child(2) > a > svg {
   height: 1.8em;
   width: 3em;
   margin-top: 1em;
+  color: #000;
 }
 
 /* hamburger menu  */
-header > nav > ul > li:nth-child(3) > a > img {
+header > ul > li:nth-child(3) > button > svg {
   height: 1.5em;
   width: 2.5em;
   margin-top: 1em;
+  color: black;
 }
 
 /* buttons rond */
