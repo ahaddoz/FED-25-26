@@ -15,7 +15,7 @@
   --color-bg-1: #eee7d5;
   --color-bg-2: #e9eefa;
   --color-bg-3: #e8ebe6;
-  --color-bg-4: #f1f2f1;
+  --color-bg-4: #f8f3eb;
   --color-bg-5: #333b3a;
   --color-bg-6: #746866;
 
@@ -219,7 +219,7 @@ header > nav > a:last-of-type:hover {
   transform: translateX(-50%) scale(1.03);
 }
 
-/* buttons rond */
+/* algemene buttons rond */
 section:not(:first-of-type) a:first-of-type,
 main a:first-of-type {
   display: block;

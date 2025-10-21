@@ -121,3 +121,30 @@ main section:nth-of-type(3) > img {
   height: auto;
   margin: 0 0 1.25em 0;
 }
+
+/* Meer dan een electrische fiets */
+main section:nth-of-type(4) {
+  background-color: var(--color-bg-4);
+  padding: 3em 0 3em 0;
+}
+main section:nth-of-type(4) > h2 {
+  margin: 0 0 0.375em 0;
+  font-size: 2.25em;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+main section:nth-of-type(4) > p {
+  font-size: 0.9em;
+  color: var(--quaternary-color);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.3em;
+
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto;
+  padding: 0.5em 1.5em 1.5em 0;
+}
