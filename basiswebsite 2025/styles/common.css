@@ -13,7 +13,7 @@
   --tertiary-color: #ffffff;
   --quaternary-color: #737373;
   --color-bg-1: #eee7d5;
-  --color-bg-2: #d9e7fb;
+  --color-bg-2: #e9eefa;
   --color-bg-3: #e8ebe6;
   --color-bg-4: #f1f2f1;
   --color-bg-5: #333b3a;
@@ -46,23 +46,26 @@ body {
 
 /* meldingsbalk */
 body > section:nth-of-type(1) {
-  background: #000;
-  color: #fff;
+  background: var(--secondary-color);
+  width: 100%;
   margin: 0;
   padding: 0.75em 1em;
-  text-align: center;
-  font-size: 0.875em;
   top: 0;
+  box-sizing: border-box;
 }
 
 /* tekst + link */
 body > section:nth-of-type(1) p {
   margin: 0;
   line-height: 1.4;
+  color: var(--primary-color);
+  font-weight: 400;
+  text-align: center;
+  font-size: 0.875em;
 }
 
 body > section:nth-of-type(1) p a {
-  color: #fff;
+  color: var(--primary-color);
   text-decoration: underline;
   display: block;
   margin-top: 0.25em;
@@ -85,7 +88,7 @@ header > a > svg {
   width: auto;
   margin-top: 1em;
   height: 1.1875em;
-  color: #000;
+  color: var(--secondary-color);
 }
 
 /* iconen rechts */
@@ -107,25 +110,30 @@ header > ul > li > a {
 /* Profiel (voor mobiel is hij hidden)*/
 header > ul > li:first-child > a > svg {
   display: none;
-  color: #000;
+  color: var(--secondary-color);
   height: 1.8em;
   width: 3em;
 }
 
-/* shopping bag ( */
+/* shopping bag  */
 header > ul > li:nth-child(2) > a > svg {
   height: 1.8em;
   width: 3em;
   margin-top: 1em;
-  color: #000;
+  color: var(--secondary-color);
 }
 
+/* button van de hamburger menu  */
+header > ul > li:nth-child(3) > button {
+  border: none;
+  background-color: var(--color-bg-1);
+}
 /* hamburger menu  */
 header > ul > li:nth-child(3) > button > svg {
   height: 1.5em;
   width: 2.5em;
   margin-top: 1em;
-  color: black;
+  color: var(--secondary-color);
 }
 
 /* hamburgermenu open */
@@ -149,7 +157,6 @@ header > nav > ul {
   list-style: none;
   margin: 0 0 0 1.5em;
   padding: 0;
-  z-index: 10;
 }
 
 /* 1) Kolommen in de ul */
@@ -184,6 +191,33 @@ header > nav > ul > ul > li > a {
   padding: 0.15em 0;
   letter-spacing: -0.025em;
 }
+/* Boek gratis testrit in nav */
+header > nav > a:last-of-type {
+  position: fixed;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0.75em 1em;
+  border-radius: 999em;
+  border: none;
+  line-height: 1;
+
+  background-color: var(--primary-text-color);
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  z-index: 100;
+}
+
+/* Hover button in de nav */
+header > nav > a:last-of-type:hover {
+  background-color: var(--secondary-text-color);
+  color: var(--primary-text-color);
+  transform: translateX(-50%) scale(1.03);
+}
 
 /* buttons rond */
 section:not(:first-of-type) a:first-of-type,
@@ -196,8 +230,8 @@ main a:first-of-type {
   border: none;
   line-height: 1;
 
-  background-color: #1e1e1e;
-  color: #ffffff;
+  background-color: var(--primary-text-color);
+  color: var(--secondary-text-color);
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -230,17 +264,19 @@ main > section > a:nth-of-type(2) svg {
   color: #000;
 }
 
+/* mini usp's */
 main > section > a:nth-of-type(2) + ul {
   display: flex;
   justify-content: center;
   gap: 2em;
   list-style: none;
-  padding: 1em 0;
+  padding: 1em 0 3em 0;
   margin: 1.5em 0 0;
-  border-top: 0.0625em solid #e6e6e6;
+  border-top: 0.0625em solid;
+  border-color: var(--border-color);
 }
 
-/* elk item */
+/* elk item in de lijst */
 main > section > a:nth-of-type(2) + ul > li {
   text-align: center;
   padding: 0 1.25em;
@@ -248,7 +284,8 @@ main > section > a:nth-of-type(2) + ul > li {
 
 /* lijn tussen alle items */
 main > section > a:nth-of-type(2) + ul > li + li {
-  border-left: 0.0625em solid #dddddd;
+  border-left: 0.0625em solid;
+  border-color: var(--border-color);
 }
 
 /* Bovenste regel  */
@@ -256,7 +293,7 @@ main > section > a:nth-of-type(2) + ul > li > h4 {
   margin: 0 0 0.25em;
   font-size: 0.6em;
   font-weight: 400;
-  color: #6b6b6b;
+  color: var(--quaternary-color);
 }
 
 /* onderste regel  */
@@ -264,4 +301,5 @@ main > section > a:nth-of-type(2) + ul > li > p {
   margin: 0;
   font-size: 0.7em;
   font-weight: 600;
+  color: var(--primary-text-color);
 }
