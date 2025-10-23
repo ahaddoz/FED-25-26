@@ -156,3 +156,136 @@ main section:nth-of-type(4) > p {
   margin: 0 auto;
   padding: 0.5em 1.5em 1.5em 0;
 }
+
+/* Productsectie 4 */
+
+main section:nth-of-type(5) {
+  background-color: var(--color-bg-5);
+}
+
+/* Cross */
+main section:nth-of-type(5) > h2 {
+  margin: 0 0 0.85em 0;
+  padding-top: 3em;
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* gemaakt voor avontuur */
+main section:nth-of-type(5) > h3 {
+  margin: 0 0 0.375em 0;
+  font-size: 2.25em;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+/* Vanaf €3.999 */
+main section:nth-of-type(5) > p {
+  margin: 0 0 1em 0;
+  font-size: 0.75em;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* fiets afbeelding */
+main section:nth-of-type(5) > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 1.25em 0;
+}
+
+/* witte ronde button */
+main > section:nth-of-type(5) > a:first-of-type {
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+}
+
+/* hover: kleuren omdraaien */
+main > section:nth-of-type(5) > a:first-of-type:hover {
+  background-color: var(--primary-text-color);
+  color: var(--primary-color);
+}
+
+/* Boek een gratis testrit */
+main section:nth-of-type(5) a:last-of-type {
+  color: var(--primary-color);
+}
+
+/* Pijl naast knop */
+main > section:nth-of-type(5) > a:last-of-type svg {
+  color: var(--primary-color);
+}
+
+/* Mini usp's */
+main > section:nth-of-type(5) > a:last-of-type + ul {
+  border-color: var(--primary-color);
+}
+
+/* lijn tussen alle items */
+main > section:nth-of-type(5) > a:last-of-type + ul + li {
+  border-color: var(--primary-color);
+}
+
+/* Bovenste regel  */
+main > section:nth-of-type(5) > a:last-of-type + ul > li > h4 {
+  color: var(--border-color);
+}
+
+/* onderste regel  */
+main > section:nth-of-type(5) > a:last-of-type + ul > li > p {
+  color: var(--primary-color);
+}
+
+/* Achtergrond afbeelding (Belgie) */
+
+main section:nth-of-type(6) {
+  background-image: url("../images/assembledinfrance.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  min-height: 80vh;
+  padding: 6em 1em;
+}
+
+/* Ontworpen in Belgie  */
+main section:nth-of-type(6) > h2 {
+  margin: 0 0 0.85em 0;
+  padding-top: 3em;
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Nu geassembleerd in Frankrijk  */
+main section:nth-of-type(6) > h3 {
+  margin: 0 0 0.375em 0;
+  font-size: 2.25em;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+/* Witte button  */
+main > section:nth-of-type(6) > a:first-of-type {
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+}
+
+/* hover: kleuren omdraaien */
+main > section:nth-of-type(6) > a:first-of-type:hover {
+  background-color: var(--primary-text-color);
+  color: var(--primary-color);
+}

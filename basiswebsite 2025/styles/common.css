@@ -16,7 +16,7 @@
   --color-bg-2: #e9eefa;
   --color-bg-3: #e8ebe6;
   --color-bg-4: #f8f3eb;
-  --color-bg-5: #333b3a;
+  --color-bg-5: #5c6462;
   --color-bg-6: #746866;
 
   --primary-text-color: #1d1d1d;
@@ -152,7 +152,7 @@ header > nav.toonMenu {
   translate: 0% 0%;
 }
 
-/* de totale ul in menu open */
+/* VANAF HIER MENU OPEN  */
 header > nav > ul {
   list-style: none;
   margin: 0 0 0 1.5em;
@@ -239,8 +239,8 @@ main a:first-of-type {
 /* hover: kleuren omdraaien */
 section:not(:first-of-type) a:first-of-type:hover,
 main a:first-of-type:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--primary-color);
+  color: var(--secondary-text-color);
 }
 
 /* Boek gratis testrit knop */
@@ -251,20 +251,20 @@ main > section > a:nth-of-type(2) {
   width: max-content;
   margin: 0 auto;
   padding: 1em 1.3em;
-  color: #000;
+  color: var(--primary-text-color);
   text-decoration: none;
 }
 
-/* Pijltje naast de boek gratis testrit */
+/* Pijltje naast knop */
 main > section > a:nth-of-type(2) svg {
   width: 0.375rem;
   height: 0.625rem;
   transition: transform 200ms ease;
   vertical-align: middle;
-  color: #000;
+  color: var(--primary-text-color);
 }
 
-/* mini usp's */
+/* VANAF HIER MINI USPS*/
 main > section > a:nth-of-type(2) + ul {
   display: flex;
   justify-content: center;
@@ -276,19 +276,19 @@ main > section > a:nth-of-type(2) + ul {
   border-color: var(--border-color);
 }
 
-/* elk item in de lijst */
+/* 1. elk item in de lijst */
 main > section > a:nth-of-type(2) + ul > li {
   text-align: center;
   padding: 0 1.25em;
 }
 
-/* lijn tussen alle items */
+/* 2. lijn tussen alle items */
 main > section > a:nth-of-type(2) + ul > li + li {
   border-left: 0.0625em solid;
   border-color: var(--border-color);
 }
 
-/* Bovenste regel  */
+/* 3. Bovenste regel  */
 main > section > a:nth-of-type(2) + ul > li > h4 {
   margin: 0 0 0.25em;
   font-size: 0.6em;
@@ -296,7 +296,7 @@ main > section > a:nth-of-type(2) + ul > li > h4 {
   color: var(--quaternary-color);
 }
 
-/* onderste regel  */
+/* 4. onderste regel  */
 main > section > a:nth-of-type(2) + ul > li > p {
   margin: 0;
   font-size: 0.7em;
