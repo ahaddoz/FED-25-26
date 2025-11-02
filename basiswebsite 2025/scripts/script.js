@@ -3,6 +3,7 @@ console.log("hi");
 
 // stap 1: zoek de menu-button op en sla die op in een variabele
 var openButton = document.querySelector("header ul li button");
+var body = document.body;
 
 // stap 2: laat de menu-button luisteren naar kliks en voer dan een functie uit
 openButton.onclick = openMenu;
@@ -13,6 +14,7 @@ function openMenu() {
   var deNav = document.querySelector("nav");
   // voeg class toe aan nav
   deNav.classList.add("toonMenu");
+  body.classList.add("no-scroll");
 }
 
 /************************************/
@@ -29,6 +31,7 @@ sluitButton.onclick = sluitMenu;
 function sluitMenu() {
   var deNav = document.querySelector("nav");
   deNav.classList.remove("toonMenu");
+  body.classList.remove("no-scroll");
 }
 
 /**********************************/

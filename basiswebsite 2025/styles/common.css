@@ -20,8 +20,10 @@
   --color-bg-6: #746866;
 
   --primary-text-color: #1d1d1d;
-  --secondary-text-color: #ffffff;
+  --secondary-text-color: #a3a3a3;
   --border-color: #e4e7eb;
+  --footer-color: #222222;
+  --accent-color: #565656;
 }
 
 /* Suisse Intl (regular) */
@@ -30,6 +32,14 @@
   src: url("../fonts/suisse-intl-regular.ttf") format("truetype");
   font-weight: 400;
 }
+
+/* Suisse Intl (light) */
+@font-face {
+  font-family: "Suisse Intl";
+  src: url("../fonts/suisse-intl-light.ttf") format("truetype");
+  font-weight: 300;
+}
+
 /* Gill Sans (regular) */
 @font-face {
   font-family: "Gill sans";
@@ -137,74 +147,78 @@ header > ul > li:nth-child(3) > button > svg {
 }
 
 /* hamburgermenu open */
+body.no-scroll {
+  overflow: hidden;
+}
+
 header > nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  position: absolute;
+  inset: 0;
   translate: -100% 0%;
   transition: translate 0.3s;
   background-color: var(--tertiary-color);
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  flex: 1;
 }
 
 header > nav.toonMenu {
   translate: 0% 0%;
+  z-index: 10;
 }
 
 /* VANAF HIER MENU OPEN  */
-header > nav > ul {
+header > nav > section {
   list-style: none;
-  margin: 0 0 0 1.5em;
-  padding: 0;
+  padding: 0 0 0 1.5em;
 }
 
 /* 1) Kolommen in de ul */
-header > nav > ul > ul {
+header > nav > section > ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 /* 2) h2 kopjes */
-header > nav > ul > ul h2 {
+header > nav > section > ul > h2 {
   font-size: 0.875em;
   color: var(--quaternary-color);
   font-family: "Suisse Intl";
   font-weight: 400;
-  margin: 1.5em 0 0 0;
-  padding: 0 0 0.3em 0;
+  margin: 1.5em 0 0.3em 0;
 }
 
 /* 3) De lijst in de ul */
-header > nav > ul > ul > li {
+header > nav > section > ul > li {
   margin: 0;
 }
 
 /* 4) Alle linkjes in de lijst */
-header > nav > ul > ul > li > a {
+header > nav > section > ul > li > a {
   display: block;
   text-decoration: none;
   font-size: 1.75em;
   font-weight: 400;
   color: #111;
-  padding: 0.15em 0;
+  margin: 0.15em 0;
   letter-spacing: -0.025em;
 }
 /* Boek gratis testrit in nav */
-header > nav > a:last-of-type {
-  position: fixed;
-  bottom: 2em;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-block;
-  width: max-content;
-  margin: 0 auto;
+header > nav > section:last-of-type {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+header > nav > section:last-of-type > a:last-of-type {
   padding: 0.75em 1em;
   border-radius: 999em;
   border: none;
   line-height: 1;
-
   background-color: var(--primary-text-color);
   color: var(--secondary-text-color);
   text-decoration: none;
@@ -213,14 +227,14 @@ header > nav > a:last-of-type {
 }
 
 /* Hover button in de nav */
-header > nav > a:last-of-type:hover {
+header > nav > section:last-of-type > a:last-of-type:hover {
   background-color: var(--secondary-text-color);
   color: var(--primary-text-color);
   transform: translateX(-50%) scale(1.03);
 }
 
 /* algemene buttons rond */
-section:not(:first-of-type) a:first-of-type,
+main section:not(:first-of-type) a:first-of-type,
 main a:first-of-type {
   display: block;
   width: max-content;
@@ -237,10 +251,10 @@ main a:first-of-type {
 }
 
 /* hover: kleuren omdraaien */
-section:not(:first-of-type) a:first-of-type:hover,
+main section:not(:first-of-type) a:first-of-type:hover,
 main a:first-of-type:hover {
   background-color: var(--primary-color);
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
 }
 
 /* Boek gratis testrit knop */
@@ -264,42 +278,254 @@ main > section > a:nth-of-type(2) svg {
   color: var(--primary-text-color);
 }
 
-/* VANAF HIER MINI USPS*/
-main > section > a:nth-of-type(2) + ul {
+/* Footer Algemeen */
+
+footer {
+  background-color: var(--footer-color);
+  color: var(--primary-color);
+}
+
+footer section {
+  max-width: 80em;
+  margin: 0 auto;
+}
+/* de 4 blokken met linkjes (ontdek, services ect.) */
+footer > section:first-of-type {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 2em;
-  list-style: none;
-  padding: 1em 0 3em 0;
-  margin: 1.5em 0 0;
-  border-top: 0.0625em solid;
-  border-color: var(--border-color);
+  justify-content: space-between;
+  padding: 3em 0;
 }
 
-/* 1. elk item in de lijst */
-main > section > a:nth-of-type(2) + ul > li {
-  text-align: center;
-  padding: 0 1.25em;
+/* elke blokje appart */
+footer > section:first-of-type section {
+  flex: 1 1 12em;
 }
 
-/* 2. lijn tussen alle items */
-main > section > a:nth-of-type(2) + ul > li + li {
-  border-left: 0.0625em solid;
-  border-color: var(--border-color);
-}
-
-/* 3. Bovenste regel  */
-main > section > a:nth-of-type(2) + ul > li > h4 {
-  margin: 0 0 0.25em;
-  font-size: 0.6em;
-  font-weight: 400;
+/* Alle kopjes */
+footer h3 {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0 0 1em 1em;
   color: var(--quaternary-color);
 }
 
-/* 4. onderste regel  */
-main > section > a:nth-of-type(2) + ul > li > p {
+/* alle linkjes */
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1em;
+}
+
+footer section ul li a {
+  position: relative;
+  display: inline;
+  padding: 0;
+  margin: 0 0 0.5em 0;
+  border-radius: 0;
+  background: none;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1em;
+  display: inline-block;
+}
+
+footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.1em;
+  width: 0%;
+  height: 1px;
+  background-color: var(--primary-color);
+}
+
+footer a:hover {
+  color: var(--primary-color);
+}
+
+footer a:hover::after {
+  width: 100%;
+}
+
+/* Nieuwsbrief section */
+footer > section:nth-of-type(2) {
+  background-color: var(--primary-text-color);
+  padding: 2em 0;
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+/* titel */
+footer > section:nth-of-type(2) h2 {
+  color: var(--secondary-text-color);
+  font-size: 1.25em;
+  margin: 0 0 1em 1em;
+  font-weight: 400;
+}
+/* de nieuwsbrief formulier */
+footer > section:nth-of-type(2) form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 1em;
+  row-gap: 0.75em;
+  margin: 0 0 0 0.6em;
+}
+/* de label*/
+footer > section:nth-of-type(2) label {
+  grid-column: 1;
+  width: 100%;
+}
+/* email input */
+footer > section:nth-of-type(2) input[type="email"] {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 0.0625em solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: 1em;
+  padding: 0.5em 0;
+  margin: 0 0.75em;
+}
+
+footer > section:nth-of-type(2) input[type="email"]::placeholder {
+  color: var(--primary-color);
+}
+
+/* abboneren knop */
+
+footer > section:nth-of-type(2) button {
+  grid-column: 2;
+  background: none;
+  border: none;
+  color: var(--secondary-text-color);
+  font-size: 1.2em;
+}
+
+footer > section:nth-of-type(2) button:hover {
+  color: var(--primary-color);
+}
+/* tekst */
+footer > section:nth-of-type(2) p {
+  grid-column: 1 / -1;
+  font-size: 0.8em;
+  color: var(--secondary-text-color);
+  margin: 0 0 0 1em;
+  font-weight: 300;
+}
+/* de link in de tekst */
+footer > section:nth-of-type(2) p a {
+  color: var(--secondary-text-color);
+}
+
+/* SOCIAL MEDIA */
+
+/* de 3 social media iconen*/
+footer > section:nth-of-type(3) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+  padding: 0 1em 0em;
+  background-color: var(--primary-text-color);
+  border-bottom: 0.05em solid var(--accent-color);
+  margin: 0 1em 0 1em;
+}
+
+/* de iconen zelf */
+
+footer > section:nth-of-type(3) svg {
+  width: 1.5em;
+  height: 1.5em;
+  fill: var(--secondary-text-color);
+  cursor: pointer;
+  transition: fill 0.3 ease;
+  margin: 0 0 1em 0;
+}
+
+footer > section:nth-of-type(3) svg:hover {
+  fill: var(--primary-color);
+}
+
+/* Cowboy logo + taal keuze sectie */
+
+footer > section:nth-of-type(4) {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  row-gap: 1rem;
+  align-items: center;
+  padding: 2em 1em 2em;
+  border-bottom: 0.05em solid var(--accent-color);
+  background-color: var(--primary-text-color);
+  margin: 0 1em 0 1em;
+}
+
+footer > section:nth-of-type(4) > a {
+  grid-column: 1 / -1;
+}
+
+/* logo */
+footer > section:nth-of-type(4) a svg {
+  width: 8em;
+  height: auto;
+  color: var(--primary-color);
+}
+
+/* Vlag */
+footer > section:nth-of-type(4) > svg:nth-of-type(1) {
+  justify-self: start;
+  width: 1.5em;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Pijljte naast vlag */
+footer > section:nth-of-type(4) > svg:nth-of-type(2) {
+  width: 0.75em;
+  height: auto;
+  transform: translateY(0.1em);
+}
+/* De tekst: Nederland / Nederland */
+footer > section:nth-of-type(4) > p {
+  margin: 0 0 0 0.5em;
+  color: var(--primary-color);
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  align-self: center;
+  padding: 0 3em 0 0;
+}
+
+/* Laatste footer sectie */
+footer > section:last-of-type {
+  padding: 2em 0;
+  color: var(--secondary-text-color);
+  background-color: var(--primary-text-color);
+}
+
+/* de 3 linkjes */
+
+footer > section:last-of-type a {
+  display: block;
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  font-size: 0.7em;
+  font-weight: 400;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+footer > section:last-of-type a:hover {
+  text-decoration: underline;
+}
+
+footer > section:last-of-type p {
   margin: 0;
   font-size: 0.7em;
-  font-weight: 600;
-  color: var(--primary-text-color);
+  font-weight: 300;
+  color: var(--secondary-text-color);
+  margin-left: 1em;
 }

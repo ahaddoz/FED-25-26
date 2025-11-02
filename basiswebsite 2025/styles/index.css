@@ -147,7 +147,7 @@ main section:nth-of-type(4) > h2 {
 main section:nth-of-type(4) > p {
   font-size: 0.9em;
   color: var(--quaternary-color);
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 1.3em;
 
@@ -221,7 +221,52 @@ main > section:nth-of-type(5) > a:last-of-type svg {
   color: var(--primary-color);
 }
 
-/* Mini usp's */
+/* VANAF HIER MINI USPS*/
+main > section > a:nth-of-type(2) + ul {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  list-style: none;
+  padding: 1em 0 3em 0;
+  margin: 1.5em 1.25em 0 1.25em;
+  border-top: 0.0625em solid;
+  border-color: var(--border-color);
+}
+
+/* 1. elk item in de lijst */
+main > section > a:nth-of-type(2) + ul > li {
+  position: relative;
+  padding: 0 0.5em;
+  text-align: center;
+}
+
+main > section > a:nth-of-type(2) + ul > li:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: -1em; /* lijn tussen de kolommen */
+  top: 0;
+  bottom: 0;
+  width: 0.0625em;
+  background-color: var(--border-color);
+}
+
+/* 3. Bovenste regel  */
+main > section > a:nth-of-type(2) + ul > li > h4 {
+  margin: 0 0 0.25em;
+  font-size: 0.6em;
+  font-weight: 400;
+  color: var(--quaternary-color);
+}
+
+/* 4. onderste regel  */
+main > section > a:nth-of-type(2) + ul > li > p {
+  margin: 0;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: var(--primary-text-color);
+}
+
+/* Mini usp alleen section 5 */
 main > section:nth-of-type(5) > a:last-of-type + ul {
   border-color: var(--primary-color);
 }
@@ -244,24 +289,24 @@ main > section:nth-of-type(5) > a:last-of-type + ul > li > p {
 /* Achtergrond afbeelding (Belgie) */
 
 main section:nth-of-type(6) {
-  background-image: url("../images/assembledinfrance.jpg");
+  background-image: url("../images/assembledfiets.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
 
-  text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
 
-  justify-content: center;
   min-height: 80vh;
   padding: 6em 1em;
 }
 
 /* Ontworpen in Belgie  */
 main section:nth-of-type(6) > h2 {
-  margin: 0 0 0.85em 0;
-  padding-top: 3em;
+  transform: translateY(-4.5em);
   font-size: 1em;
   font-weight: 400;
   color: var(--primary-color);
@@ -270,7 +315,7 @@ main section:nth-of-type(6) > h2 {
 
 /* Nu geassembleerd in Frankrijk  */
 main section:nth-of-type(6) > h3 {
-  margin: 0 0 0.375em 0;
+  transform: translateY(-3em);
   font-size: 2.25em;
   font-weight: 400;
   line-height: 1.1;
@@ -282,10 +327,277 @@ main section:nth-of-type(6) > h3 {
 main > section:nth-of-type(6) > a:first-of-type {
   background-color: var(--primary-color);
   color: var(--primary-text-color);
+  transform: translateY(-8em);
 }
 
 /* hover: kleuren omdraaien */
 main > section:nth-of-type(6) > a:first-of-type:hover {
   background-color: var(--primary-text-color);
   color: var(--primary-color);
+}
+
+/* Productsectie 5 */
+
+main section:nth-of-type(7) {
+  background-color: var(--color-bg-6);
+}
+
+/* Cross ST */
+main section:nth-of-type(7) > h2 {
+  margin: 0 0 0.85em 0;
+  padding-top: 3em;
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Niet te schokken */
+main section:nth-of-type(7) > h3 {
+  margin: 0 0 0.375em 0;
+  font-size: 2.25em;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+/* Vanaf €3.999 */
+main section:nth-of-type(7) > p {
+  margin: 0 0 1em 0;
+  font-size: 0.75em;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* fiets afbeelding */
+main section:nth-of-type(7) > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 1.25em 0;
+}
+
+/* witte ronde button */
+main > section:nth-of-type(7) > a:first-of-type {
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+}
+
+/* hover: kleuren omdraaien */
+main > section:nth-of-type(7) > a:first-of-type:hover {
+  background-color: var(--primary-text-color);
+  color: var(--primary-color);
+}
+
+/* Boek een gratis testrit */
+main section:nth-of-type(7) a:last-of-type {
+  color: var(--primary-color);
+}
+
+/* Pijl naast knop */
+main > section:nth-of-type(7) > a:last-of-type svg {
+  color: var(--primary-color);
+}
+
+/* Mini usp alleen section 5 */
+main > section:nth-of-type(7) > a:last-of-type + ul {
+  border-color: var(--primary-color);
+}
+
+/* lijn tussen alle items */
+main > section:nth-of-type(7) > a:last-of-type + ul + li {
+  border-color: var(--primary-color);
+}
+
+/* Bovenste regel  */
+main > section:nth-of-type(7) > a:last-of-type + ul > li > h4 {
+  color: var(--border-color);
+}
+
+/* onderste regel  */
+main > section:nth-of-type(7) > a:last-of-type + ul > li > p {
+  color: var(--primary-color);
+}
+
+/* USP 1,2 en 3 */
+main section:nth-of-type(8) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.5em;
+  background-color: var(--tertiary-color);
+}
+
+/* kleine USP's tussenin */
+main section:nth-of-type(8) > section {
+  background-color: var(--primary-color);
+  border-radius: 1em;
+  padding: 0.5em;
+  text-align: center;
+}
+
+/* SVG-iconen */
+main section:nth-of-type(8) > section > svg {
+  display: inline-block;
+  background-color: var(--tertiary-color);
+  border-radius: 50%;
+  padding: 1em;
+  width: 3.5em;
+  height: 3.5em;
+  margin: 3em 0 0 0;
+}
+
+/* titels */
+main section:nth-of-type(8) > section > h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+  padding: 0em;
+  color: var(--primary-text-color);
+  margin: 1em;
+}
+
+/* tekst */
+main section:nth-of-type(8) > section > p {
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--quaternary-color);
+  line-height: 1.5;
+}
+
+/* buttons */
+main section:nth-of-type(8) > section > a:first-of-type {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 0 2.5em 0;
+}
+
+/* de hele carrousel selectie */
+main section:nth-of-type(9) {
+  padding: 2.5em 1em 3em 1em;
+  background-color: var(--footer-color);
+}
+
+/* Waarom cowboy */
+main section:nth-of-type(9) h2 {
+  text-align: left;
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+/* We staan voor je klaar */
+main section:nth-of-type(9) h3 {
+  text-align: left;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+/* de layout van de carrousel */
+main section:nth-of-type(9) ul:first-of-type {
+  display: flex;
+  gap: 1em;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+/* browser’s standaard scrollbalk */
+main section:nth-of-type(9) ul:first-of-type::-webkit-scrollbar {
+  display: none;
+}
+
+main section:nth-of-type(9) ul:first-of-type li {
+  list-style: none;
+  flex: 0 0 95%;
+  scroll-snap-align: start;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--primary-text-color);
+  border-radius: 1em;
+  padding: 1em;
+  margin: 0;
+  min-height: 10em;
+}
+
+/* Eerste icoontjes */
+main section:nth-of-type(9) li > svg {
+  display: inline-block;
+  color: var(--primary-color);
+  width: 2em;
+  height: 2em;
+  margin: 0.5em;
+}
+
+/* 200+ vestigingen ect.*/
+main section:nth-of-type(9) li h4 {
+  font-size: 1em;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* de tekst */
+main section:nth-of-type(9) li p {
+  color: var(--quaternary-color);
+  font-size: 0.9em;
+  font-weight: 300;
+}
+/* Plus icoontje link */
+main section:nth-of-type(9) li a:last-of-type {
+  position: absolute;
+  bottom: 1.5em;
+  right: 1.5em;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  padding: 0.4em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Plus icoontje zelf */
+main section:nth-of-type(9) li a svg {
+  width: 1.25em;
+  height: auto;
+  color: var(--primary-text-color);
+  transition: transform 0.2 ease;
+}
+
+main section:nth-of-type(9) li a:hover svg {
+  transform: translateX(0.5em);
+}
+
+/* de dots onder de carrousel*/
+main section:nth-of-type(9) > ul:last-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 1.5em;
+  list-style: none;
+  padding: 0;
+}
+
+/* de stippen*/
+main section:nth-of-type(9) > ul:last-of-type li {
+  width: 0.4em;
+  height: 0.4em;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+/* actieve stip (de witte balk) */
+main section:nth-of-type(9) > ul:last-of-type li {
+  width: 1.2em;
+  height: 0.3em;
+  background-color: var(--primary-color);
+  border-radius: 1em;
 }
