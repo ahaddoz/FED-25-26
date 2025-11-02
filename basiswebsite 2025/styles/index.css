@@ -48,9 +48,17 @@ main section:first-of-type > img {
 }
 
 /* Productsectie 2 */
-main section:nth-of-type(2) {
+main > section:nth-of-type(2) {
   background-color: var(--color-bg-2);
+  height: 50em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
+/* @media (min-width: 650px) {
+    height: 60em;
+  }
+} */
 
 main section:nth-of-type(2) > h2 {
   margin: 0 0 0.85em 0;
@@ -79,9 +87,12 @@ main section:nth-of-type(2) > p {
 
 main section:nth-of-type(2) > img {
   display: block;
-  width: 100%;
+  width: 120%;
   height: auto;
   margin: 0 0 1.25em 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Productsectie 3 */
@@ -231,6 +242,9 @@ main > section > a:nth-of-type(2) + ul {
   margin: 1.5em 1.25em 0 1.25em;
   border-top: 0.0625em solid;
   border-color: var(--border-color);
+
+  align-items: flex-end;
+  height: 100%;
 }
 
 /* 1. elk item in de lijst */
@@ -299,6 +313,7 @@ main section:nth-of-type(6) {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
+  height: 55em;
 
   min-height: 80vh;
   padding: 6em 1em;

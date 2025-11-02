@@ -399,9 +399,11 @@ footer > section:nth-of-type(2) input[type="email"]::placeholder {
 footer > section:nth-of-type(2) button {
   grid-column: 2;
   background: none;
-  border: none;
   color: var(--secondary-text-color);
   font-size: 1.2em;
+  border: solid;
+  padding: 0.3em;
+  margin: 0 3em 0 0;
 }
 
 footer > section:nth-of-type(2) button:hover {
@@ -475,12 +477,18 @@ footer > section:nth-of-type(4) a svg {
 
 /* Vlag */
 footer > section:nth-of-type(4) > svg:nth-of-type(1) {
-  justify-self: start;
   width: 1.5em;
   height: auto;
   border-radius: 50%;
   overflow: hidden;
 }
+
+/* footer > section:nth-of-type(4) > span {
+  aspect-ratio: 1 / 1;
+  width: 1.5em;
+  border-radius: 50%;
+  background: url('path/to/flag.svg') center/cover no-repeat;
+} */
 
 /* Pijljte naast vlag */
 footer > section:nth-of-type(4) > svg:nth-of-type(2) {
@@ -488,7 +496,25 @@ footer > section:nth-of-type(4) > svg:nth-of-type(2) {
   height: auto;
   transform: translateY(0.1em);
 }
-/* De tekst: Nederland / Nederland */
+
+footer > section:nth-of-type(4) > p span:first-of-type {
+  margin: 0 0 0 0.5em;
+  color: var(--primary-color);
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  align-self: center;
+}
+
+footer > section:nth-of-type(4) > p span:last-of-type {
+  color: var(--secondary-text-color);
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  align-self: center;
+}
+
+/* De tekst: Nederland / Nederland 
 footer > section:nth-of-type(4) > p {
   margin: 0 0 0 0.5em;
   color: var(--primary-color);
@@ -497,7 +523,7 @@ footer > section:nth-of-type(4) > p {
   letter-spacing: 0.01em;
   align-self: center;
   padding: 0 3em 0 0;
-}
+} */
 
 /* Laatste footer sectie */
 footer > section:last-of-type {
