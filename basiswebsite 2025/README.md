@@ -193,47 +193,6 @@ Detail summery (dat is wanneer je een tabje open klapt)
 
 ### Stand van zaken
 
-hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
-
-### Agenda voor meeting
-
-samen met je groepje opstellen
-
-| student 1      | student 2          | student 3    | student 4        |
-| -------------- | ------------------ | ------------ | ---------------- |
-| dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-| en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-| ...            | ...                | ...          | ...              |
-
-### Verslag van meeting
-
-hier na afloop snel de uitkomsten van de meeting vastleggen
-
-- punt 1
-- punt 2
-- nog een punt
-- ...
-
-</details>
-
-## Toegankelijkheidstest 2/2 (week 4)
-
-<details>
-  <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
-
-### Bevindingen
-
-Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
-
-</details>
-
-## Voortgang 3 (week 4)
-
-<details>
-  <summary>uitwerken voor 3<sup>e</sup> voortgang</summary>
-
-### Stand van zaken
-
 Dit ging lastig:
 
 Alle SVG’s vinden van de website en deze in mijn eigen HTML zetten. Uiteindelijk heb ik online gevonden hoe ik de SVG-codes kan kopiëren en daar mijn eigen SVG’s van kan maken. Tot nu toe heb ik alle iconen kunnen krijgen, behalve die van de USP’s.
@@ -288,6 +247,52 @@ Phon:
 5.⁠ ⁠Hoe moet ik de favorieten hartje bij de producten aan spreken in css.?
 6.⁠ ⁠Hoe kan ik alleen de social media bij de beoordeling naast elkaar krijgen?
 7.⁠ ⁠Hoeveel js moeten we hebben, 1 toch?
+
+### Verslag van meeting
+
+hier na afloop snel de uitkomsten van de meeting vastleggen
+
+- punt 1
+- punt 2
+- nog een punt
+- ...
+
+</details>
+
+## Toegankelijkheidstest 2/2 (week 4)
+
+<details>
+  <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
+
+### Bevindingen
+
+Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+
+</details>
+
+## Voortgang 3 (week 4)
+
+<details>
+  <summary>uitwerken voor 3<sup>e</sup> voortgang</summary>
+
+### Stand van zaken
+
+Wat ging goed:
+Deze week ging het goed met het toepassen van semantische HTML en het beter begrijpen van de structuur in mijn pagina’s. Ik heb geleerd hoe de volgorde van CSS-bestanden invloed heeft op de styling en hoe ik met specifieke selectors conflicten kan oplossen.
+
+Wat ging minder goed:
+Ik liep vast op een aantal stylingconflicten tussen common.css en de pagina-specifieke stylesheets. Vooral het begrijpen waarom bepaalde regels voorrang kregen, kostte tijd. Ook heb ik gemerkt dat kleine fouten in de HTML-structuur (zoals een verkeerde sluit-tag) direct invloed hebben op de layout, wat soms frustrerend was.
+
+### Agenda voor meeting
+
+samen met je groepje opstellen
+
+Zineb:
+
+- Vlag in een span of niet? Want ik krijg hem niet mooi rond
+- Hoe kan ik ervoor zorgen dat de achtergrond ook zwart word, mag ik een section in een section plaatsen zodat ik die achtergrond kleur kan veranderen.
+- Welke selecteer gebruiken voor button op lease pagina, hij wordt overschreven door de common.css
+- Dark mode staat niet in het beoordelingsformulier, hoe zwaar telt dit mee
 
 ### Verslag van meeting
 

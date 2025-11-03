@@ -1,0 +1,136 @@
+/* Header transparant */
+header {
+  background-color: transparent;
+  position: absolute;
+  top: 3.4em;
+  left: 0;
+  width: 100%;
+  z-index: 15;
+  padding: 1em 2em;
+}
+
+header > a > svg {
+  color: var(--primary-color);
+}
+
+/* Profiel (voor mobiel is hij hidden)*/
+header > ul > li:first-child > a > svg {
+  display: none;
+  color: var(--primary-color);
+}
+
+/* shopping bag  */
+header > ul > li:nth-child(2) > a > svg {
+  color: var(--primary-color);
+}
+
+/* button van de hamburger menu  */
+header > ul > li:nth-child(3) > button {
+  background-color: transparent;
+}
+
+/* hamburger menu  */
+header > ul > li:nth-child(3) > button > svg {
+  color: var(--primary-color);
+}
+
+/* Meldingsbalk blijft zwart */
+body > section:first-of-type {
+  position: relative;
+  z-index: 20;
+}
+
+/* Hero section*/
+main > section:first-of-type {
+  background-image: url("../images/manfiets.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+/* Tekst in hero */
+main > section:first-of-type > h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+  color: var(--primary-color);
+}
+
+main > section:first-of-type > h2 {
+  font-size: 1.25em;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  color: var(--primary-color);
+}
+
+/* Witte button  */
+main > section:first-of-type > a:first-of-type {
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+  transform: translateY(5em);
+}
+
+/* hover: kleuren omdraaien */
+main > section:first-of-type > a:first-of-type:hover {
+  background-color: var(--primary-text-color);
+  color: var(--primary-color);
+}
+
+/* Eerste tekst */
+main section:nth-of-type(2) > p {
+  font-size: 1.3em;
+  padding: 1em 1.5em 1em 1.5em;
+  font-weight: 400;
+}
+
+/* De section zelf: alleen marge rondom */
+main > section:nth-of-type(3) {
+  margin: 2em 1.25em;
+}
+
+/* Foto-blok bovenaan (decoratief) */
+main > section:nth-of-type(3)::before {
+  content: "";
+  display: block;
+  height: 35em;
+  background: url("../images/leasecowboy.jpg") center / cover no-repeat;
+  border-radius: 0.75em;
+  margin-bottom: 1.25em;
+}
+
+/* h2, Tekst en knop eronder */
+main > section:nth-of-type(3) > h2 {
+  font-size: 1.75em;
+  margin: 0 0 0.5em 0;
+}
+
+main > section:nth-of-type(3) > p {
+  line-height: 1.3;
+  color: var(--secondary-text-color);
+  font-weight: 400;
+  max-width: 40em;
+  margin: 0 0 1em 0;
+}
+
+/* Start nu button */
+main > section:nth-of-type(3) a {
+  display: inline-block;
+  margin-top: 0.75em;
+  padding: 0.75em 1.25em;
+  border-radius: 2em;
+  background: var(--primary-text-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-left: 0;
+  color: red;
+}

@@ -605,14 +605,14 @@ main section:nth-of-type(9) > ul:last-of-type {
 main section:nth-of-type(9) > ul:last-of-type li {
   width: 0.4em;
   height: 0.4em;
-  background-color: var(--accent-color);
   border-radius: 50%;
+  background-color: var(--primary-color);
 }
 
-/* actieve stip (de witte balk) */
+/* actieve stip (de witte balk)
 main section:nth-of-type(9) > ul:last-of-type li {
   width: 1.2em;
   height: 0.3em;
   background-color: var(--primary-color);
   border-radius: 1em;
-}
+} */
