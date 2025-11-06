@@ -214,6 +214,7 @@ header > nav > section:last-of-type {
   width: 100%;
 }
 
+/* Boek gratis testrit in nav*/
 header > nav > section:last-of-type > a:last-of-type {
   padding: 0.75em 1em;
   border-radius: 999em;
@@ -239,7 +240,7 @@ main a:first-of-type {
   display: block;
   width: max-content;
   margin: 0 auto;
-  padding: 0.75em 1em;
+  padding: 1em 1em;
   border-radius: 999em;
   border: none;
   line-height: 1;
@@ -248,6 +249,7 @@ main a:first-of-type {
   color: var(--primary-color);
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 1em;
 }
 
 /* hover: kleuren omdraaien */
@@ -378,7 +380,7 @@ footer > section:nth-of-type(2) label {
   grid-column: 1;
   width: 100%;
 }
-/* email input */
+/* email input, voor toegankelijkheid een een border omheen gemaakt zodat het duidelijk is dat je hierin je email kunt invullen */
 footer > section:nth-of-type(2) input[type="email"] {
   width: 100%;
   background: none;
@@ -395,7 +397,7 @@ footer > section:nth-of-type(2) input[type="email"]::placeholder {
   color: var(--primary-color);
 }
 
-/* abboneren knop */
+/* abboneren knop, voor toegankelijkheid een echte knop gemaakt */
 
 footer > section:nth-of-type(2) button {
   grid-column: 2;
@@ -498,7 +500,7 @@ footer > section:nth-of-type(4) > a {
 
 /* logo */
 footer > section:nth-of-type(4) a svg {
-  width: 8em;
+  width: 10em;
   height: auto;
   color: var(--primary-color);
 }
@@ -572,6 +574,9 @@ footer > section:nth-of-type(5) > ul {
   list-style: none;
   margin: 0;
   padding: 0.5em 0;
+  height: 100%;
+  overflow: auto;
+
   background-color: var(--primary-color);
   color: var(--primary-text-color);
   border: 0.0625em solid var(--accent-color);
