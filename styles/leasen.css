@@ -284,3 +284,43 @@ main section:nth-of-type(5) p {
   line-height: 1.5em;
   padding-bottom: 0.5em;
 }
+
+/* FAQ summary*/
+
+main > section:nth-of-type(6) {
+  padding: 1em 1em;
+}
+
+/* FAQ */
+main > section:nth-of-type(6) > h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Elke vraag */
+main > section:nth-of-type(6) > details {
+  border-top: 0.05em solid var(--border-color);
+  padding: 1em 0;
+}
+
+/* de vraag zelf */
+main > section:nth-of-type(6) > details > summary {
+  font-weight: 400;
+  font-size: 1.1em;
+  line-height: 1.4;
+  list-style: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main > section:nth-of-type(6) > details > summary svg {
+  flex-shrink: 0;
+  width: 1.125em;
+  height: 1.125em;
+  color: var(--primary-text-color);
+}
