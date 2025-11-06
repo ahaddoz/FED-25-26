@@ -283,7 +283,6 @@ main > section > a:nth-of-type(2) svg {
 footer {
   background-color: var(--footer-color);
   color: var(--primary-color);
-  position: relative;
 }
 
 footer section {
