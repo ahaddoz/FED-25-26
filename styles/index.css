@@ -8,13 +8,6 @@ main > section {
   background-color: inherit;
 }
 
-/* Content binnen de section blijft gecentreerd */
-main > section > * {
-  max-inline-size: 70rem; /* ~1120px */
-  margin-inline: auto;
-  padding-inline: 1.5rem;
-}
-
 h1 {
   position: absolute;
   width: 1px;
@@ -32,6 +25,7 @@ main > section:first-of-type {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: 5em 0 0 0;
 }
 
 main section:first-of-type > h2 {
@@ -260,7 +254,7 @@ main > section:nth-of-type(5) > a:first-of-type:hover {
 /* Boek een gratis testrit */
 main section:nth-of-type(5) a:last-of-type {
   color: var(--primary-color);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* Pijl naast knop */

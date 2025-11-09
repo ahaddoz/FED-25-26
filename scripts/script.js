@@ -45,3 +45,35 @@ function sluitMenu() {
 //     deNav.classList.remove("toonMenu");
 //   }
 // }
+
+/* MELDINGSBALK */
+
+var messages = [
+  'Welke Cowboy is geschikt voor jou? <a href="quiz.html">Doe de quiz</a>',
+  "Nieuw: onze duurzame collectie is binnen!",
+  "Schrijf je in voor de nieuwsbrief en ontvang 10% korting!",
+];
+
+var index = 0;
+var bannerText = document.querySelector(
+  "body > section > section:first-of-type p"
+);
+
+setInterval(() => {
+  index = (index + 1) % messages.length;
+  bannerText.innerHTML = messages[index];
+}, 10000);
+
+// stap 1 - zoekt de sluiten button vanm de banner op
+var sluitButtonBanner = document.querySelector(
+  "body > section > section:first-of-type button"
+);
+
+// stap 2 - laat die button luisteren naar een onclick
+sluitButtonBanner.onclick = sluitBanner;
+
+// stap 3 - in de functie wordt de class toegevoegd aan de banner, zodat ie niet meer zichtbaar is
+function sluitBanner() {
+  var banner = document.querySelector("body > section > section:first-of-type");
+  banner.classList.add("hidden");
+}

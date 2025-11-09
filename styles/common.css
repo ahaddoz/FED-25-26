@@ -62,8 +62,21 @@ main {
   padding: 0;
 }
 
+body > section:first-of-type {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  left: 0;
+  right: 0;
+}
+
 /* meldingsbalk */
-body > section:nth-of-type(1) {
+body > section > section:nth-of-type(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
   background: var(--secondary-color);
   width: 100%;
   margin: 0;
@@ -72,8 +85,13 @@ body > section:nth-of-type(1) {
   box-sizing: border-box;
 }
 
+/* de hele meldingsbalk verdwijnt */
+body > section > section:nth-of-type(1).hidden {
+  display: none;
+}
+
 /* tekst + link */
-body > section:nth-of-type(1) p {
+body > section > section:nth-of-type(1) p {
   margin: 0;
   line-height: 1.4;
   color: var(--primary-color);
@@ -82,26 +100,38 @@ body > section:nth-of-type(1) p {
   font-size: 0.875em;
 }
 
-body > section:nth-of-type(1) p a {
+/* doe de quiz */
+body > section > section:nth-of-type(1) p a {
   color: var(--primary-color);
   text-decoration: underline;
   display: block;
   margin-top: 0.25em;
 }
+
+/* sluitbutton van de meldingsbalk */
+body > section > section:nth-of-type(1) button {
+  all: unset; /* verwijdert standaardstijl */
+  width: 0.8em;
+  height: 0.8em;
+  color: var(--primary-color);
+  position: absolute;
+  right: 1em;
+}
+
 /* Header */
-header {
+body > section header {
   padding: 0em;
   margin-left: em;
 }
 
-header {
+body > section header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-bg-1);
 }
 /* Header logo */
-header > a > svg {
+body > section header > a > svg {
   display: block;
   width: auto;
   margin-top: 1em;
@@ -110,7 +140,7 @@ header > a > svg {
 }
 
 /* iconen rechts */
-header > ul:first-of-type {
+body > section header > ul:first-of-type {
   display: flex;
   align-items: center;
   list-style: none;
@@ -119,14 +149,14 @@ header > ul:first-of-type {
 }
 
 /* Links in de header-iconen  */
-header > ul > li > a {
+body > section header > ul > li > a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 /* Profiel (voor mobiel is hij hidden)*/
-header > ul > li:first-child > a > svg {
+body > section header > ul > li:first-child > a > svg {
   display: none;
   color: var(--secondary-color);
   height: 1.8em;
@@ -134,7 +164,7 @@ header > ul > li:first-child > a > svg {
 }
 
 /* shopping bag  */
-header > ul > li:nth-child(2) > a > svg {
+body > section header > ul > li:nth-child(2) > a > svg {
   height: 1.8em;
   width: 3em;
   margin-top: 1em;
@@ -142,12 +172,12 @@ header > ul > li:nth-child(2) > a > svg {
 }
 
 /* button van de hamburger menu  */
-header > ul > li:nth-child(3) > button {
+body > section header > ul > li:nth-child(3) > button {
   border: none;
   background-color: var(--color-bg-1);
 }
 /* hamburger menu  */
-header > ul > li:nth-child(3) > button > svg {
+body > section header > ul > li:nth-child(3) > button > svg {
   height: 1.5em;
   width: 2.5em;
   margin-top: 1em;
@@ -159,7 +189,7 @@ body.no-scroll {
   overflow: hidden;
 }
 
-header > nav {
+body > section header > nav {
   position: absolute;
   inset: 0;
   translate: -100% 0%;
@@ -171,26 +201,28 @@ header > nav {
   flex: 1;
 }
 
-header > nav.toonMenu {
+body > section header > nav.toonMenu {
   translate: 0% 0%;
   z-index: 10;
 }
 
 /* VANAF HIER MENU OPEN  */
-header > nav > section {
+body > section header > nav > section {
   list-style: none;
   padding: 0 0 0 1.5em;
 }
 
+/* Sluit svg hier stijlen */
+
 /* 1) Kolommen in de ul */
-header > nav > section > ul {
+body > section header > nav > section > ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 /* 2) h2 kopjes */
-header > nav > section > ul > h2 {
+body > section header > nav > section > ul > h2 {
   font-size: 0.875em;
   color: var(--quaternary-color);
   font-family: "Suisse Intl";
@@ -199,12 +231,12 @@ header > nav > section > ul > h2 {
 }
 
 /* 3) De lijst in de ul */
-header > nav > section > ul > li {
+body > section header > nav > section > ul > li {
   margin: 0;
 }
 
 /* 4) Alle linkjes in de lijst */
-header > nav > section > ul > li > a {
+body > section header > nav > section > ul > li > a {
   display: block;
   text-decoration: none;
   font-size: 1.75em;
@@ -214,7 +246,7 @@ header > nav > section > ul > li > a {
   letter-spacing: -0.025em;
 }
 /* Boek gratis testrit in nav */
-header > nav > section:last-of-type {
+body > section header > nav > section:last-of-type {
   position: sticky;
   bottom: 0;
   display: flex;
@@ -223,7 +255,7 @@ header > nav > section:last-of-type {
 }
 
 /* Boek gratis testrit in nav*/
-header > nav > section:last-of-type > a:last-of-type {
+body > section header > nav > section:last-of-type > a:last-of-type {
   padding: 0.75em 1em;
   border-radius: 999em;
   border: none;
@@ -236,7 +268,7 @@ header > nav > section:last-of-type > a:last-of-type {
 }
 
 /* Hover button in de nav */
-header > nav > section:last-of-type > a:last-of-type:hover {
+body > section header > nav > section:last-of-type > a:last-of-type:hover {
   background-color: var(--secondary-text-color);
   color: var(--primary-text-color);
   transform: translateX(-50%) scale(1.03);
@@ -530,10 +562,10 @@ footer > section:nth-of-type(5) label[for="language-select"] {
 
 /* zorgt ervoor dat de select en svg naast elkaar komen te staan */
 footer > section:nth-of-type(5) {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
   position: relative;
   background-color: var(--primary-text-color);
+  margin: 0 0 1.5em 0;
 }
 
 /* pseudo-element voor de “fake” border */
@@ -546,9 +578,7 @@ footer > section:nth-of-type(5)::after {
   width: 94vw;
   height: 0.05em;
   background-color: var(--accent-color);
-  margin-top: 2em;
 }
-
 /* algemene stijling voor de select */
 footer > section:nth-of-type(5) select {
   appearance: none;
@@ -563,13 +593,14 @@ footer > section:nth-of-type(5) select {
 
 /* Het pijltje naast de select */
 footer > section:nth-of-type(5) svg {
-  width: 1em;
+  width: 100%;
   height: 1em;
   margin-left: 0.4em;
   transition: transform 0.2s ease;
   transform-origin: center;
   color: var(--primary-color);
   pointer-events: none;
+  position: absolute;
 }
 
 /* de 3 linkjes */
