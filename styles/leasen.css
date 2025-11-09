@@ -288,39 +288,148 @@ main section:nth-of-type(5) p {
 /* FAQ summary*/
 
 main > section:nth-of-type(6) {
-  padding: 1em 1em;
+  margin: 0 0.5em 0 1.5em;
 }
 
-/* FAQ */
+/* FAQ sectie */
+main > section:nth-of-type(6) {
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+}
+
+/* Titel */
 main > section:nth-of-type(6) > h2 {
-  font-size: 2em;
-  margin-bottom: 1em;
-  font-weight: 400;
+  font-size: 2.5em;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
-/* Elke vraag */
-main > section:nth-of-type(6) > details {
-  border-top: 0.05em solid var(--border-color);
-  padding: 1em 0;
+/* Vraagblokken */
+main > section:nth-of-type(6) details {
+  border-top: 0.0625em solid var(--border-color);
+  padding: 1.25em 0;
+  interpolate-size: allow-keywords; /*  hier begint de animatie */
 }
 
-/* de vraag zelf */
-main > section:nth-of-type(6) > details > summary {
-  font-weight: 400;
-  font-size: 1.1em;
-  line-height: 1.4;
-  list-style: none;
-  cursor: pointer;
+main > section:nth-of-type(6) details:last-of-type {
+  border-bottom: 0.0625em solid var(--border-color);
+}
 
+/* Klikbare vraag */
+main > section:nth-of-type(6) summary {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
-  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.25em;
+  font-weight: 500;
 }
 
-main > section:nth-of-type(6) > details > summary svg {
-  flex-shrink: 0;
-  width: 1.125em;
-  height: 1.125em;
+main > section:nth-of-type(6) summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Antwoordtekst */
+main > section:nth-of-type(6) p {
+  margin: 1em 0 0 0;
+  line-height: 1.6;
+  font-size: 1em;
+}
+
+/* onze retour beleid */
+main > section:nth-of-type(6) details > p > a[href] {
+  all: revert;
   color: var(--primary-text-color);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* SVG iconen */
+main > section:nth-of-type(6) summary svg {
+  width: 1.25rem;
+  height: auto;
+  color: var(--primary-text-color);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* standaard: alleen + zichtbaar */
+
+main > section:nth-of-type(6) summary svg:nth-of-type(2) {
+  display: none;
+}
+
+/* open state: wissel naar - icoon */
+
+main > section:nth-of-type(6) details[open] summary svg:nth-of-type(1) {
+  display: none;
+}
+
+main > section:nth-of-type(6) details[open] summary svg:nth-of-type(2) {
+  display: inline-block;
+}
+
+/*  Animatie open en dicht */
+main > section:nth-of-type(6) details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: content-visibility, block-size;
+  transition-behavior: allow-discrete;
+}
+
+main > section:nth-of-type(6) details[open]::details-content {
+  block-size: auto;
+}
+
+/* Bron: https://blog.logrocket.com/styling-html-modern-css/ + Chatgpt */
+
+main > section:nth-of-type(7) {
+  background-color: var(--color-bg-7);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+
+  overflow: hidden;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* We komen naar je toe */
+main section:nth-of-type(7) > h2 {
+  margin: 0 0 0.85em 0;
+  padding-top: 3em;
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  text-align: center;
+}
+
+/* Ervaar het zelf*/
+main section:nth-of-type(7) > h3 {
+  margin: 0 0 0.375em 0;
+  font-size: 2.25em;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--primary-text-color);
+}
+
+/* fiets afbeelding */
+main section:nth-of-type(7) > img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  transform: scale(1.2);
+  transform-origin: center bottom;
+  margin-top: 2em;
+  padding: 3em 0 3em 0;
 }

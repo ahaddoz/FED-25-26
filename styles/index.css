@@ -1,3 +1,20 @@
+/* Laat elke section schermbreed zijn */
+main > section {
+  inline-size: 100vw;
+  position: relative;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  overflow-x: clip;
+  background-color: inherit;
+}
+
+/* Content binnen de section blijft gecentreerd */
+main > section > * {
+  max-inline-size: 70rem; /* ~1120px */
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
 h1 {
   position: absolute;
   width: 1px;
@@ -54,7 +71,7 @@ main section:first-of-type > img {
   transform: translateX(-50%);
 }
 
-/* Productsectie 2 */
+/* PRODUCSECTIE 2 */
 main > section:nth-of-type(2) {
   background-color: var(--color-bg-2);
   height: 50em;
@@ -76,6 +93,7 @@ main section:nth-of-type(2) > h2 {
   text-align: center;
 }
 
+/* Deel het zadel,deel de vrijheid */
 main section:nth-of-type(2) > h3 {
   margin: 0 0 0.375em 0;
   font-size: 2.25em;
@@ -121,6 +139,7 @@ main section:nth-of-type(3) > h2 {
   text-align: center;
 }
 
+/* Voel je één met je fiets */
 main section:nth-of-type(3) > h3 {
   margin: 0 0 0.375em 0;
   font-size: 2.25em;
@@ -193,7 +212,7 @@ main section:nth-of-type(5) > h2 {
   padding-top: 3em;
   font-size: 1em;
   font-weight: 400;
-  color: var(--quaternary-color);
+  color: var(--primary-color);
   text-align: center;
 }
 
@@ -204,7 +223,7 @@ main section:nth-of-type(5) > h3 {
   font-weight: 400;
   line-height: 1.1;
   text-align: center;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 /* Vanaf €3.999 */
@@ -241,6 +260,7 @@ main > section:nth-of-type(5) > a:first-of-type:hover {
 /* Boek een gratis testrit */
 main section:nth-of-type(5) a:last-of-type {
   color: var(--primary-color);
+  font-weight: 300;
 }
 
 /* Pijl naast knop */
@@ -303,7 +323,7 @@ main > section:nth-of-type(5) > a:last-of-type + ul {
   list-style: none;
   padding: 1em 0 3em 0;
   margin: 1.5em 1.25em 0 1.25em;
-  border-top: 0.0625em solid;
+  border-top: 0.0425em solid;
   border-color: var(--border-color);
 
   align-items: flex-end;
@@ -317,11 +337,13 @@ main > section:nth-of-type(5) > a:last-of-type + ul + li {
 /* Bovenste regel  */
 main > section:nth-of-type(5) > a:last-of-type + ul > li > h4 {
   color: var(--border-color);
+  font-weight: 300;
 }
 
 /* onderste regel  */
 main > section:nth-of-type(5) > a:last-of-type + ul > li > p {
   color: var(--primary-color);
+  font-weight: 300;
 }
 
 /* Achtergrond afbeelding (Belgie) */
