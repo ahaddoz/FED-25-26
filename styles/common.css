@@ -214,6 +214,15 @@ body > section header > nav > section {
 
 /* Sluit svg hier stijlen */
 
+body > section header > nav > button {
+  all: unset; /* verwijdert standaardstijl */
+  width: 5em;
+  height: 5em;
+  color: red;
+  position: absolute;
+  right: 1em;
+}
+
 /* 1) Kolommen in de ul */
 body > section header > nav > section > ul {
   list-style: none;
