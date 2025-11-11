@@ -50,7 +50,7 @@ function sluitMenu() {
 
 var messages = [
   'Welke Cowboy is geschikt voor jou? <a href="quiz.html">Doe de quiz</a>',
-  "Nieuw: onze duurzame collectie is binnen!",
+  "Boek een gratis testrit!",
   "Schrijf je in voor de nieuwsbrief en ontvang 10% korting!",
 ];
 
