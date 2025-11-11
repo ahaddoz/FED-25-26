@@ -104,7 +104,6 @@ body > section > section:nth-of-type(1) p {
 body > section > section:nth-of-type(1) p a {
   color: var(--primary-color);
   text-decoration: underline;
-  display: block;
   margin-top: 0.25em;
 }
 
@@ -130,6 +129,7 @@ body > section header {
   align-items: center;
   background-color: var(--color-bg-1);
 }
+
 /* Header logo */
 body > section header > a > svg {
   display: block;
@@ -189,6 +189,70 @@ body.no-scroll {
   overflow: hidden;
 }
 
+/* Menu header (alleen zichtbaar wanneer menu open is) - eerste header */
+body > section > header:first-of-type {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--tertiary-color);
+  padding: 0 1.5rem;
+}
+
+/* Toon menu header wanneer menu open is */
+body.menu-open > section > header:first-of-type {
+  display: flex;
+}
+
+/* Menu header logo */
+body > section > header:first-of-type > a > svg {
+  display: block;
+  width: auto;
+  margin-top: 1em;
+  height: 1.1875em;
+  color: var(--secondary-color);
+}
+
+/* Menu header iconen */
+body > section > header:first-of-type > ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu header profiel icoon */
+body > section > header:first-of-type > ul > li:first-child > a > svg {
+  display: none;
+  color: var(--secondary-color);
+  height: 1.8em;
+  width: 3em;
+}
+
+/* Menu header shopping bag */
+body > section > header:first-of-type > ul > li:nth-child(2) > a > svg {
+  height: 1.8em;
+  width: 3em;
+  margin-top: 1em;
+  color: var(--secondary-color);
+}
+
+/* Menu header close button */
+body > section > header:first-of-type > ul > li:nth-child(3) > button {
+  border: none;
+  background-color: var(--tertiary-color);
+}
+
+body > section > header:first-of-type > ul > li:nth-child(3) > button > svg {
+  height: 1.5em;
+  width: 2.5em;
+  margin-top: 1em;
+  color: var(--secondary-color);
+}
+
 body > section header > nav {
   position: absolute;
   inset: 0;
@@ -209,7 +273,7 @@ body > section header > nav.toonMenu {
 /* VANAF HIER MENU OPEN  */
 body > section header > nav > section {
   list-style: none;
-  padding: 0 0 0 1.5em;
+  padding: 3rem 0 0 1.5em;
 }
 
 /* Sluit svg hier stijlen */
