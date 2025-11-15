@@ -75,6 +75,8 @@ main > section:first-of-type > img {
   display: none;
 }
 
+/* MEDIAQUERY VOOR SECTION 1 */
+
 @media (min-width: 1024px) {
   /* Maak eerste section flex op desktop */
 
@@ -158,6 +160,8 @@ main > section:nth-of-type(2) > img {
   max-width: 45rem;
   display: none;
 }
+
+/* MEDIAQUERY VOOR SECTION 2 */
 
 @media (min-width: 1024px) {
   /* Maak tweede section flex op desktop */
@@ -244,6 +248,8 @@ main > section:nth-of-type(3) > img {
   display: none;
 }
 
+/* MEDIAQUERY VOOR SECTION 3 */
+
 @media (min-width: 1024px) {
   /* Maak derde section flex op desktop */
 
@@ -305,6 +311,8 @@ main section:nth-of-type(4) > div > img:last-child {
 main section:nth-of-type(4) > div > img:nth-child(3) {
   display: block;
 }
+
+/* MEDIAQUERY VOOR SECTION 4 */
 
 @media (min-width: 1024px) {
   /* Op desktop: alle afbeeldingen tonen - overschrijf display: none */
@@ -445,6 +453,8 @@ main > section:nth-of-type(5) > section > a:nth-of-type(2) {
 main > section:nth-of-type(5) > section > a:nth-of-type(2) svg {
   color: var(--primary-color);
 }
+
+/* MEDIAQUERY VOOR SECTION 5 */
 
 @media (min-width: 1024px) {
   /* Maak vijfde section flex op desktop */
@@ -730,6 +740,8 @@ main > section:nth-of-type(7) > section > a:nth-of-type(2) {
 main > section:nth-of-type(7) > section > a:nth-of-type(2) svg {
   color: var(--primary-color);
 }
+
+/* MEDIAQUERY VOOR SECTION 7 */
 
 @media (min-width: 1024px) {
   /* Maak zevende section flex op desktop */
