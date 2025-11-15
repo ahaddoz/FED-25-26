@@ -29,9 +29,9 @@ function openMenu() {
   }
 }
 
-/************/
+/************************************/
 /* menu sluiten met de sluit button */
-/************/
+/************************************/
 
 // stap 1 - zoek sluiten button op
 var sluitButton = document.querySelector(".hamburger-menu-button-open");
@@ -57,9 +57,9 @@ function sluitMenu() {
   }
 }
 
-/************/
+/**********************************/
 /* bonus: menu sluiten met escape */
-/************/
+/**********************************/
 // window.onkeydown = handleKeydown;
 
 // function handleKeydown(event) {
@@ -107,9 +107,9 @@ function sluitBanner() {
   }
 }
 
-/************/
+/************************************/
 /* menu sluiten met menu header close button */
-/************/
+/************************************/
 
 // Zoek de close button in de menu header op
 var menuCloseButton = document.querySelector(".menu-close-button");
