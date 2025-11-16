@@ -765,7 +765,6 @@ main section:nth-of-type(6) {
   min-height: 80vh;
   padding: 6em 1em;
   display: flex;
-  justify-content: flex-end;
   align-items: flex-start;
   flex-direction: column;
 }
@@ -776,6 +775,7 @@ main section:nth-of-type(6) > h2 {
   font-weight: 400;
   color: var(--primary-color);
   text-align: center;
+  width: 100%;
 }
 
 /* Nu geassembleerd in Frankrijk  */
@@ -797,6 +797,22 @@ body > main > section:nth-of-type(6) > a:first-of-type {
 main > section:nth-of-type(6) > a:first-of-type:hover {
   background-color: var(--primary-text-color);
   color: var(--primary-color);
+}
+
+@media (min-width: 1024px) {
+  /* Maak zevende section flex op desktop */
+
+  main > section:nth-of-type(6) {
+    justify-content: flex-end;
+  }
+
+  main > section:nth-of-type(6) > h2 {
+    text-align: start;
+  }
+
+  main section:nth-of-type(6) > h3 {
+    font-size: 4em;
+  }
 }
 
 /* Productsectie 5 */
@@ -1115,6 +1131,7 @@ main section:nth-of-type(9) ul:first-of-type > li {
   flex-basis: 30%;
   flex-shrink: 0;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   list-style: none;
 
   position: relative;
