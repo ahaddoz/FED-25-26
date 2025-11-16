@@ -2,7 +2,7 @@
 console.log("hi");
 
 // stap 1: zoek de menu-button op en sla die op in een variabele
-var openButton = document.querySelector(".hamburger-menu-button-closed");
+var openButton = document.querySelector(".hamburger-menu-button-closed"); // zoek naar de class //
 var body = document.body;
 
 // stap 2: laat de menu-button luisteren naar kliks en voer dan een functie uit
@@ -15,7 +15,7 @@ function openMenu() {
   var deNav = document.querySelector("nav");
   deNav.classList.add("toonMenu");
   body.classList.add("no-scroll");
-  body.classList.add("menu-open");
+  body.classList.add("menu-open"); // display flex voor header zichtbaar boven in //
 
   var closeButton = document.querySelector(".hamburger-menu-button-open");
   if (closeButton) {
