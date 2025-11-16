@@ -25,7 +25,7 @@ main > section:first-of-type {
 
 main > section:first-of-type > section {
   background-color: var(--color-bg-1);
-  height: 50em;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -75,14 +75,50 @@ main > section:first-of-type > img {
   display: none;
 }
 
-/* MEDIAQUERY VOOR SECTION 1 */
-
 @media (min-width: 1024px) {
   /* Maak eerste section flex op desktop */
 
+  main > section:first-of-type {
+    padding: 0 5em;
+  }
+
+  /* 
+  Voor deze en de volgende secties, heb ik een flex-flow: row wrap; toegevoegd 
+  om de tekst naast elkaar te laten staan.
+  */
   main > section:first-of-type > section {
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     height: auto;
+    flex-flow: row wrap;
+    column-gap: 2rem;
+  }
+
+  /* 
+  Vervolgens heb ik de teksten een flex: 1 1 100%; zodat ze dan een breedte van 100% krijgen.
+  En dan een order (order: 1; order: 2; order: 4; etc.) zodat ze in de juiste volgorde 
+  komen te staan. Dit heb ik voor de h2, h3 en p. 
+  
+  Zo heb ik de USPs (ul's) ook aangepast, zodat ze onderaan komen te staan.
+  */
+  main section:first-of-type > section > h2 {
+    font-size: 1.5em;
+    text-align: left;
+    flex: 1 1 100%;
+    order: 1;
+  }
+
+  main section:first-of-type > section > h3 {
+    font-size: 3em;
+    text-align: left;
+    flex: 1 1 100%;
+    order: 2;
+  }
+
+  main section:first-of-type > section > p {
+    font-size: 1.25em;
+    order: 4;
+    padding-top: 1em;
   }
 
   main > section:first-of-type {
@@ -111,11 +147,10 @@ main > section:nth-of-type(2) {
 
 main > section:nth-of-type(2) > section {
   background-color: var(--color-bg-2);
-  height: 50em;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 5em 0 0 0;
 }
 
 main section:nth-of-type(2) > section > h2 {
@@ -161,21 +196,42 @@ main > section:nth-of-type(2) > img {
   display: none;
 }
 
-/* MEDIAQUERY VOOR SECTION 2 */
-
 @media (min-width: 1024px) {
   /* Maak tweede section flex op desktop */
 
-  main > section:nth-of-type(2) > section {
-    justify-content: center;
-    height: auto;
-  }
-
   main > section:nth-of-type(2) {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: 2rem;
+  }
+
+  main > section:nth-of-type(2) > section {
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    flex-flow: row wrap;
+    column-gap: 2rem;
+  }
+
+  main section:nth-of-type(2) > section > h2 {
+    font-size: 1.5em;
+    text-align: left;
+    flex: 1 1 100%;
+    order: 1;
+  }
+
+  main section:nth-of-type(2) > section > h3 {
+    font-size: 3em;
+    text-align: left;
+    flex: 1 1 100%;
+    order: 2;
+  }
+
+  main section:nth-of-type(2) > section > p {
+    font-size: 1.25em;
+    order: 4;
+    padding-top: 1em;
   }
 
   /* Verberg mobiele image op desktop */
@@ -198,11 +254,10 @@ main > section:nth-of-type(3) {
 
 main > section:nth-of-type(3) > section {
   background-color: var(--color-bg-3);
-  height: 50em;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 5em 0 0 0;
 }
 
 main section:nth-of-type(3) > section > h2 {
@@ -248,21 +303,43 @@ main > section:nth-of-type(3) > img {
   display: none;
 }
 
-/* MEDIAQUERY VOOR SECTION 3 */
-
 @media (min-width: 1024px) {
   /* Maak derde section flex op desktop */
-
-  main > section:nth-of-type(3) > section {
-    justify-content: center;
-    height: auto;
-  }
 
   main > section:nth-of-type(3) {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    padding: 0 5em;
+  }
+
+  main > section:nth-of-type(3) > section {
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 2rem;
+    flex-flow: row wrap;
+    height: auto;
+  }
+
+  main section:nth-of-type(3) > section > h2 {
+    font-size: 1.5em;
+    text-align: left;
+    flex: 1 1 100%;
+    order: 1;
+  }
+
+  main section:nth-of-type(3) > section > h3 {
+    font-size: 3em;
+    text-align: left;
+    flex: 1 1 100%;
+    order: 2;
+  }
+
+  main section:nth-of-type(3) > section > p {
+    font-size: 1.25em;
+    order: 4;
+    padding-top: 1em;
   }
 
   /* Verberg mobiele image op desktop */
@@ -311,8 +388,6 @@ main section:nth-of-type(4) > div > img:last-child {
 main section:nth-of-type(4) > div > img:nth-child(3) {
   display: block;
 }
-
-/* MEDIAQUERY VOOR SECTION 4 */
 
 @media (min-width: 1024px) {
   /* Op desktop: alle afbeeldingen tonen - overschrijf display: none */
@@ -369,6 +444,19 @@ main section:nth-of-type(4) > p {
   font-size: 0.75em;
   color: var(--quaternary-color);
   text-align: center;
+}
+
+@media (min-width: 1024px) {
+  main section:nth-of-type(4) > h2 {
+    font-size: 3em;
+    font-weight: 600;
+  }
+
+  main section:nth-of-type(4) > p {
+    font-size: 1.25em;
+    max-width: 70ch;
+    margin: 0 auto;
+  }
 }
 
 /* Productsectie 4 */
@@ -454,21 +542,43 @@ main > section:nth-of-type(5) > section > a:nth-of-type(2) svg {
   color: var(--primary-color);
 }
 
-/* MEDIAQUERY VOOR SECTION 5 */
-
 @media (min-width: 1024px) {
   /* Maak vijfde section flex op desktop */
-
-  main > section:nth-of-type(5) > section {
-    justify-content: center;
-    height: auto;
-  }
 
   main > section:nth-of-type(5) {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    padding: 0 5em 10em;
+  }
+
+  main > section:nth-of-type(5) > section {
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 2rem;
+    flex-flow: row wrap;
+    height: auto;
+  }
+
+  main section:nth-of-type(5) > section > h2 {
+    font-size: 1.5em;
+    text-align: left;
+    flex: 1 1 100%;
+    order: 1;
+  }
+
+  main section:nth-of-type(5) > section > h3 {
+    font-size: 3em;
+    text-align: left;
+    flex: 1 1 100%;
+    order: 2;
+  }
+
+  main section:nth-of-type(5) > section > p {
+    font-size: 1.25em;
+    order: 4;
+    padding-top: 1em;
   }
 
   /* Verberg mobiele image op desktop */
@@ -508,6 +618,22 @@ main > section > a:nth-of-type(2) + ul {
   align-items: flex-end;
 }
 
+/* Media queries voor de USPs */
+@media (min-width: 1024px) {
+  main > section:first-of-type > section > a:nth-of-type(2) + ul,
+  main > section:nth-of-type(2) > section > a:nth-of-type(2) + ul,
+  main > section:nth-of-type(3) > section > a:nth-of-type(2) + ul,
+  main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul,
+  main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul,
+  main > section > a:nth-of-type(2) + ul {
+    flex: 1 1 100%;
+    order: 6;
+    margin: 1em 0 0 0;
+    justify-content: flex-start;
+    align-self: flex-end;
+  }
+}
+
 /* 1. elk item in de lijst - voor sections met nested section */
 main > section:first-of-type > section > a:nth-of-type(2) + ul > li,
 /* 1. elk item in de lijst - voor sections met nested section (tweede section) */
@@ -523,6 +649,18 @@ main > section > a:nth-of-type(2) + ul > li {
   position: relative;
   padding: 0 0.5em;
   text-align: center;
+}
+
+/* Media queries voor de USPs */
+@media (min-width: 1024px) {
+  main > section:first-of-type > section > a:nth-of-type(2) + ul > li,
+  main > section:nth-of-type(2) > section > a:nth-of-type(2) + ul > li,
+  main > section:nth-of-type(3) > section > a:nth-of-type(2) + ul > li,
+  main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul > li,
+  main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul > li,
+  main > section > a:nth-of-type(2) + ul > li {
+    text-align: left;
+  }
 }
 
 /* Lijn tussen items - voor sections met nested section */
@@ -741,21 +879,43 @@ main > section:nth-of-type(7) > section > a:nth-of-type(2) svg {
   color: var(--primary-color);
 }
 
-/* MEDIAQUERY VOOR SECTION 7 */
-
 @media (min-width: 1024px) {
   /* Maak zevende section flex op desktop */
-
-  main > section:nth-of-type(7) > section {
-    justify-content: center;
-    height: auto;
-  }
 
   main > section:nth-of-type(7) {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    padding: 0 5em;
+  }
+
+  main > section:nth-of-type(7) > section {
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 2rem;
+    flex-flow: row wrap;
+    height: auto;
+  }
+
+  main section:nth-of-type(7) > section > h2 {
+    font-size: 1.5em;
+    text-align: left;
+    flex: 1 1 100%;
+    order: 1;
+  }
+
+  main section:nth-of-type(7) > section > h3 {
+    font-size: 3em;
+    text-align: left;
+    flex: 1 1 100%;
+    order: 2;
+  }
+
+  main section:nth-of-type(7) > section > p {
+    font-size: 1.25em;
+    order: 4;
+    padding-top: 1em;
   }
 
   /* Verberg mobiele image op desktop */
@@ -774,6 +934,13 @@ main > section:nth-of-type(7) > section > a:nth-of-type(2) svg {
 main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul {
   margin: 1.5em 1.25em 0 1.25em;
   border-top: 0.0425em solid;
+}
+
+@media (min-width: 1024px) {
+  main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul {
+    margin: 1em 0 0 0;
+    border-color: var(--border-color);
+  }
 }
 
 main

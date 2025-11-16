@@ -187,7 +187,7 @@ main > section:nth-of-type(3) > article > a:first-of-type:hover {
     padding: 0 2em;
   }
   main > section:nth-of-type(2) > p {
-    font-size: 1.4em;
+    font-size: 1.7em;
     line-height: 1.7;
     text-align: left;
     margin: 0;
@@ -237,6 +237,57 @@ main > section:nth-of-type(3) > article > a:first-of-type:hover {
 }
 
 /* DE HELE CARROUSEL SECTIE */
+main > section:nth-of-type(4) > section:first-of-type::scroll-button(*) {
+  width: 2.8em;
+  aspect-ratio: 1;
+  background-color: var(--accent-color);
+  color: var(--tertiary-color);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 0;
+  transform: translateY(0);
+
+  display: grid;
+  place-items: center;
+  font-size: 1.25em;
+
+  box-shadow: 0 0.15em 0.4em var(--footer-color);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+main > section:nth-of-type(4) {
+  position: relative;
+}
+
+main
+  > section:nth-of-type(4)
+  > section:first-of-type::scroll-button(inline-end) {
+  content: "›" / "Volgende";
+  right: clamp(1rem, 5vw, 2rem);
+}
+
+main
+  > section:nth-of-type(4)
+  > section:first-of-type::scroll-button(inline-start) {
+  content: "‹" / "Vorige";
+  right: clamp(6rem, 5vw, 2rem);
+}
+
+main > section:nth-of-type(4) > section:first-of-type::scroll-button(*):hover {
+  background-color: var(--secondary-color);
+  transform: translateY(0) scale(1.05);
+}
+
+main
+  > section:nth-of-type(4)
+  > section:first-of-type::scroll-button(*):disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: translateY(0) scale(1);
+}
 
 main > section:nth-of-type(4) {
   padding: 2.5em 1em 3em 1em;

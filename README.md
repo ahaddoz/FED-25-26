@@ -250,12 +250,19 @@ Phon:
 
 ### Verslag van meeting
 
-hier na afloop snel de uitkomsten van de meeting vastleggen
+Wat ik zelf heb geleerd:
 
-- punt 1
-- punt 2
-- nog een punt
-- ...
+- Buttons zijn essentieel in een carousel voor accessibility — niet iedereen kan swipen.
+
+- CSS carousel configureren kan makkelijk via de Chrome Carousel Configurator.
+
+- Een element met z-index:100 staat altijd boven alles met z-index 0 of lager.
+
+- Mijn hele homepage bestaat uit één main, niet alleen de eerste productsectie.
+
+- Nooit SVG's laden als plaatje,inline SVG in HTML geeft controle over kleur & styling.
+
+- Media queries horen bij het element waarvoor je ze schrijft, zoals direct onder de header-CSS.
 
 </details>
 
@@ -296,12 +303,12 @@ Zineb:
 
 ### Verslag van meeting
 
-hier na afloop snel de uitkomsten van de meeting vastleggen
+Wat ik heb geleerd
 
-- punt 1
-- punt 2
-- nog een punt
-- ...
+- Het gebruik van select en option is de juiste aanpak voor een taal- of landenkeuze. Dit geeft dezelfde functionaliteit als Cowboy en is semantisch correct.
+  Afbeeldingen in option-tags worden door mijn Chrome-versie niet ondersteund, dus ik heb emoji-vlaggen gebruikt als alternatief.
+
+- Pseudo-elementen zoals ::before en ::after kunnen worden ingezet om een fake border of fake achtergrondvlak te creëren. Dit maakt het mogelijk om de achtergrond van een section te stylen zonder dat de footer of omliggende secties worden beïnvloed
 
 </details>
 
@@ -316,16 +323,20 @@ hier na afloop snel de uitkomsten van de meeting vastleggen
 
 ### Dit ging goed/Heb ik geleerd:
 
-Korte omschrijving met plaatjes
+De afgelopen weken heb ik veel vooruitgang geboekt in mijn FED-project, maar ook ervaren dat mijn gekozen website technisch uitdagender was dan ik dacht. Ik had verwacht dat Cowboy een “makkelijke” site zou zijn, maar er zaten toch veel elementen in die intensief gestyled moesten worden. Het responsive maken van elke pagina kostte eveneens meer tijd dan vooraf ingeschat.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+Wat goed ging
+Ik heb grote stappen gezet in het begrijpen van HTML-semantiek, CSS-structuur en het inzetten van pseudo-elementen. Ik weet nu hoe ik inline SVG’s moet gebruiken, hoe ik een carousel toegankelijk opbouw met buttons en hoe ik media queries logisch plaats. Daarnaast heb ik mijn footer, select-dropdowns en verschillende sections visueel verbeterd. Ik wilde namelijk eerst een drop down maken, maar dit heeft ook veel JS nodig om het echt werkend te maken. Dit heb ik dus achteraf niet gedaan. Ook heb ik actief vragen gesteld, getest en veel nieuwe technieken toegepast die ik eerder niet kende.
 
 ### Dit was lastig/Is niet gelukt:
 
 Korte omschrijving met plaatjes
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
-</details>
+Wat minder goed ging
+Sommige onderdelen kostten meer tijd door overschreven CSS, foutieve selectors of te complexe code. Het responsive maken van de site verliep trager dan gepland, en sommige functies (zoals icoontjes in dropdowns of de buttons in de carrousel) werkten niet in één keer. Ook merkte ik dat ik soms te veel tijd verloor aan details voordat de basis helemaal stond.
+
+Wat ik zou doen als ik meer tijd had
+Ik zou mij volledig richten op het verder uitwerken van de dark mode. De originele Cowboy-site heeft zelf geen dark-mode functie, dus ik moest extra tijd besteden aan het onderzoeken hoe ik dit visueel en technisch kon vormgeven. Met meer tijd zou ik een complete, consistente dark-mode stijl ontwikkelen én een JS-toggle bouwen waarmee gebruikers de modus handmatig kunnen aan- of uitzetten.
 
 ## Bronnenlijst
 
@@ -336,9 +347,24 @@ Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 Nb. ChatGpT en andere AI horen er ook bij.
 Nb. Vermeld de bronnen ook in je code.
 
-1. bron 1
-2. bron 2
-3. ...
+1. https://chatgpt.com/
+2. https://developer.chrome.com/blog/carousels-with-css?hl=nl
+3. https://codepen.io/zinebcancode/pen/myVJeZJ
+4. https://codepen.io/zinebcancode/pen/RNrmWxX
+5. https://stackoverflow.com/questions/2671563/how-to-include-images-for-selectionoption
+6. https://www.w3schools.com/css/css_pseudo_elements.asp
+7. https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow/Carousels
+8. https://www.w3schools.com/cssref/pr_pos_z-index.php
+9. https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0
+10. https://swink.nl/blog/wat-wcag-betekent-digitale-toegankelijkheid/?gad_source=1&gad_campaignid=9874867858&gbraid=0AAAAADr-YSpNG4_vigUMKQpD06aphRSEb&gclid=Cj0KCQiA5uDIBhDAARIsAOxj0CGLfppkG8jBie3_aMa6WvcZ4PP8BUEz3N6-XW8n0QW9Y8pHErLQCBcaAibjEALw_wcB
+11. https://www.youtube.com/watch?v=GteJWhCikCk&t=1s
+12. https://www.youtube.com/watch?v=dMxOojFq2ho
+13. https://codepen.io/shooft/pen/QwjQGZe
+
+ <img src="readme-images/chat1.png" width="375px" alt="chatgpt nav bron">
+Ik heb ChatGPT gebruikt omdat een deel van mijn website verkeerd gestyled werd. Mijn CSS-selector was te algemeen, waardoor meerdere <section>-elementen dezelfde height kregen en mijn menu vreemd ging doen. Met hulp van ChatGPT kwam ik erachter welke selector het probleem veroorzaakte en waarom dat gebeurde.
+
+Ik heb het daarna zelf opgelost door de selector specifieker te maken met > en nth-of-type(). Daardoor wordt de styling nu alleen toegepast op het juiste onderdeel, en beïnvloedt het niet meer de andere secties. Sinds die aanpassing werkt mijn navigatie en menu weer normaal.
 
 FED PLANNING
 
