@@ -442,8 +442,8 @@ main a:first-of-type {
   main > section:nth-of-type(7) > section > a:first-of-type,
   main
     section:not(:first-of-type):not(:nth-of-type(2)):not(:nth-of-type(3)):not(
-      :nth-of-type(5)
-    ):not(:nth-of-type(7))
+      :nth-of-type(4)
+    ):not(:nth-of-type(5)):not(:nth-of-type(7))
     a:first-of-type,
   main a:first-of-type {
     margin: 0;

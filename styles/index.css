@@ -429,7 +429,7 @@ main section:nth-of-type(4) > div > img:nth-child(3) {
   }
 }
 
-main section:nth-of-type(4) > h2 {
+main section:nth-of-type(4) > section > h2 {
   margin: 0 0 0.375em 0;
   padding: 1em 0 0 0;
   font-size: 2.25em;
@@ -439,20 +439,24 @@ main section:nth-of-type(4) > h2 {
   color: var(--secondary-color);
 }
 
-main section:nth-of-type(4) > p {
+main section:nth-of-type(4) > section > p {
   margin: 0 0 1em 0;
   font-size: 0.75em;
   color: var(--quaternary-color);
   text-align: center;
 }
 
+main section:nth-of-type(4) > section > a {
+  /* Styling voor de link in de geneste section */
+}
+
 @media (min-width: 1024px) {
-  main section:nth-of-type(4) > h2 {
+  main section:nth-of-type(4) > section > h2 {
     font-size: 3em;
     font-weight: 600;
   }
 
-  main section:nth-of-type(4) > p {
+  main section:nth-of-type(4) > section > p {
     font-size: 1.25em;
     max-width: 70ch;
     margin: 0 auto;
@@ -467,7 +471,6 @@ main > section:nth-of-type(5) {
 
 main > section:nth-of-type(5) > section {
   background-color: var(--color-bg-5);
-  height: 50em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -804,7 +807,6 @@ main > section:nth-of-type(7) {
 
 main > section:nth-of-type(7) > section {
   background-color: var(--color-bg-6);
-  height: 50em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -1072,7 +1074,7 @@ main section:nth-of-type(8) > section > a:first-of-type {
 
 /* de hele carrousel selectie */
 main section:nth-of-type(9) {
-  padding: 2.5em 1em 3em 1em;
+  padding: 2.5em 1em 8em 1em;
   background-color: var(--footer-color);
 }
 
@@ -1184,7 +1186,7 @@ main section:nth-of-type(9) ul:first-of-type::scroll-button(*) {
   cursor: pointer;
 
   position: absolute;
-  bottom: 0;
+  bottom: 2rem;
   transform: translateY(0);
 
   display: grid;
