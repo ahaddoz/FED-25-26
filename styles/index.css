@@ -786,7 +786,7 @@ main section:nth-of-type(6) > section > h3 {
   color: var(--primary-color);
 }
 
-/* Witte button  */
+/* Witte button (hij doet het nu niet) */
 body > main > section:nth-of-type(6) > section > a:first-of-type {
   background-color: red;
   color: var(--primary-text-color);
@@ -799,7 +799,7 @@ main > section:nth-of-type(6) > a:first-of-type:hover {
 }
 
 @media (min-width: 1024px) {
-  /* Maak zevende section flex op desktop */
+  /* Maak zesde section flex op desktop */
 
   main > section:nth-of-type(6) {
     justify-content: flex-end;
