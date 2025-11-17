@@ -82,6 +82,18 @@ main > section:first-of-type > h2 {
 main > section:first-of-type > a:first-of-type {
   background-color: var(--primary-color);
   color: var(--primary-text-color);
+
+  display: block;
+  width: max-content;
+  margin: 2em auto;
+  padding: 1em 1em;
+  border-radius: 999em;
+  border: none;
+  line-height: 1;
+
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 1em;
   transform: translateY(5em);
 }
 

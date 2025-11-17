@@ -630,32 +630,32 @@ main > section:nth-of-type(5) > section > a:nth-of-type(2) svg {
   }
 }
 
-/* VANAF HIER MINI USPS*/
-/* Voor sections met nested section (eerste section) */
-main > section:first-of-type > section > a:nth-of-type(2) + ul,
-/* Voor sections met nested section (tweede section) */
-main > section:nth-of-type(2) > section > a:nth-of-type(2) + ul,
-/* Voor sections met nested section (derde section) */
-main > section:nth-of-type(3) > section > a:nth-of-type(2) + ul,
-/* Voor sections met nested section (vijfde section) */
-main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul,
-/* Voor sections met nested section (zevende section) */
-main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul,
-/* Voor sections zonder nested section (andere sections) */
+/* VANAF HIER MINI USPS
+  Deze selectors pakken alle <ul> lijstjes die direct na de 2e <a> komen
+  in secties met nested sections of zonder nested sections.
+  Daardoor werkt het voor ALLE productsecties zonder classes/IDs.
+*/
+main > section:first-of-type > section > a:nth-of-type(2) + ul, /* Pak ul direct na 2e link (sectie 1, nested) */
+main > section:nth-of-type(2) > section > a:nth-of-type(2) + ul, /* Sectie 2 */
+main > section:nth-of-type(3) > section > a:nth-of-type(2) + ul, /* Sectie 3 */
+main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul, /* Sectie 5 (Cross) */
+main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul, /* Sectie 7 (Testrit) */
 main > section > a:nth-of-type(2) + ul {
-  display: flex;
+  display: flex; /* USP’s naast elkaar tonen */
   justify-content: center;
   gap: 2em;
   list-style: none;
   padding: 1em 0 3em 0;
   margin: 1em 1.25em 0 1.25em;
-  border-top: 0.0625em solid;
+  border-top: 0.0625em solid; /* Dunne lijn boven de USP-balk */
   border-color: var(--border-color);
-
-  align-items: flex-end;
+  align-items: flex-end; /* USP-tekstjes gelijk onderaan uitlijnen */
 }
 
 /* Media queries voor de USPs */
+/* 
+  DESKTOP: USP-BALK WORDT VOLLEDIGE RIJ IN LAYOUT
+*/
 @media (min-width: 1024px) {
   main > section:first-of-type > section > a:nth-of-type(2) + ul,
   main > section:nth-of-type(2) > section > a:nth-of-type(2) + ul,
@@ -663,32 +663,31 @@ main > section > a:nth-of-type(2) + ul {
   main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul,
   main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul,
   main > section > a:nth-of-type(2) + ul {
-    flex: 1 1 100%;
-    order: 6;
+    flex: 1 1 100%; /* USP-balk neemt volledige rijbreedte */
+    order: 6; /* USP’s komen onder h2, h3, p en knoppen */
     margin: 1em 0 0 0;
-    justify-content: flex-start;
-    align-self: flex-end;
+    justify-content: flex-start; /* USP’s links uitlijnen op desktop */
+    align-self: flex-end; /* USP-balk onderaan de flex-kolom */
   }
 }
 
-/* 1. elk item in de lijst - voor sections met nested section */
+/* 
+
+  USP ITEMS
+  Elke li is een kolom + krijgt ruimte voor een verticale lijn tussen items
+*/
 main > section:first-of-type > section > a:nth-of-type(2) + ul > li,
-/* 1. elk item in de lijst - voor sections met nested section (tweede section) */
 main > section:nth-of-type(2) > section > a:nth-of-type(2) + ul > li,
-/* 1. elk item in de lijst - voor sections met nested section (derde section) */
 main > section:nth-of-type(3) > section > a:nth-of-type(2) + ul > li,
-/* 1. elk item in de lijst - voor sections met nested section (vijfde section) */
 main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul > li,
-/* 1. elk item in de lijst - voor sections met nested section (zevende section) */
 main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul > li,
-/* 1. elk item in de lijst - voor sections zonder nested section */
 main > section > a:nth-of-type(2) + ul > li {
-  position: relative;
+  position: relative; /* Nodig voor positioneren van ::before lijn */
   padding: 0 0.5em;
   text-align: center;
 }
 
-/* Media queries voor de USPs */
+/* Desktop: tekst links uitlijnen */
 @media (min-width: 1024px) {
   main > section:first-of-type > section > a:nth-of-type(2) + ul > li,
   main > section:nth-of-type(2) > section > a:nth-of-type(2) + ul > li,
@@ -696,42 +695,62 @@ main > section > a:nth-of-type(2) + ul > li {
   main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul > li,
   main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul > li,
   main > section > a:nth-of-type(2) + ul > li {
-    text-align: left;
+    text-align: left; /* USP-tekst links op desktop */
   }
 }
 
-/* Lijn tussen items - voor sections met nested section */
-main > section:first-of-type > section > a:nth-of-type(2) + ul > li:not(:first-child)::before,
-/* Lijn tussen items - voor sections met nested section (tweede section) */
-main > section:nth-of-type(2) > section > a:nth-of-type(2) + ul > li:not(:first-child)::before,
-/* Lijn tussen items - voor sections met nested section (derde section) */
-main > section:nth-of-type(3) > section > a:nth-of-type(2) + ul > li:not(:first-child)::before,
-/* Lijn tussen items - voor sections met nested section (vijfde section) */
-main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul > li:not(:first-child)::before,
-/* Lijn tussen items - voor sections met nested section (zevende section) */
-main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul > li:not(:first-child)::before,
-/* Lijn tussen items - voor sections zonder nested section */
+/* 
+  VERTICALE LIJN TUSSEN USP ITEMS
+  Wordt toegevoegd met ::before.
+*/
+main
+  > section:first-of-type
+  > section
+  > a:nth-of-type(2)
+  + ul
+  > li:not(:first-child)::before,
+main
+  > section:nth-of-type(2)
+  > section
+  > a:nth-of-type(2)
+  + ul
+  > li:not(:first-child)::before,
+main
+  > section:nth-of-type(3)
+  > section
+  > a:nth-of-type(2)
+  + ul
+  > li:not(:first-child)::before,
+main
+  > section:nth-of-type(5)
+  > section
+  > a:nth-of-type(2)
+  + ul
+  > li:not(:first-child)::before,
+main
+  > section:nth-of-type(7)
+  > section
+  > a:nth-of-type(2)
+  + ul
+  > li:not(:first-child)::before,
 main > section > a:nth-of-type(2) + ul > li:not(:first-child)::before {
-  content: "";
-  position: absolute;
-  left: -1em; /* lijn tussen de kolommen */
-  top: 0;
-  bottom: 0;
-  width: 0.0625em;
+  content: ""; /* Nodig om pseudo-element zichtbaar te maken */
+  position: absolute; /* Positie binnen li */
+  left: -1em; /* Exacte positie van de verticale lijn */
+  top: 0; /* Begin van de lijn */
+  bottom: 0; /* Eind van de lijn */
+  width: 0.0625em; /* Dikte van de lijn */
   background-color: var(--border-color);
 }
 
-/* 3. Bovenste regel - voor sections met nested section */
+/* 
+  USP TITEL (bovenste regel)
+*/
 main > section:first-of-type > section > a:nth-of-type(2) + ul > li > h4,
-/* 3. Bovenste regel - voor sections met nested section (tweede section) */
 main > section:nth-of-type(2) > section > a:nth-of-type(2) + ul > li > h4,
-/* 3. Bovenste regel - voor sections met nested section (derde section) */
 main > section:nth-of-type(3) > section > a:nth-of-type(2) + ul > li > h4,
-/* 3. Bovenste regel - voor sections met nested section (vijfde section) */
 main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul > li > h4,
-/* 3. Bovenste regel - voor sections met nested section (zevende section) */
 main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul > li > h4,
-/* 3. Bovenste regel - voor sections zonder nested section */
 main > section > a:nth-of-type(2) + ul > li > h4 {
   margin: 0 0 0.25em;
   font-size: 0.6em;
@@ -739,68 +758,73 @@ main > section > a:nth-of-type(2) + ul > li > h4 {
   color: var(--quaternary-color);
 }
 
-/* 4. onderste regel - voor sections met nested section */
+/* 
+  USP SUBTEXT (onderste regel)
+*/
 main > section:first-of-type > section > a:nth-of-type(2) + ul > li > p,
-/* 4. onderste regel - voor sections met nested section (tweede section) */
 main > section:nth-of-type(2) > section > a:nth-of-type(2) + ul > li > p,
-/* 4. onderste regel - voor sections met nested section (derde section) */
 main > section:nth-of-type(3) > section > a:nth-of-type(2) + ul > li > p,
-/* 4. onderste regel - voor sections met nested section (vijfde section) */
 main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul > li > p,
-/* 4. onderste regel - voor sections met nested section (zevende section) */
 main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul > li > p,
-/* 4. onderste regel - voor sections zonder nested section */
 main > section > a:nth-of-type(2) + ul > li > p {
   margin: 0;
   font-size: 0.7em;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--primary-text-color);
 }
 
-/* Specifieke styling voor section 5 en 7 */
+/* 
+  SPECIALE USP STYLING VOOR CROSS (section 5)
+*/
 main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul {
   margin: 1.5em 1.25em 0 1.25em;
   border-color: var(--primary-color);
 }
 
-/* Bovenste regel voor section 5 */
+/* Bovenste regel Cross */
 main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul > li > h4 {
   color: var(--border-color);
   font-weight: 300;
 }
 
-/* onderste regel voor section 5 */
+/* Onderste regel Cross */
 main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul > li > p {
   color: var(--primary-color);
   font-weight: 300;
 }
 
+/* Bronnen voor de section:
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Child_combinator
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Next-sibling_combinator
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Descendant_combinator
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors/Selectors_and_combinators
++ chatgpt */
+
 /* ONTWORPEN IN BELGIE  */
 
-/* Achtergrond afbeelding (Belgie) */
-
+/* Achtergrond afbeelding (België) — section 6 */
 main section:nth-of-type(6) {
   background-image: url("../images/assembledfiets.webp");
-  background-size: 450%;
-  background-position: 60% top;
-  background-repeat: no-repeat;
+  background-size: 450%; /* foto ingezoomd */
+  background-position: 60% top; /* Schuift de focus iets naar rechts en boven */
+  background-repeat: no-repeat; /* Voorkomt herhaling van de afbeelding */
+  align-items: center; /* Centreert children horizontaal in flex container */
+  text-align: center; /* Tekst staat in het midden op mobiel */
 
-  align-items: center;
-  text-align: center;
   height: 55em;
-
-  min-height: 80vh;
+  min-height: 80vh; /* Minimaal 80% van schermhoogte, voorkomt rare gaps */
   padding: 6em 1em;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+  display: flex; /* Maakt de section een flex container */
+  align-items: flex-start; /* Inhoud begint linksboven */
+  flex-direction: column; /* Stapelt alles verticaal */
 }
 
 main section:nth-of-type(6) > section {
   width: 100%;
 }
 
-/* Ontworpen in Belgie  */
+/* Ontworpen in België */
 main section:nth-of-type(6) > section > h2 {
   font-size: 1em;
   font-weight: 400;
@@ -809,7 +833,7 @@ main section:nth-of-type(6) > section > h2 {
   width: 100%;
 }
 
-/* Nu geassembleerd in Frankrijk  */
+/* Nu geassembleerd in Frankrijk */
 main section:nth-of-type(6) > section > h3 {
   font-size: 2.25em;
   font-weight: 400;
@@ -823,8 +847,8 @@ main section:nth-of-type(6) > section > h3 {
   main section:nth-of-type(6) {
     padding: 3em 4em;
     background-image: url("../images/assembledfiets.webp");
-    background-position: center bottom;
-    background-size: cover;
+    background-position: center bottom; /* Focus op onderkant van de foto */
+    background-size: cover; /* Foto volledig laten vullen */
   }
 
   main section:nth-of-type(6) > section > h2 {
@@ -837,33 +861,32 @@ main section:nth-of-type(6) > section > h3 {
   main section:nth-of-type(6) > section > h3 {
     font-size: 4em;
     text-align: left;
-    max-width: 14ch;
+    max-width: 14ch; /* Maximaal 14 karakters per regel*/
     margin: 0.5em 0 0.5em;
-    line-height: 0.95;
+    line-height: 0.95; /* regelafstand */
   }
 }
 
-/* Witte button (hij doet het nu niet) */
+/* Witte button */
 main > section:nth-of-type(6) > section > a:first-of-type {
-  background-color: var(--primary-color);
-  color: var(--primary-text-color);
+  background-color: var(--primary-color); /* Witte achtergrondkleur */
+  color: var(--primary-text-color); /* Donkere tekst */
 }
 
-/* hover: kleuren omdraaien */
+/* Hover: kleuren omdraaien */
 main > section:nth-of-type(6) > a:first-of-type:hover {
-  background-color: var(--primary-text-color);
-  color: var(--primary-color);
+  background-color: var(--primary-text-color); /* Donkere achtergrond */
+  color: var(--primary-color); /* Lichte tekst */
 }
 
 @media (min-width: 1024px) {
-  /* Maak zesde section flex op desktop */
-
+  /* Positionering op desktop */
   main > section:nth-of-type(6) {
-    justify-content: flex-end;
+    justify-content: flex-end; /* Plaatst content naar beneden */
   }
 
   main > section:nth-of-type(6) > h2 {
-    text-align: start;
+    text-align: start; /* Links uitlijnen */
   }
 
   main section:nth-of-type(6) > h3 {
@@ -876,7 +899,7 @@ main > section:nth-of-type(6) > a:first-of-type:hover {
   }
 }
 
-/* Productsectie 5 */
+/* PRODUCTSECTIE 5*/
 
 main > section:nth-of-type(7) {
   background-color: var(--color-bg-6);
@@ -884,9 +907,9 @@ main > section:nth-of-type(7) {
 
 main > section:nth-of-type(7) > section {
   background-color: var(--color-bg-6);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: flex; /* maakt van de inner section een flex container */
+  flex-direction: column; /* stapelt elementen onder elkaar op mobiel */
+  justify-content: space-around; /* verdeelt ruimte gelijkmatig over kolom */
 }
 
 /* Cross ST */
@@ -919,13 +942,13 @@ main section:nth-of-type(7) > section > p {
 
 /* fiets-afbeelding - mobiele versie (binnen nested section) */
 main > section:nth-of-type(7) > section > img {
-  display: block;
-  width: 120%;
+  display: block; /* afbeelding zichtbaar op mobiel */
+  width: 120%; /* expres breder dan scherm voor ‘overhang’-effect */
   height: auto;
   margin: 0 0 1.25em 0;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative; /* nodig om left + transform te gebruiken */
+  left: 50%; /* duwt midden van afbeelding naar 50% */
+  transform: translateX(-50%); /* centreert 120%-brede afbeelding */
 }
 
 /* fiets-afbeelding - desktop versie (direct binnen zevende section) */
@@ -961,57 +984,57 @@ main > section:nth-of-type(7) > section > a:nth-of-type(2) svg {
   /* Maak zevende section flex op desktop */
 
   main > section:nth-of-type(7) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* tekst + fiets naast elkaar op desktop */
+    justify-content: space-between; /* ruimte tussen tekst en fiets */
+    align-items: center; /* centreert items verticaal */
     gap: 2rem;
     padding: 0 5em;
   }
 
   main > section:nth-of-type(7) > section {
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: flex-start; /* begin bovenaan bij tekst */
+    align-items: center; /* centreert tekst binnen kolom */
     column-gap: 2rem;
-    flex-flow: row wrap;
+    flex-flow: row wrap; /* h2, h3, p in meerdere rijen */
     height: auto;
   }
 
   main section:nth-of-type(7) > section > h2 {
     font-size: 1.5em;
-    text-align: left;
-    flex: 1 1 100%;
-    order: 1;
+    text-align: left; /* links uitlijnen op desktop */
+    flex: 1 1 100%; /* titel krijgt volledige rijbreedte */
+    order: 1; /* komt als eerste */
   }
 
   main section:nth-of-type(7) > section > h3 {
     font-size: 3em;
     text-align: left;
-    flex: 1 1 100%;
-    order: 2;
+    flex: 1 1 100%; /* tweede volledige rij */
+    order: 2; /* komt als tweede, dus na h2 */
   }
 
   main section:nth-of-type(7) > section > p {
     font-size: 1.25em;
-    order: 4;
+    order: 4; /* komt onder de titel en subtitel */
     padding-top: 1em;
   }
 
   /* Verberg mobiele image op desktop */
   main > section:nth-of-type(7) > section > img {
-    display: none;
+    display: none; /* mobiele afbeelding uit */
   }
 
   /* Toon desktop image op desktop */
   main > section:nth-of-type(7) > img {
-    display: block;
-    margin-top: 10rem;
+    display: block; /* desktop afbeelding aan */
+    margin-top: 10rem; /* optische uitlijning */
   }
 }
 
 /* Specifieke styling voor section 7 (Cross ST) - overschrijft algemene styling */
 main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul {
   margin: 1.5em 1.25em 0 1.25em;
-  border-color: var(--primary-color);
+  border-color: var(--primary-color); /* USP-lijn in merk-kleur */
 }
 
 @media (min-width: 1024px) {
@@ -1027,7 +1050,7 @@ main
   > a:nth-of-type(2)
   + ul
   > li:not(:first-child)::before {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color); /* verticale lijn tussen USP’s */
 }
 
 /* Bovenste regel voor section 7 */
@@ -1043,9 +1066,10 @@ main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul > li > p {
 }
 
 /* USP 1,2 en 3 */
+
 main section:nth-of-type(8) {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* maakt de hele sectie een flex container */
+  flex-direction: column; /* stackt de 3 USP-kaarten onder elkaar op mobiel */
   gap: 0.5em;
   padding: 0.5em;
   background-color: var(--tertiary-color);
@@ -1058,18 +1082,18 @@ main section:nth-of-type(8) > section {
   padding: 1em 1em 1 1em;
   text-align: center;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: flex; /* van elke USP een flex container maken */
+  flex-direction: column; /* icon > titel > tekst onder elkaar */
+  align-items: center; /* centreert alle content horizontaal */
+  justify-content: center; /* centreert content verticaal binnen box */
 }
 
 /* SVG-iconen */
 main section:nth-of-type(8) > section > svg {
   display: block;
   background-color: var(--tertiary-color);
-  border-radius: 50%;
-  padding: 1em;
+  border-radius: 50%; /* maakt het icoon rond */
+  padding: 1em; /* ruimte om het icoon */
   width: 3.5em;
   height: 3.5em;
   margin: 2em auto 0 auto;
@@ -1094,23 +1118,23 @@ main section:nth-of-type(8) > section > p {
 
 /* buttons */
 main section:nth-of-type(8) > section > a:first-of-type {
-  display: oflex;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  justify-content: center; /* centreert tekst/icon in de knop */
+  align-items: center; /* verticaal centreren */
   margin: 0.5em 0 2.5em 0;
 }
 
-/* Op groot scherm: toon alleen eerste card, groter en prominenter */
+/* Op groot scherm: toon alleen eerste kaart, groter en prominenter */
 @media (min-width: 1024px) {
   /* Verberg tweede en derde card */
   main section:nth-of-type(8) > section:nth-of-type(2),
   main section:nth-of-type(8) > section:nth-of-type(3) {
-    display: none;
+    display: none; /* alleen de eerste USP card blijft zichtbaar */
   }
 
-  /* Eerste card groter en prominenter */
+  /* Eerste kaart groter en prominenter */
   main section:nth-of-type(8) {
-    margin: 0 auto;
+    margin: 0 auto; /* centreert de hele sectie */
     padding: 1rem;
   }
 
@@ -1146,7 +1170,7 @@ main section:nth-of-type(8) > section > a:first-of-type {
   }
 }
 
-/* 1. CARROUSEL SECTION */
+/* CARROUSEL SECTION */
 
 /* de hele carrousel selectie */
 main section:nth-of-type(9) {
@@ -1156,7 +1180,7 @@ main section:nth-of-type(9) {
 
 /* Waarom cowboy */
 main section:nth-of-type(9) h2 {
-  text-align: left;
+  text-align: left; /* zet titel links */
   margin: 0;
   color: var(--primary-color);
   font-size: 0.9em;
@@ -1165,7 +1189,7 @@ main section:nth-of-type(9) h2 {
 
 /* We staan voor je klaar */
 main section:nth-of-type(9) h3 {
-  text-align: left;
+  text-align: left; /* zet subtitel links */
   font-size: 1.5em;
   font-weight: 400;
   color: var(--primary-color);
@@ -1173,11 +1197,11 @@ main section:nth-of-type(9) h3 {
 
 /* de layout van de carrousel */
 main section:nth-of-type(9) ul:first-of-type {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  overscroll-behavior-x: contain;
+  display: flex; /* maakt horizontaal scrollbare rij */
+  overflow-x: auto; /* horizontaal scrollen mogelijk */
+  scroll-snap-type: x mandatory; /* op de juiste plek als je stopt met scrollen */
+  scroll-behavior: smooth; /* smooth scroll van de animatie */
+  overscroll-behavior-x: contain; /* voorkomt dat de pagina scrollt */
   gap: 1em;
   padding: 0;
   margin: 0;
@@ -1185,25 +1209,28 @@ main section:nth-of-type(9) ul:first-of-type {
 
 /* browser’s standaard scrollbalk */
 main section:nth-of-type(9) ul:first-of-type::-webkit-scrollbar {
-  display: none;
+  display: none; /* verbergt Chrome scrollbalk */
 }
+
 main section:nth-of-type(9) ul:first-of-type > li {
-  flex-basis: 30%;
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  flex-basis: 30%; /* breedte van elke kaart */
+  flex-shrink: 0; /* voorkomt verkleinen bij scrollen */
+  scroll-snap-align: start; /* elke kaart komt straks links tegen carrousel te staan */
+  scroll-snap-stop: always; /* geen kaarten overslaan, bij elke item stoppen */
   list-style: none;
 
-  position: relative;
-  display: flex;
+  position: relative; /* nodig voor absolute plus-knop */
+  display: flex; /* kaart layout in kolom */
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* spreidt icon–text–plusknop */
 
   background-color: var(--primary-text-color);
   border-radius: 1em;
   padding: 1em;
+  padding-bottom: 3.5em;
   min-height: 10em;
 }
+
 /* Eerste icoontjes */
 main section:nth-of-type(9) li > svg {
   display: inline-block;
@@ -1213,7 +1240,7 @@ main section:nth-of-type(9) li > svg {
   margin: 0.5em;
 }
 
-/* 200+ vestigingen ect.*/
+/* 200+ vestigingen ect. */
 main section:nth-of-type(9) li h4 {
   font-size: 1em;
   color: var(--primary-color);
@@ -1226,47 +1253,23 @@ main section:nth-of-type(9) li p {
   font-size: 0.9em;
   font-weight: 300;
 }
-/* Plus icoontje link */
-main section:nth-of-type(9) li a:last-of-type {
-  position: absolute;
-  bottom: 1.5em;
-  right: 1.5em;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  padding: 0.4em;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Plus icoontje zelf */
-main section:nth-of-type(9) li a svg {
-  width: 1.25em;
-  height: auto;
-  color: var(--primary-text-color);
-  transition: transform 0.2 ease;
-}
-
-main section:nth-of-type(9) li a:hover svg {
-  transform: translateX(0.5em);
-}
 
 /* 2. BUTTONS ONDERAAN CARROUSEL */
 
 main section:nth-of-type(9) ul:first-of-type::scroll-button(*) {
   width: 2.8em;
-  aspect-ratio: 1;
+  aspect-ratio: 1; /* houdt knop perfect vierkant */
   background-color: var(--accent-color);
   color: var(--tertiary-color);
   border: none;
-  border-radius: 1rem;
+  border-radius: 1rem; /* ronde hoeken */
   cursor: pointer;
 
-  position: absolute;
-  bottom: 2rem;
+  position: absolute; /* plaatst knoppen over de carousel */
+  bottom: 2rem; /* positie onderkant */
   transform: translateY(0);
 
-  display: grid;
+  display: grid; /* perfect centreren van tekentjes */
   place-items: center;
   font-size: 1.25em;
 
@@ -1274,23 +1277,25 @@ main section:nth-of-type(9) ul:first-of-type::scroll-button(*) {
   transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
+/* bron chatgpt + https://chrome.dev/carousel-configurator/, https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp*/
+
 main section:nth-of-type(9) ul:first-of-type::scroll-button(inline-end) {
-  content: "›" / "Volgende";
-  right: clamp(1rem, 5vw, 2rem);
+  content: "›" / "Volgende"; /* label voor screenreaders */
+  right: clamp(1rem, 5vw, 2rem); /* responsive afstand */
 }
 
 main section:nth-of-type(9) ul:first-of-type::scroll-button(inline-start) {
-  content: "‹" / "Vorige";
-  right: clamp(6rem, 5vw, 2rem);
+  content: "‹" / "Vorige"; /* label voor screenreaders */
+  right: clamp(6rem, 5vw, 2rem); /* verplaatst naar links */
 }
 
 main section:nth-of-type(9) ul:first-of-type::scroll-button(*):hover {
   background-color: var(--secondary-color);
-  transform: translateY(0) scale(1.05);
+  transform: translateY(0) scale(1.05); /* lichte hover-zoom */
 }
 
 main section:nth-of-type(9) ul:first-of-type::scroll-button(*):disabled {
-  opacity: 0.4;
+  opacity: 0.4; /* toont niet klikbaar */
   cursor: not-allowed;
   transform: translateY(0) scale(1);
 }
@@ -1298,16 +1303,15 @@ main section:nth-of-type(9) ul:first-of-type::scroll-button(*):disabled {
 /* 3. DE DOTS ONDER DE CARROUSEL */
 
 main section:nth-of-type(9) ul:first-of-type {
-  /* verberg scrollbar en toon marker-group onderaan */
-  scrollbar-width: none;
-  scroll-marker-group: after;
+  scrollbar-width: none; /* Firefox scrollbar verbergen */
+  scroll-marker-group: after; /* toont dots onderaan */
 }
 
 main section:nth-of-type(9) ul:first-of-type::scroll-marker-group {
   height: 3em;
-  margin: 0 3.5em 0; /* ruimte boven & zijkant (laat plek voor pijlen) */
+  margin: 0 3.5em 0; /* ruimte voor de pijltjes */
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* dots op nieuwe regel als nodig */
   justify-content: center;
   align-content: center;
   row-gap: 0.25em;
@@ -1315,17 +1319,19 @@ main section:nth-of-type(9) ul:first-of-type::scroll-marker-group {
 }
 
 main section:nth-of-type(9) ul:first-of-type > li::scroll-marker {
-  content: "" / "naar" attr(data-label);
+  content: "" / "naar" attr(data-label); /* aria-label voor screenreaders, Laat visueel een rond bolletje zien, 
+  maar lees tegen blinde gebruikers:
+naar .. naam van kaart  */
   width: 0.3em;
-  aspect-ratio: 1;
+  aspect-ratio: 1; /* perfecte cirkel */
   background-color: var(--accent-color);
-  border-radius: 50%;
-  transition: background-color 0.25s ease;
+  border-radius: 50%; /* maakt dots rond */
+  transition: background-color 0.25s ease; /* animatie bij actief dot */
 }
 
 main
   section:nth-of-type(9)
   ul:first-of-type
   > li::scroll-marker:target-current {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color); /* dot voor actieve kaart */
 }
