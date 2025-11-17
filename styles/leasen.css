@@ -93,7 +93,7 @@ main > section:first-of-type > a:first-of-type {
 
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
-  font-size: 1em;
+  font-size: 1.5em;
   transform: translateY(5em);
 }
 

@@ -123,8 +123,6 @@ Lees meer van mijn bevindingen in de screenshot van de WCAG checklist hieronder.
 
 ### Stand van zaken
 
-hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
-
 ### Agenda voor meeting
 
 samen met je groepje opstellen
@@ -365,7 +363,35 @@ Wat ik heb geleerd
 
 ### Je uitkomst - karakteristiek screenshots:
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
+Mobiel:
+<img src="readme-images/indexmobiel1.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/indexmobiel2.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/indexmobiel3.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/indexmobiel4.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/indexmobiel5.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/indexmobiel6.png" width="375px" alt="uitomst opdracht 1">
+
+<img src="readme-images/leasenmobiel1.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/leasenmobiel2.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/leasenmobiel3.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/leasenmobiel4.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/leasenmobiel5.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/leasenmobiel6.png" width="375px" alt="uitomst opdracht 1">
+
+Desktop:
+<img src="readme-images/leasendesktop1.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/leasendesktop2.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/leasendesktop3.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/leasendesktop4.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/leasendesktop5.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/leasendesktop6.png" width="375px" alt="uitomst opdracht 1">
+
+<img src="readme-images/indexdesktop1.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/indexdesktop2.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/indexdesktop3.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/indexdesktop4.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/indexdesktop5.png" width="375px" alt="uitomst opdracht 1">
+<img src="readme-images/indexdesktop6.png" width="375px" alt="uitomst opdracht 1">
 
 ### Dit ging goed/Heb ik geleerd:
 
