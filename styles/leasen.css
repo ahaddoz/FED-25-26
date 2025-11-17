@@ -627,7 +627,7 @@ main > section:nth-of-type(6) details[open]::details-content {
   block-size: auto;
 }
 
-/* Bron: https://blog.logrocket.com/styling-html-modern-css/ + Chatgpt */
+/* Bron: https://blog.logrocket.com/styling-html-modern-css/+ Chatgpt */
 
 main > section:nth-of-type(7) {
   background-color: var(--color-bg-7);
@@ -645,6 +645,14 @@ main > section:nth-of-type(7) {
   margin-left: -50vw;
   margin-right: -50vw;
   padding: 3em 1em;
+}
+
+/* bron: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/article + chatgpt */
+
+main section:nth-of-type(7) > article {
+  max-width: 40em;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* We komen naar je toe */

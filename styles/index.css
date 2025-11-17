@@ -1,13 +1,16 @@
 /* Laat elke section schermbreed zijn */
 main > section {
   inline-size: 100vw;
-  position: relative;
+  position: relative; /*  Maakt het mogelijk om de section te verplaatsen of dingen erin absoluut te positioneren. */
+
   inset-inline-start: 50%;
-  transform: translateX(-50%);
-  overflow-x: clip;
+  transform: translateX(
+    -50%
+  ); /*dan komt het precies in het midden van het scherm*/
+  overflow-x: clip; /* verbergt alles buiten de zijkanten zoals de fiets afbeeldingen*/
   background-color: inherit;
 }
-
+/* Visueel verbergen, alleen screenreader leest dit voor */
 h1 {
   position: absolute;
   width: 1px;
@@ -27,8 +30,8 @@ main > section:first-of-type > section {
   background-color: var(--color-bg-1);
   height: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: column; /*Op mobiel alles onder elkaar: titel, subtitel, prijs, afbeelding, knoppen, USP-lijst. */
+  justify-content: space-around; /* Er komt ongeveer evenveel ruimte boven, tussen en onder de elementen. */
   margin: 5em 0 0 0;
 }
 
@@ -58,18 +61,21 @@ main section:first-of-type > section > p {
   text-align: center;
 }
 
-/* fiets-afbeelding - mobiele versie (binnen nested section) */
+/* fiets-afbeelding - mobiele versie  */
 main > section:first-of-type > section > img {
-  display: block;
+  display: block; /* want img is standaard inline*/
   width: 120%;
-  height: auto;
+  height: auto; /*verhoudingen blijven netjes*/
   margin: 0 0 1.25em 0;
+
+  /*Met position: relative, left: 50% en transform: translateX(-50%) 
+  centreer ik de afbeelding precies in het midden */
   position: relative;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* fiets-afbeelding - desktop versie (direct binnen eerste section) */
+/* fiets-afbeelding - desktop versie  */
 main > section:first-of-type > img {
   max-width: 45rem;
   display: none;
@@ -87,10 +93,13 @@ main > section:first-of-type > img {
   om de tekst naast elkaar te laten staan.
   */
   main > section:first-of-type > section {
-    justify-content: flex-start;
+    justify-content: flex-start; /* content begint links, niet uitgesmeerd over de hele breedte */
     align-items: center;
     height: auto;
     flex-flow: row wrap;
+    /* flex-direction: row; → items komen naast elkaar (horizontaal)
+    flex-wrap: wrap; → als er te weinig ruimte is, mogen ze afbreken naar de volgende rij */
+
     column-gap: 2rem;
   }
 
@@ -98,26 +107,24 @@ main > section:first-of-type > img {
   Vervolgens heb ik de teksten een flex: 1 1 100%; zodat ze dan een breedte van 100% krijgen.
   En dan een order (order: 1; order: 2; order: 4; etc.) zodat ze in de juiste volgorde 
   komen te staan. Dit heb ik voor de h2, h3 en p. 
-  
-  Zo heb ik de USPs (ul's) ook aangepast, zodat ze onderaan komen te staan.
   */
   main section:first-of-type > section > h2 {
     font-size: 1.5em;
     text-align: left;
-    flex: 1 1 100%;
-    order: 1;
+    flex: 1 1 100%; /* h2 neemt de volledige breedte van de tekskolom in */
+    order: 1; /* h2 moet als eerste verschijnen in de flex layout */
   }
 
   main section:first-of-type > section > h3 {
     font-size: 3em;
     text-align: left;
     flex: 1 1 100%;
-    order: 2;
+    order: 2; /*  komt onder de h2 */
   }
 
   main section:first-of-type > section > p {
     font-size: 1.25em;
-    order: 4;
+    order: 4; /* komt na h2,h3 en button(order:3) */
     padding-top: 1em;
   }
 
@@ -126,6 +133,9 @@ main > section:first-of-type > img {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
+    /* justify-content: center centreert de twee kolommen in de sectie.
+align-items: center zorgt dat de tekst en de afbeelding verticaal mooi uitgelijnd zijn. */
   }
 
   /* Verberg mobiele image op desktop */
@@ -142,15 +152,17 @@ main > section:first-of-type > img {
 
 /* PRODUCSECTIE 2 */
 main > section:nth-of-type(2) {
-  background-color: var(--color-bg-2);
+  background-color: var(
+    --color-bg-2
+  ); /* Geef deze sectie zijn eigen achtergrondkleur */
 }
 
 main > section:nth-of-type(2) > section {
   background-color: var(--color-bg-2);
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  height: auto; /* Laat hoogte meegroeien met de inhoud */
+  display: flex; /* Maak een flexcontainer voor mobiel */
+  flex-direction: column; /* Zet elementen onder elkaar */
+  justify-content: space-around; /* Verdeel verticale ruimte gelijkmatig */
 }
 
 main section:nth-of-type(2) > section > h2 {
@@ -159,10 +171,10 @@ main section:nth-of-type(2) > section > h2 {
   font-size: 1em;
   font-weight: 400;
   color: var(--quaternary-color);
-  text-align: center;
+  text-align: center; /* Tekst centreren (mobiel) */
 }
 
-/* Deel het zadel,deel de vrijheid */
+/* Deel het zadel, deel de vrijheid */
 main section:nth-of-type(2) > section > h3 {
   margin: 0 0 0.375em 0;
   font-size: 2.25em;
@@ -182,55 +194,58 @@ main section:nth-of-type(2) > section > p {
 /* fiets-afbeelding - mobiele versie (binnen nested section) */
 main > section:nth-of-type(2) > section > img {
   display: block;
-  width: 120%;
-  height: auto;
+  width: 120%; /* Iets breder dan container  */
+  height: auto; /* Verhouding behouden */
   margin: 0 0 1.25em 0;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative; /* Nodig voor left + transform */
+  left: 50%; /* Centreer afbeelding horizontaal */
+  transform: translateX(-50%); /* Centreer exact vanuit het midden */
 }
 
-/* fiets-afbeelding - desktop versie (direct binnen tweede section) */
+/* fiets-afbeelding op desktop */
 main > section:nth-of-type(2) > img {
-  max-width: 45rem;
+  max-width: 45em; /* Maximale breedte van desktop-fiets */
   display: none;
 }
 
+/* DESKTOP WEERGAVE */
 @media (min-width: 1024px) {
   /* Maak tweede section flex op desktop */
-
   main > section:nth-of-type(2) {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    display: flex; /* Tekst + afbeelding naast elkaar */
+    justify-content: flex-start; /* Start links */
+    align-items: center; /* Verticaal centreren */
     gap: 2rem;
   }
 
   main > section:nth-of-type(2) > section {
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: flex-start; /* Tekst start links */
+    align-items: center; /* Verticaal centreren */
     height: auto;
-    flex-flow: row wrap;
+    flex-flow: row wrap; /* Kinderen naast elkaar, maar mogen afbreken */
     column-gap: 2rem;
   }
 
+  /* Desktop h2 */
   main section:nth-of-type(2) > section > h2 {
     font-size: 1.5em;
-    text-align: left;
-    flex: 1 1 100%;
-    order: 1;
+    text-align: left; /* Links uitlijnen */
+    flex: 1 1 100%; /* Neemt volledige breedte in kolom */
+    order: 1; /* Eerste in volgorde */
   }
 
+  /* Desktop h3 */
   main section:nth-of-type(2) > section > h3 {
     font-size: 3em;
     text-align: left;
     flex: 1 1 100%;
-    order: 2;
+    order: 2; /* Tweede in volgorde */
   }
 
+  /* Desktop p */
   main section:nth-of-type(2) > section > p {
     font-size: 1.25em;
-    order: 4;
+    order: 4; /* Komt later, naast knop */
     padding-top: 1em;
   }
 
@@ -242,12 +257,11 @@ main > section:nth-of-type(2) > img {
   /* Toon desktop image op desktop */
   main > section:nth-of-type(2) > img {
     display: block;
-    margin-top: 10rem;
+    margin-top: 10em;
   }
 }
 
-/* Productsectie 3 */
-
+/* PRODUCTSECTIE 3 */
 main > section:nth-of-type(3) {
   background-color: var(--color-bg-3);
 }
@@ -255,9 +269,9 @@ main > section:nth-of-type(3) {
 main > section:nth-of-type(3) > section {
   background-color: var(--color-bg-3);
   height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: flex; /* Flex-container voor mobiel */
+  flex-direction: column; /* Onder elkaar ordenen */
+  justify-content: space-around; /* Ruimte gelijk verdelen */
 }
 
 main section:nth-of-type(3) > section > h2 {
@@ -266,7 +280,7 @@ main section:nth-of-type(3) > section > h2 {
   font-size: 1em;
   font-weight: 400;
   color: var(--quaternary-color);
-  text-align: center;
+  text-align: center; /* Centraal voor mobiel */
 }
 
 /* Voel je één met je fiets */
@@ -286,59 +300,61 @@ main section:nth-of-type(3) > section > p {
   text-align: center;
 }
 
-/* fiets-afbeelding - mobiele versie (binnen nested section) */
+/* fiets-afbeelding - mobiel */
 main > section:nth-of-type(3) > section > img {
-  display: block;
+  display: block; /* Blokweergave */
   width: 120%;
   height: auto;
   margin: 0 0 1.25em 0;
-  position: relative;
+  position: relative; /* Nodig voor centering */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* Centreer de afbeelding precies */
 }
 
-/* fiets-afbeelding - desktop versie (direct binnen derde section) */
+/* fiets-afbeelding desktop */
 main > section:nth-of-type(3) > img {
-  max-width: 45rem;
-  display: none;
+  max-width: 45rem; /* Maximale grootte */
+  display: none; /* Verborge op mobiel */
 }
 
 @media (min-width: 1024px) {
-  /* Maak derde section flex op desktop */
-
+  /* Desktop layout sectie 3 */
   main > section:nth-of-type(3) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Tekst + fiets naast elkaar */
+    justify-content: space-between; /* Ruimte tussen tekst en fiets */
+    align-items: center; /* Verticaal centreren */
     gap: 2rem;
     padding: 0 5em;
   }
 
   main > section:nth-of-type(3) > section {
-    justify-content: flex-start;
+    justify-content: flex-start; /* Tekst start links */
     align-items: center;
-    column-gap: 2rem;
+    column-gap: 2rem; /* Ruimte tussen flex-items */
+
+    /* row zorgt dat de elementen op desktop naast elkaar kunnen staan,
+    wrap zorgt dat ze kunnen afbreken naar een nieuwe regel. */
     flex-flow: row wrap;
     height: auto;
   }
 
   main section:nth-of-type(3) > section > h2 {
     font-size: 1.5em;
-    text-align: left;
-    flex: 1 1 100%;
-    order: 1;
+    text-align: left; /* Links uitlijnen op desktop */
+    flex: 1 1 100%; /* H2 neemt hele breedte */
+    order: 1; /* Eerste in volgorde */
   }
 
   main section:nth-of-type(3) > section > h3 {
     font-size: 3em;
     text-align: left;
-    flex: 1 1 100%;
-    order: 2;
+    flex: 1 1 100%; /* Neemt hele breedte */
+    order: 2; /* gaat onder de h2 */
   }
 
   main section:nth-of-type(3) > section > p {
-    font-size: 1.25em;
-    order: 4;
+    font-size: 1.25em; /* Grotere prijs/subinfo */
+    order: 4; /* Komt onder afbeelding */
     padding-top: 1em;
   }
 
@@ -347,123 +363,137 @@ main > section:nth-of-type(3) > img {
     display: none;
   }
 
-  /* Toon desktop image op desktop */
+  /* Toon desktop image */
   main > section:nth-of-type(3) > img {
     display: block;
-    margin-top: 10rem;
+    margin-top: 10em;
   }
 }
 
-/* Meer dan een electrische fiets */
+/* MEER DAN EEN ELEKTRISCHE FIETS */
+
 main section:nth-of-type(4) {
   background-color: var(--color-bg-4);
-  padding: 3em 0 3em 0;
-  overflow-x: hidden;
+  padding: 3em 0 3em 0; /* Boven- en onderruimte */
+  overflow-x: hidden; /* Ik laat alleen het deel zien dat in het scherm past, De rest moet verborgen blijven */
 }
 
-main section:nth-of-type(4) > div {
+/* Eerste inner section = afbeeldingenblok */
+
+main section:nth-of-type(4) > section:first-of-type {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centreer de afbeeldingen horizontaal */
+  align-items: center; /* Centreer ze verticaal */
   gap: 1rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
+  max-width: 40em; /* Beperk maximale breedte van het blok */
+  margin: 0 auto; /* Centreer het gehele blok */
+  padding: 0 1.5em;
 }
 
-main section:nth-of-type(4) > div > img {
-  width: 18em;
-  height: auto;
-  flex-shrink: 0;
+/* Tweede inner section = tekstblok */
+main section:nth-of-type(4) > section:nth-of-type(2) {
+  max-width: 40em; /* Zelfde max-width voor consistentie */
+  margin: 0 auto; /* Tekstblok centreren */
+  text-align: center; /* Teksten centreren op mobiel */
+  padding: 0 1.5em;
 }
 
-/* Op mobiel: alleen de 3e afbeelding (middelste) tonen */
-main section:nth-of-type(4) > div > img:first-child,
-main section:nth-of-type(4) > div > img:nth-child(2),
-main section:nth-of-type(4) > div > img:nth-child(4),
-main section:nth-of-type(4) > div > img:last-child {
-  display: none;
+/* Afbeeldingen styling */
+main section:nth-of-type(4) > section:first-of-type > img {
+  width: 18em; /* Vaste breedte van elke foto */
+  height: auto; /* Behoud verhoudingen */
+  flex-shrink: 0; /* Voorkomt dat afbeeldingen kleiner worden */
 }
 
-main section:nth-of-type(4) > div > img:nth-child(3) {
-  display: block;
+/* Op mobiel: alleen de middelste afbeelding tonen */
+main section:nth-of-type(4) > section:first-of-type > img:first-child,
+main section:nth-of-type(4) > section:first-of-type > img:nth-child(2),
+main section:nth-of-type(4) > section:first-of-type > img:nth-child(4),
+main section:nth-of-type(4) > section:first-of-type > img:last-child {
+  display: none; /* Verberg afbeelding 1, 2, 4 en 5 */
 }
 
-@media (min-width: 1024px) {
-  /* Op desktop: alle afbeeldingen tonen - overschrijf display: none */
-  main section:nth-of-type(4) > div > img:first-child,
-  main section:nth-of-type(4) > div > img:nth-child(2),
-  main section:nth-of-type(4) > div > img:nth-child(3),
-  main section:nth-of-type(4) > div > img:nth-child(4),
-  main section:nth-of-type(4) > div > img:last-child {
-    display: block;
-  }
-
-  /* 1e afbeelding: half op scherm (links), in het midden qua hoogte */
-  main section:nth-of-type(4) > div > img:first-child {
-    margin-left: -9em;
-    margin-top: 0;
-  }
-
-  /* 2e afbeelding: een paar rem erboven */
-  main section:nth-of-type(4) > div > img:nth-child(2) {
-    margin-top: -8rem;
-  }
-
-  /* 3e afbeelding: precies in het midden horizontaal, een paar rem eronder */
-  main section:nth-of-type(4) > div > img:nth-child(3) {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 7rem;
-  }
-
-  /* 4e afbeelding: een paar rem erboven */
-  main section:nth-of-type(4) > div > img:nth-child(4) {
-    margin-top: -8rem;
-  }
-
-  /* 5e afbeelding: half op scherm (rechts), in het midden qua hoogte */
-  main section:nth-of-type(4) > div > img:last-child {
-    margin-right: -9em;
-    margin-top: 0;
-  }
+main section:nth-of-type(4) > section:first-of-type > img:nth-child(3) {
+  display: block; /* Toon alleen afbeelding 3 op mobiel */
 }
 
+/* TITEL */
 main section:nth-of-type(4) > section > h2 {
   margin: 0 0 0.375em 0;
   padding: 1em 0 0 0;
   font-size: 2.25em;
   font-weight: 400;
   line-height: 1.1;
-  text-align: center;
+  text-align: center; /* Centreer tekst */
   color: var(--secondary-color);
 }
 
+/* TEKST */
 main section:nth-of-type(4) > section > p {
   margin: 0 0 1em 0;
-  font-size: 0.75em;
+  font-size: 0.9em;
+  margin: 0 auto; /* Centreer binnen het max-width blok */
   color: var(--quaternary-color);
-  text-align: center;
+  text-align: center; /* Gecentreerd */
 }
 
-main section:nth-of-type(4) > section > a {
-  /* Styling voor de link in de geneste section */
-}
-
+/* DESKTOP WEERGAVE */
 @media (min-width: 1024px) {
+  /* Op desktop: alle afbeeldingen zichtbaar maken */
+  main section:nth-of-type(4) > section:first-of-type > img:first-child,
+  main section:nth-of-type(4) > section:first-of-type > img:nth-child(2),
+  main section:nth-of-type(4) > section:first-of-type > img:nth-child(3),
+  main section:nth-of-type(4) > section:first-of-type > img:nth-child(4),
+  main section:nth-of-type(4) > section:first-of-type > img:last-child {
+    display: block; /* Toon alles */
+  }
+
+  /* Individuele desktop-posities voor elke foto */
+
+  /* 1e afbeelding links, half buiten beeld */
+  main section:nth-of-type(4) > section:first-of-type > img:first-child {
+    margin-left: -9em; /* Duw de foto half uit het scherm */
+    margin-top: 0;
+  }
+
+  /* 2e afbeelding wat hoger */
+  main section:nth-of-type(4) > section:first-of-type > img:nth-child(2) {
+    margin-top: -8em;
+  }
+
+  /* 3e afbeelding lager, in het midden */
+  main section:nth-of-type(4) > section:first-of-type > img:nth-child(3) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 7em;
+  }
+
+  /* 4e afbeelding weer omhoog */
+  main section:nth-of-type(4) > section:first-of-type > img:nth-child(4) {
+    margin-top: -8rem;
+  }
+
+  /* 5e afbeelding rechts, half buiten beeld */
+  main section:nth-of-type(4) > section:first-of-type > img:last-child {
+    margin-right: -9em;
+    margin-top: 0;
+  }
+
+  /* Desktop titel */
   main section:nth-of-type(4) > section > h2 {
     font-size: 3em;
-    font-weight: 600;
+    font-weight: 400;
   }
 
+  /* Desktop tekst */
   main section:nth-of-type(4) > section > p {
     font-size: 1.25em;
-    max-width: 70ch;
-    margin: 0 auto;
+    max-width: 70ch; /* bron sizing: https://web.dev/learn/css/sizing */
+    margin: 0 auto; /* Centreer tekstblok */
   }
 }
 
-/* Productsectie 4 */
+/* PRODUCTSECTIE 4 - CROSS */
 
 main > section:nth-of-type(5) {
   background-color: var(--color-bg-5);
@@ -471,9 +501,9 @@ main > section:nth-of-type(5) {
 
 main > section:nth-of-type(5) > section {
   background-color: var(--color-bg-5);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: flex; /* Flexbox gebruiken voor mobiele structuur */
+  flex-direction: column; /* Alle elementen onder elkaar */
+  justify-content: space-around; /* Verdeel verticale ruimte */
 }
 
 /* Cross */
@@ -483,7 +513,7 @@ main section:nth-of-type(5) > section > h2 {
   font-size: 1em;
   font-weight: 400;
   color: var(--primary-color);
-  text-align: center;
+  text-align: center; /* Tekst centreren op mobiel */
 }
 
 /* gemaakt voor avontuur */
@@ -496,7 +526,7 @@ main section:nth-of-type(5) > section > h3 {
   color: var(--primary-color);
 }
 
-/* Vanaf €3.999 */
+/* Vanaf € 3.999 */
 main section:nth-of-type(5) > section > p {
   margin: 0 0 1em 0;
   font-size: 0.75em;
@@ -504,94 +534,99 @@ main section:nth-of-type(5) > section > p {
   text-align: center;
 }
 
-/* fiets-afbeelding - mobiele versie (binnen nested section) */
+/* Mobiele fiets-afbeelding (in inner section) */
 main > section:nth-of-type(5) > section > img {
   display: block;
   width: 120%;
   height: auto;
   margin: 0 0 1.25em 0;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative; /* Nodig om met left + transform te centreren */
+  left: 50%; /* Schuif afbeelding horizontaal op de helft */
+  transform: translateX(
+    -50%
+  ); /* Trek hem terug zodat hij exact in het midden staat */
 }
 
-/* fiets-afbeelding - desktop versie (direct binnen vijfde section) */
+/* Desktop-afbeelding (buiten inner section) — wordt pas op desktop zichtbaar */
 main > section:nth-of-type(5) > img {
-  max-width: 45rem;
-  display: none;
+  max-width: 45rem; /* Maximale breedte desktop-afbeelding */
+  display: none; /* Verborgen op mobiel */
 }
 
-/* witte ronde button */
+/* Witte ronde button (eerste link) */
 main > section:nth-of-type(5) > section > a:first-of-type {
   background-color: var(--primary-color);
   color: var(--primary-text-color);
 }
 
-/* hover: kleuren omdraaien */
+/* Hover: kleuren omdraaien */
 main > section:nth-of-type(5) > section > a:first-of-type:hover {
   background-color: var(--primary-text-color);
   color: var(--primary-color);
 }
 
-/* Boek een gratis testrit */
+/* Boek een gratis testrit (tweede link) */
 main > section:nth-of-type(5) > section > a:nth-of-type(2) {
   color: var(--primary-color);
   font-weight: 400;
 }
 
-/* Pijl naast knop */
+/* Pijl-icoon naast de tweede link */
 main > section:nth-of-type(5) > section > a:nth-of-type(2) svg {
   color: var(--primary-color);
 }
 
 @media (min-width: 1024px) {
-  /* Maak vijfde section flex op desktop */
-
+  /* Buitenste sectie wordt een flex-container op desktop */
   main > section:nth-of-type(5) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    padding: 0 5em 10em;
+    display: flex; /* Tekstblok + afbeelding naast elkaar */
+    justify-content: space-between; /* Ruimte tussen tekst en fiets */
+    align-items: center; /* Verticaal uitlijnen */
+    gap: 2rem; /* Ruimte tussen kolommen */
+    padding: 0 5em 10em; /* Extra ruimte onderin voor breathing space */
   }
 
+  /* Inner section krijgt desktop lay-out */
   main > section:nth-of-type(5) > section {
-    justify-content: flex-start;
+    justify-content: flex-start; /* Begin bovenaan */
     align-items: center;
-    column-gap: 2rem;
-    flex-flow: row wrap;
+    column-gap: 2em;
+    flex-flow: row wrap; /* Alle tekst-elementen op hun eigen rij */
     height: auto;
   }
 
+  /* Desktop h2 */
   main section:nth-of-type(5) > section > h2 {
     font-size: 1.5em;
-    text-align: left;
-    flex: 1 1 100%;
+    text-align: left; /* Linker uitlijning */
+    flex: 1 1 100%; /* Neemt volledige breedte */
     order: 1;
   }
 
+  /* Desktop h3 */
   main section:nth-of-type(5) > section > h3 {
     font-size: 3em;
-    text-align: left;
+    /text-align: left;
     flex: 1 1 100%;
     order: 2;
   }
 
+  /* Desktop p */
   main section:nth-of-type(5) > section > p {
     font-size: 1.25em;
-    order: 4;
+    order: 4; /* Onder andere elementen */
     padding-top: 1em;
   }
 
-  /* Verberg mobiele image op desktop */
+  /* Mobiele afbeelding verbergen op desktop */
   main > section:nth-of-type(5) > section > img {
-    display: none;
+    display: none; /* Alleen desktop-image tonen */
   }
 
-  /* Toon desktop image op desktop */
+  /* Desktop-afbeelding tonen */
   main > section:nth-of-type(5) > img {
-    display: block;
-    margin-top: 10rem;
+    display: block; /* Nu zichtbaar */
+    margin-top: 10rem; /* Plaatsing in de verticale ruimte */
   }
 }
 
@@ -722,19 +757,10 @@ main > section > a:nth-of-type(2) + ul > li > p {
   color: var(--primary-text-color);
 }
 
-/* Specifieke styling voor section 5 (Cross) - overschrijft algemene styling */
+/* Specifieke styling voor section 5 en 7 */
 main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul {
   margin: 1.5em 1.25em 0 1.25em;
-  border-top: 0.0425em solid;
-}
-
-main
-  > section:nth-of-type(5)
-  > section
-  > a:nth-of-type(2)
-  + ul
-  > li:not(:first-child)::before {
-  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 /* Bovenste regel voor section 5 */
@@ -749,12 +775,13 @@ main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul > li > p {
   font-weight: 300;
 }
 
+/* ONTWORPEN IN BELGIE  */
+
 /* Achtergrond afbeelding (Belgie) */
 
 main section:nth-of-type(6) {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../images/assembledfiets.webp");
-  background-size: 250%;
+  background-image: url("../images/assembledfiets.webp");
+  background-size: 450%;
   background-position: 60% top;
   background-repeat: no-repeat;
 
@@ -984,7 +1011,7 @@ main > section:nth-of-type(7) > section > a:nth-of-type(2) svg {
 /* Specifieke styling voor section 7 (Cross ST) - overschrijft algemene styling */
 main > section:nth-of-type(7) > section > a:nth-of-type(2) + ul {
   margin: 1.5em 1.25em 0 1.25em;
-  border-top: 0.0425em solid;
+  border-color: var(--primary-color);
 }
 
 @media (min-width: 1024px) {
