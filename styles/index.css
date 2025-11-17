@@ -752,9 +752,10 @@ main > section:nth-of-type(5) > section > a:nth-of-type(2) + ul > li > p {
 /* Achtergrond afbeelding (Belgie) */
 
 main section:nth-of-type(6) {
-  background-image: url("../images/assembledfiets.webp");
-  background-size: cover;
-  background-position: center top;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/assembledfiets.webp");
+  background-size: 250%;
+  background-position: 60% top;
   background-repeat: no-repeat;
 
   align-items: center;
@@ -766,6 +767,10 @@ main section:nth-of-type(6) {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+}
+
+main section:nth-of-type(6) > section {
+  width: 100%;
 }
 
 /* Ontworpen in Belgie  */
@@ -784,11 +789,36 @@ main section:nth-of-type(6) > section > h3 {
   line-height: 1.1;
   text-align: center;
   color: var(--primary-color);
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  main section:nth-of-type(6) {
+    padding: 3em 4em;
+    background-image: url("../images/assembledfiets.webp");
+    background-position: center bottom;
+    background-size: cover;
+  }
+
+  main section:nth-of-type(6) > section > h2 {
+    font-size: 1.25em;
+    text-align: left;
+    margin: 0;
+    color: var(--secondary-text-color);
+  }
+
+  main section:nth-of-type(6) > section > h3 {
+    font-size: 4em;
+    text-align: left;
+    max-width: 14ch;
+    margin: 0.5em 0 0.5em;
+    line-height: 0.95;
+  }
 }
 
 /* Witte button (hij doet het nu niet) */
-body > main > section:nth-of-type(6) > section > a:first-of-type {
-  background-color: red;
+main > section:nth-of-type(6) > section > a:first-of-type {
+  background-color: var(--primary-color);
   color: var(--primary-text-color);
 }
 
