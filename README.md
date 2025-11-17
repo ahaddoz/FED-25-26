@@ -268,12 +268,58 @@ Wat ik zelf heb geleerd:
 
 ## Toegankelijkheidstest 2/2 (week 4)
 
-<details>
-  <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
+Verbeteringen & bevindingen (WCAG + eigen analyse)
 
-### Bevindingen
+Tijdens het analyseren van de originele Cowboy-website kwamen meerdere toegankelijkheidsproblemen naar voren. Hieronder beschrijf ik welke problemen ik heb ontdekt, wat ik heb verbeterd en waarom deze verbeteringen belangrijk zijn volgens WCAG-richtlijnen.
 
-Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+1. Headings & pagina-structuur
+   Bevindingen
+
+-Veel pagina’s hadden geen H1, waardoor een screenreader niet weet waar de pagina eigenlijk over gaat.
+-Sommige H2’s en H3’s waren niet logisch opgebouwd of werden overgeslagen.
+-Slogans zoals “Go Dutch” werden als gewone H3 getoond, zonder context → een screenreader weet dan niet dat dit een slogan is.
+
+Verbeteringen
+-Ik heb elke pagina een unieke H1 gegeven (visually-hidden waar nodig).
+-Headings opnieuw logisch opgebouwd (H1 → H2 → H3).
+-Extra aria-labels toegevoegd aan titels zodat screenreaders begrijpen dat het om een fietsmodel gaat.
+
+2. Buttons & links
+   Bevindingen
+
+-Veel knoppen waren eigenlijk <a>-links verkleed als buttons (“Ontdek”).
+-De tekst van knoppen was niet beschrijvend genoeg → screenreader hoort alleen “Ontdek”, maar niet wat.
+-Focus styles waren onduidelijk zichtbaar.
+-Op mobiel gaven sommige knoppen geen duidelijke interactie-feedback.
+
+Verbeteringen
+
+-Knoppen betekenisvoller gemaakt → bv. “Ontdek Cruiser”.
+-Knoppen groter gemaakt voor mobile touch
+
+3. Navigatie & menu
+   Bevindingen
+
+-In het uitklapmenu stonden alleen algemene links (“Ontdek”), zonder context.
+-Geen duidelijke aria-labels → screenreader weet niet welke fiets er bedoeld wordt.
+-Er was geen skip-link aanwezig.
+-Close-knoppen voor het menu hadden geen duidelijke tekst of aria-label.
+
+Verbeteringen
+
+- Elke link in het menu een unieke naam gegeven.
+- Menu-iconen titels gegeven.
+
+4. Formulieren
+   Bevindingen
+
+-Newsletter input had onvoldoende label-associatie.
+-Niet zichtbaar dat het een form-field is.
+
+Verbeteringen
+
+- Input een duidelijke border voor toegankelijkheid.
+- Button om te subscriben als echte <button> gebruikt i.p.v. <a>.
 
 </details>
 
@@ -347,48 +393,92 @@ Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 Nb. ChatGpT en andere AI horen er ook bij.
 Nb. Vermeld de bronnen ook in je code.
 
-1. https://chatgpt.com/
-2. https://developer.chrome.com/blog/carousels-with-css?hl=nl
-3. https://codepen.io/zinebcancode/pen/myVJeZJ
-4. https://codepen.io/zinebcancode/pen/RNrmWxX
-5. https://stackoverflow.com/questions/2671563/how-to-include-images-for-selectionoption
-6. https://www.w3schools.com/css/css_pseudo_elements.asp
-7. https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow/Carousels
-8. https://www.w3schools.com/cssref/pr_pos_z-index.php
-9. https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0
-10. https://swink.nl/blog/wat-wcag-betekent-digitale-toegankelijkheid/?gad_source=1&gad_campaignid=9874867858&gbraid=0AAAAADr-YSpNG4_vigUMKQpD06aphRSEb&gclid=Cj0KCQiA5uDIBhDAARIsAOxj0CGLfppkG8jBie3_aMa6WvcZ4PP8BUEz3N6-XW8n0QW9Y8pHErLQCBcaAibjEALw_wcB
-11. https://www.youtube.com/watch?v=GteJWhCikCk&t=1s
-12. https://www.youtube.com/watch?v=dMxOojFq2ho
-13. https://codepen.io/shooft/pen/QwjQGZe
+Bronnenlijst:
+
+OpenAI. (z.d.). ChatGPT. https://chatgpt.com/
+
+Google Developers. (2023). Carousels with CSS. https://developer.chrome.com/blog/carousels-with-css?hl=nl
+
+ZinebCanCode. (z.d.). CSS test — CodePen. https://codepen.io/zinebcancode/pen/myVJeZJ
+
+ZinebCanCode. (z.d.). Responsive section test — CodePen. https://codepen.io/zinebcancode/pen/RNrmWxX
+
+StackOverflow Community. (2010). How to include images for selection/option. https://stackoverflow.com/questions/2671563/how-to-include-images-for-selectionoption
+
+W3Schools. (z.d.). CSS pseudo-elements. https://www.w3schools.com/css/css_pseudo_elements.asp
+
+Mozilla Developer Network. (z.d.). CSS overflow & carousels guide. https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow/Carousels
+
+W3Schools. (z.d.). CSS z-index property. https://www.w3schools.com/cssref/pr_pos_z-index.php
+
+ljcdev. (2020). Easy hamburger menu with JS. https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0
+
+Swink. (z.d.). Wat WCAG betekent voor digitale toegankelijkheid. https://swink.nl/blog/wat-wcag-betekent-digitale-toegankelijkheid/
+
+Coding Artist. (2021). CSS Carousel Tutorial [YouTube-video]. YouTube. https://www.youtube.com/watch?v=GteJWhCikCk
+
+Mr. Web Designer. (2022). HTML CSS Carousel Build [YouTube-video]. YouTube. https://www.youtube.com/watch?v=dMxOojFq2ho
+
+Shooft. (z.d.). CSS voorbeelden — CodePen. https://codepen.io/shooft/pen/QwjQGZe
+
+Mozilla Developer Network. (z.d.). :not selector. https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not
+
+Mozilla Developer Network. (z.d.). flex-flow property. https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-flow
+
+Mozilla Developer Network. (z.d.). flex-shrink property. https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-shrink
+
+Mozilla Developer Network. (z.d.). flex-wrap property. https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-wrap
+
+Shooft. (z.d.). Scroll-linked carousel concept — CodePen. https://codepen.io/shooft/pen/JoGrgYO
 
  <img src="readme-images/chat1.png" width="375px" alt="chatgpt nav bron">
 Ik heb ChatGPT gebruikt omdat een deel van mijn website verkeerd gestyled werd. Mijn CSS-selector was te algemeen, waardoor meerdere <section>-elementen dezelfde height kregen en mijn menu vreemd ging doen. Met hulp van ChatGPT kwam ik erachter welke selector het probleem veroorzaakte en waarom dat gebeurde.
 
 Ik heb het daarna zelf opgelost door de selector specifieker te maken met > en nth-of-type(). Daardoor wordt de styling nu alleen toegepast op het juiste onderdeel, en beïnvloedt het niet meer de andere secties. Sinds die aanpassing werkt mijn navigatie en menu weer normaal.
 
-FED PLANNING
+<img src="readme-images/chat2.png" width="375px" alt="chatgpt maxwidth bron">
 
-    - [ ] HTML
-        - [ ] Home
-            - [ ] Svg’s van cowboy overnemen en in de website plaatsen.
-            - [ ] Maak taal zonder klikbaarheid
-            - [ ] Testrit
-    - [ ] Css
-        - [ ] Globale css
-        - [ ] Home
-        - [ ] Testrit
-            - [ ] Radio fiets keuze highlighten.
-    - [ ] Javascript
-        - [ ] Menu
-    - [ ] Verslag
-        - [ ] Wat zou ik nog meer doen als ik meer tijd heb
-    - [ ] WGAC (Alles hercontroleren ook alles wat yes)
-        - [ ] Alle No’s fixen
-        - [ ] Screen reader test
-    - [ ] Wensen lijstje (als tijd en zin over)
-        - [ ] Balk bovenin
-            - [ ] Wegklikbaar
-            - [ ] Texten die Veranderen
-        - [ ] Kaart
+Ik wilde weten hoe ik een max-width kon gebruiken, ik had alles al netjes gecentreerd met flexbox maar de teskt en h2 kwamen zowel links en rechts tegen het rand aan.
+
+<img src="readme-images/chat3.png" width="375px" alt="chatgpt article bron">
+<img src="readme-images/chat4.png" width="375px" alt="chatgpt article bron">
+<img src="readme-images/chat5.png" width="375px" alt="chatgpt article bron">
+
+Waarom ik een section in een section heb gebruikt
+
+Bij mijn productblokken heb ik één grote <section> gebruikt voor het hele product (titel, tekst + afbeelding).
+Daarbinnen heb ik een tweede <section> gezet speciaal voor het tekstblok.
+
+De reden hiervoor is heel simpel:
+
+de buitenste section = het hele product
+
+de binnenste section = alleen de tekst en knoppen
+
+dit maakt het veel makkelijker om de layout responsive te maken
+
+op mobiel staat tekst bovenaan
+
+op desktop kan de tekst naast de afbeelding komen
+
+ik kan flexbox en order gebruiken zonder dat de content door elkaar raakt
+
+Dus: deze structuur maakt de code logisch én flexibel voor alle schermgroottes.
+Het is ook semantisch prima, want een section mag subsecties bevatten zolang ze samen één groter thema vormen (hier: één product).
+
+✦ Waarom het laatste blok wél een <article> is
+
+Het laatste blok (“We komen naar je toe – Ervaar het zelf – Boek een testrit”) heb ik een <article> gegeven omdat:
+
+het een zelfstandig stukje content is
+
+het ook los buiten de pagina kan bestaan (bijv. als promo, teaser, advertentie)
+
+het voldoet aan de HTML-regels voor een article
+
+Kort gezegd:
+
+De productblokken bestaan uit meerdere onderdelen en vragen flexibele structuur > daarom sections.
+De teaser is een losstaand item > daarom een article.
 
 </details>

@@ -450,18 +450,43 @@ body > section header:nth-of-type(3) nav {
   }
 }
 
-/************************************/
-/*   ALGEMENE BUTTONS IN SECTIONS   */
-/************************************/
+/*** ALGEMENE BUTTONS***/
+/*** ALGEMENE BUTTONS***/
+/* Button in de desktop navigatie */
+body
+  > section
+  header:nth-of-type(3)
+  section:nth-of-type(2)
+  ul
+  li:nth-of-type(3)
+  a:last-of-type {
+  display: block;
+  width: max-content;
+  margin: 1em auto;
+  padding: 0.75em 1em;
+  border-radius: 999em;
+  border: none;
+  line-height: 1;
 
-/* Product-knoppen in secties met nested section */
+  background-color: var(--primary-text-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 1em;
+}
+/* Eerste link button - voor sections met nested section (eerste section) */
 main > section:first-of-type > section > a:first-of-type,
+/* Eerste link button - voor sections met nested section (tweede section) */
 main > section:nth-of-type(2) > section > a:first-of-type,
+/* Eerste link button - voor sections met nested section (derde section) */
 main > section:nth-of-type(3) > section > a:first-of-type,
+/* Eerste link button - voor sections met nested section (vijfde section) */
 main > section:nth-of-type(5) > section > a:first-of-type,
+/* Eerste link button - voor sections met nested section (zevende section) */
 main > section:nth-of-type(7) > section > a:first-of-type,
-/* Product-knoppen in secties zonder nested section */
-main > section > section a:first-of-type {
+/* Eerste link button - voor sections zonder nested section (andere sections) */
+main section:not(:first-of-type):not(:nth-of-type(2)):not(:nth-of-type(3)):not(:nth-of-type(5)):not(:nth-of-type(6)):not(:nth-of-type(7)) a:first-of-type,
+main a:first-of-type {
   display: block;
   width: max-content;
   margin: 2em auto;
@@ -477,62 +502,43 @@ main > section > section a:first-of-type {
   font-size: 1em;
 }
 
-/* Hover styles */
-main > section:first-of-type > section > a:first-of-type:hover,
-main > section:nth-of-type(2) > section > a:first-of-type:hover,
-main > section:nth-of-type(3) > section > a:first-of-type:hover,
-main > section:nth-of-type(5) > section > a:first-of-type:hover,
-main > section:nth-of-type(7) > section > a:first-of-type:hover,
-main > section > section a:first-of-type:hover {
-  background-color: var(--primary-color);
-  color: var(--primary-text-color);
-}
-
+/* Media queries voor het "Ontdek" button  */
 @media (min-width: 1024px) {
   main > section:first-of-type > section > a:first-of-type,
   main > section:nth-of-type(2) > section > a:first-of-type,
   main > section:nth-of-type(3) > section > a:first-of-type,
   main > section:nth-of-type(5) > section > a:first-of-type,
   main > section:nth-of-type(7) > section > a:first-of-type,
-  main > section > section a:first-of-type {
+  main
+    section:not(:first-of-type):not(:nth-of-type(2)):not(:nth-of-type(3)):not(
+      :nth-of-type(4)
+    ):not(:nth-of-type(5)):not(:nth-of-type(7))
+    a:first-of-type,
+  main a:first-of-type {
     margin: 0;
     order: 3;
   }
 
-  /* uitzondering voor section 4 */
   main > section:nth-of-type(4) > section > a:first-of-type {
     margin: 0 auto;
   }
 }
 
-/**********************************************/
-/*   CARROUSEL PLUS-KNOP — APARTE STYLING     */
-/**********************************************/
-
-/* Plus icoontje link */
-main section:nth-of-type(9) li a:last-of-type {
-  position: absolute;
-  bottom: 1.5em;
-  right: 1.5em;
+/* hover: kleuren omdraaien - voor sections met nested section (eerste section) */
+main > section:first-of-type > section > a:first-of-type:hover,
+/* hover: kleuren omdraaien - voor sections met nested section (tweede section) */
+main > section:nth-of-type(2) > section > a:first-of-type:hover,
+/* hover: kleuren omdraaien - voor sections met nested section (derde section) */
+main > section:nth-of-type(3) > section > a:first-of-type:hover,
+/* hover: kleuren omdraaien - voor sections met nested section (vijfde section) */
+main > section:nth-of-type(5) > section > a:first-of-type:hover,
+/* hover: kleuren omdraaien - voor sections met nested section (zevende section) */
+main > section:nth-of-type(7) > section > a:first-of-type:hover,
+/* hover: kleuren omdraaien - voor sections zonder nested section (andere sections) */
+main section:not(:first-of-type):not(:nth-of-type(2)):not(:nth-of-type(3)):not(:nth-of-type(5)):not(:nth-of-type(7)) a:first-of-type:hover,
+main a:first-of-type:hover {
   background-color: var(--primary-color);
-  border-radius: 50%;
-  padding: 0.4em;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-
-/* Plus icoontje zelf */
-main section:nth-of-type(9) li a:last-of-type svg {
-  width: 1.25em;
-  height: auto;
   color: var(--primary-text-color);
-  transition: transform 0.2s ease;
-}
-
-main section:nth-of-type(9) li a:last-of-type:hover svg {
-  transform: translateX(0.5em);
 }
 
 /* Boek gratis testrit knop - voor sections met nested section (eerste section) */
@@ -590,50 +596,51 @@ main > section > a:nth-of-type(2) svg {
   color: var(--primary-text-color);
 }
 
-/* HELE FOOTER*/
+/* Footer Algemeen */
 
 footer {
   background-color: var(--footer-color);
-  display: flex; /* footer-secties onder elkaar op mobiel */
-  flex-flow: column wrap; /* Zet alle items eerst onder elkaar.
-Maar als de container te smal is en het past niet meer, dan mogen ze in een tweede kolom springen. */
+  display: flex;
+  flex-flow: column wrap;
   color: var(--primary-color);
 }
 
 footer section {
-  margin: 0 auto; /* centreert de child-secties horizontaal */
+  margin: 0 auto;
 }
 
 /* de 4 blokken met linkjes (ontdek, services ect.) */
 footer > section:first-of-type {
   width: 100%;
-  display: flex; /* kolommen naast elkaar */
-  flex-wrap: wrap; /* kolommen gaan onder elkaar op mobiel */
-  gap: 2em; /* ruimte tussen kolommen */
-  justify-content: space-between; /* gelijkmatig verspreid */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: space-between;
   padding: 2em 1em;
 }
 
 @media (min-width: 1024px) {
   footer {
-    flex-flow: row wrap; /* footer-secties naast elkaar */
+    flex-flow: row wrap;
     background-color: var(--primary-text-color);
     padding: 1em 2em;
   }
 
   footer > section:first-of-type {
-    flex: 1 1 50%; /* linkjes-sectie neemt de helft van de footer-breedte */
+    flex: 1 1 50%;
     padding: 2em 1em 0 1em;
   }
 }
 
 /* elke blokje appart */
 footer > section:first-of-type section {
-  flex: 1 1 12em; /* minimale breedte en mag groeien */
+  flex: 1 1 12em;
 }
 
 /* Alle kopjes */
 footer h3 {
+  font-size: 1em;
+  font-weight: 500;
   margin: 0 0 1em 1em;
   color: var(--quaternary-color);
 }
@@ -646,30 +653,41 @@ footer ul {
 }
 
 footer section ul li a {
-  position: relative; /* nodig voor underline-animatie */
-  display: inline-block; /* maakt underline breedte controleerbaar */
+  position: relative;
+  display: inline;
+  padding: 0;
+  margin: 0 0 0.5em 0;
+  border-radius: 0;
+  background: none;
   text-decoration: none;
   color: var(--primary-color);
+  font-size: 1em;
+  display: inline-block;
 }
 
 footer a::after {
-  content: ""; /* gefakete underline */
+  content: "";
   position: absolute;
   left: 0;
   bottom: -0.1em;
-  width: 0%; /* begint onzichtbaar */
+  width: 0%;
   height: 1px;
   background-color: var(--primary-color);
 }
 
+footer a:hover {
+  color: var(--primary-color);
+}
+
 footer a:hover::after {
-  width: 100%; /* animatie: underline groeit */
+  width: 100%;
 }
 
 /* Nieuwsbrief section */
 footer > section:nth-of-type(2) {
   background-color: var(--primary-text-color);
   padding: 2em 0;
+  /* max-width: 50em; */
   margin: 0 auto;
   width: 100%;
 }
@@ -677,86 +695,127 @@ footer > section:nth-of-type(2) {
 @media (min-width: 1024px) {
   footer > section:nth-of-type(2) {
     width: auto;
-    flex: 1 1 33%; /* neemt 1/3 van de footer op desktop */
+    flex: 1 1 33%;
   }
 }
 
+/* titel */
+footer > section:nth-of-type(2) h2 {
+  color: var(--secondary-text-color);
+  font-size: 1.25em;
+  margin: 0 0 1em 1em;
+  font-weight: 400;
+}
 /* de nieuwsbrief formulier */
 footer > section:nth-of-type(2) form {
-  display: grid; /* input + button naast elkaar */
-  grid-template-columns: 1fr auto; /* input pakt ruimte, button vaste breedte */
-  align-items: center; /* verticaal uitlijnen */
-  column-gap: 1em; /* ruimte tussen input & button */
-  row-gap: 0.75em; /* ruimte tussen rijen */
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 1em;
+  row-gap: 0.75em;
+  margin: 0 0 0 0.6em;
 }
-
 /* de label*/
 footer > section:nth-of-type(2) label {
-  grid-column: 1; /* label boven eerste kolom */
+  grid-column: 1;
+  width: 100%;
 }
-
-/* email input */
+/* email input, voor toegankelijkheid een een border omheen gemaakt zodat het duidelijk is dat je hierin je email kunt invullen */
 footer > section:nth-of-type(2) input[type="email"] {
   width: 100%;
   background: none;
   border: 0.0625em solid var(--primary-color);
-  border-radius: 1.875em; /* pill-shape */
-  padding: 0.45em 0 0.45em 1em; /* ruimte zodat tekst niet tegen rand zit */
+  border-bottom: 0.0625em solid var(--primary-color);
+  border-radius: 1.875em;
+  color: var(--primary-color);
+  font-size: 1em;
+  padding: 0.45em 0 0.45em 1em;
+  margin: 0 0.75em 0 0.5em;
 }
 
-/* abboneren knop */
+footer > section:nth-of-type(2) input[type="email"]::placeholder {
+  color: var(--primary-color);
+}
+
+/* abboneren knop, voor toegankelijkheid een echte knop gemaakt */
+
 footer > section:nth-of-type(2) button {
-  grid-column: 2; /* button komt in tweede kolom */
-  width: max-content; /* alleen breedte van inhoud */
-  border-radius: 999em; /* ronde knop */
+  grid-column: 2;
+  width: max-content;
+  padding: 0.75em 1em;
+  margin-right: 2em;
+  border-radius: 999em;
+  border: none;
+  line-height: 1;
+
   background-color: var(--primary-color);
   color: var(--primary-text-color);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 footer > section:nth-of-type(2) button:hover {
-  border: var(--primary-color) solid; /* outline bij hover */
+  border: var(--primary-color) solid;
 }
-
 /* tekst */
 footer > section:nth-of-type(2) p {
-  grid-column: 1 / -1; /* tekst onder input & button */
+  grid-column: 1 / -1;
+  font-size: 0.8em;
+  color: var(--secondary-text-color);
+  margin: 0 0 0 0.8em;
+  font-weight: 300;
 }
+/* de link in de tekst */
+footer > section:nth-of-type(2) p a {
+  color: var(--secondary-text-color);
+}
+
+/* 
+Ik heb de social media icoontjes in de section onder de form tag geplaatst,
+omdat ze altijd onder het formulier staan.
+*/
 
 /* SOCIAL MEDIA */
 
+/* de 3 social media iconen*/
 footer > section:nth-of-type(2) > section {
   position: relative;
-  display: flex; /* icoontjes naast elkaar */
+  display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 1em; /* ruimte tussen iconen */
+  gap: 1em;
+  padding: 0 1em 0em;
   background-color: var(--primary-text-color);
   margin-top: 2em;
 }
 
 /* pseudo-element voor de “fake” border */
 footer > section:nth-of-type(2) > section::after {
-  content: ""; /* maakt de borderlijn */
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%); /* centreren */
-  width: 94vw; /* brede lijn */
+  transform: translateX(-50%);
+  width: 94vw;
   height: 0.05em;
   background-color: var(--accent-color);
 }
 
 @media (min-width: 1024px) {
   footer > section:nth-of-type(2) > section::after {
-    display: none; /* desktop heeft grid, border onnodig */
+    display: none;
   }
 }
+
+/* de iconen zelf */
 
 footer > section:nth-of-type(2) > section svg {
   width: 1.5em;
   height: 1.5em;
+  fill: var(--secondary-text-color);
   cursor: pointer;
-  transition: fill 0.3s ease; /* smooth kleurverandering */
+  transition: fill 0.3 ease;
+  margin: 0 0 1em 0;
 }
 
 footer > section:nth-of-type(2) > section svg:hover {
@@ -767,8 +826,8 @@ footer > section:nth-of-type(2) > section svg:hover {
 
 footer > section:nth-of-type(3) {
   position: relative;
-  display: grid; /* mooie uitlijning voor logo + taal */
-  grid-template-columns: auto 1fr auto; /* logo – ruimte – select */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   row-gap: 1rem;
   align-items: center;
   padding: 1em 0 1em 2em;
@@ -783,41 +842,51 @@ footer > section:nth-of-type(3) {
     padding: 3em 0 1em 2em;
   }
 }
-
 /* Hidden h2 voor de screenreader */
 footer > section:nth-of-type(3) h2 {
-  position: absolute; /* volledig verborgen */
+  position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0 0 0 0); /* screenreader-only */
+  clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
 }
 
 footer > section:nth-of-type(3) > a {
-  grid-column: 1 / -1; /* logo over volledige breedte */
+  grid-column: 1 / -1;
+}
+
+/* logo */
+footer > section:nth-of-type(3) a svg {
+  width: 10em;
+  height: auto;
+  color: var(--primary-color);
 }
 
 /* TALEN KIEZEN VANAF HIER */
 
 /* Alleen zichtbaar voor screenreaders */
 footer > section:nth-of-type(4) label[for="language-select"] {
-  position: absolute; /* verstoppen */
+  position: absolute;
   width: 1px;
   height: 1px;
+  padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* zorgt ervoor dat de select en svg naast elkaar komen te staan */
 footer > section:nth-of-type(4) {
-  display: flex; /* select + icon naast elkaar */
+  display: flex;
   position: relative;
   background-color: var(--primary-text-color);
+  margin: 0;
   padding: 1em;
 }
 
@@ -831,38 +900,44 @@ footer > section:nth-of-type(4) {
 footer > section:nth-of-type(4)::after {
   content: "";
   position: absolute;
-  bottom: 0; /* border onderaan */
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 94vw;
   height: 0.05em;
   background-color: var(--accent-color);
 }
-
 /* algemene stijling voor de select */
 footer > section:nth-of-type(4) select {
-  appearance: none; /* native pijltje verbergen */
+  appearance: none;
   background: transparent;
   border: none;
+  color: var(--primary-color);
+  font-size: 0.8em;
   padding: 0.5em 2em 0.5em 1;
-  flex: 1; /* als er meer ruimte is dan groeit het element mee*/
+  margin: 0 1em 0 1em;
+  flex: 1;
+  display: block;
 }
 
 /* Het pijltje naast de select */
 footer > section:nth-of-type(4) svg {
   height: 1em;
-  position: absolute; /* exacte plek */
-  right: 1em; /* rechts uitlijnen */
-  pointer-events: none; /* icon niet klikbaar */
+  margin-left: 0.4em;
+  transition: transform 0.2s ease;
+  transform-origin: center;
+  color: var(--primary-color);
+  pointer-events: none;
+  position: absolute;
+  right: 1em;
 }
 
-/* LINKS ONDERAAN FOOTER */
-
+/* de 3 linkjes */
 footer > section:last-of-type {
   background-color: var(--primary-text-color);
   padding: 1em;
   display: flex;
-  flex-flow: column wrap; /* links onder elkaar op mobiel */
+  flex-flow: column wrap;
   width: 100%;
 }
 
@@ -870,10 +945,33 @@ footer > section:last-of-type {
   footer > section:last-of-type {
     width: auto;
     flex: 1;
-    flex-flow: row nowrap; /* op desktop naast elkaar */
+    flex-flow: row nowrap;
+  }
+}
+
+footer > section:last-of-type a {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  font-size: 0.7em;
+  font-weight: 400;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+@media (min-width: 1024px) {
+  footer > section:last-of-type a {
+    margin-bottom: 0;
   }
 }
 
 footer > section:last-of-type a:hover {
-  text-decoration: underline; /* klassieke hover underline */
+  text-decoration: underline;
+}
+
+footer > section:last-of-type p {
+  margin: 0;
+  font-size: 0.7em;
+  font-weight: 300;
+  color: var(--secondary-text-color);
+  margin-left: 1em;
 }
